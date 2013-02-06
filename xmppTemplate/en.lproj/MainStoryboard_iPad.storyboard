@@ -1776,6 +1776,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="SQf-oQ-CW2"/>
+                                    <constraint firstAttribute="height" constant="30" id="YxL-fW-0Db"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save" backgroundImage="greyButton.png">
@@ -1784,6 +1785,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="Ka1-77-F3o" eventType="touchUpInside" id="gEj-rW-ce5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPL-Eu-yhK">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1804,11 +1808,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOk-aP-wYC">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="aJg-Wj-6aV"/>
+                                    <constraint firstAttribute="width" constant="103" id="Qeg-45-xg3"/>
                                     <constraint firstAttribute="height" constant="30" id="fa4-xx-FdF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Delete Color" backgroundImage="orangeButton.png">
+                                <state key="normal" title="Delete Theory" backgroundImage="orangeButton.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1819,8 +1823,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-R7-okh">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="JZE-kt-mWT"/>
-                                    <constraint firstAttribute="width" constant="148" id="Qrk-Ll-TIi"/>
+                                    <constraint firstAttribute="height" constant="60" id="L6l-kM-9zz"/>
+                                    <constraint firstAttribute="width" constant="298" id="ybp-XK-ep4"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1829,17 +1833,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zPL-Eu-yhK" firstAttribute="bottom" secondItem="GnA-zx-yiD" secondAttribute="bottom" type="default" id="F1W-Jz-vC9"/>
-                            <constraint firstItem="GnA-zx-yiD" firstAttribute="trailing" secondItem="J7V-R7-okh" secondAttribute="trailing" type="default" id="J40-pN-65S"/>
-                            <constraint firstItem="GnA-zx-yiD" firstAttribute="trailing" secondItem="iOk-aP-wYC" secondAttribute="trailing" type="default" id="MuU-ko-bAF"/>
-                            <constraint firstItem="iOk-aP-wYC" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="189" id="QZW-Of-UMg"/>
-                            <constraint firstItem="zPL-Eu-yhK" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="100" id="TE5-c1-GpO"/>
+                            <constraint firstItem="GnA-zx-yiD" firstAttribute="trailing" secondItem="J7V-R7-okh" secondAttribute="trailing" type="default" id="2uT-yV-aD8"/>
                             <constraint firstItem="GnA-zx-yiD" firstAttribute="baseline" secondItem="iOk-aP-wYC" secondAttribute="baseline" type="default" id="Vgu-Y4-ebw"/>
-                            <constraint firstItem="zPL-Eu-yhK" firstAttribute="top" secondItem="GnA-zx-yiD" secondAttribute="top" type="default" id="ZhF-x6-EEa"/>
+                            <constraint firstItem="zPL-Eu-yhK" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="324" id="duN-mA-VdT"/>
                             <constraint firstItem="J7V-R7-okh" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" type="default" id="l9Q-dL-FE4"/>
+                            <constraint firstItem="GnA-zx-yiD" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="62" id="ldD-2D-zZa"/>
                             <constraint firstItem="zPL-Eu-yhK" firstAttribute="baseline" secondItem="GnA-zx-yiD" secondAttribute="baseline" type="default" id="nkP-hP-dK5"/>
+                            <constraint firstItem="iOk-aP-wYC" firstAttribute="leading" secondItem="3bv-rt-Tfm" secondAttribute="leading" constant="166" id="u4C-fK-xzR"/>
+                            <constraint firstItem="iOk-aP-wYC" firstAttribute="leading" secondItem="zPL-Eu-yhK" secondAttribute="leading" type="default" id="usf-ay-5ph"/>
+                            <constraint firstItem="iOk-aP-wYC" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="276" id="vV6-IH-M8j"/>
                             <constraint firstItem="J7V-R7-okh" firstAttribute="leading" secondItem="3bv-rt-Tfm" secondAttribute="leading" type="default" id="x8D-Xe-Pwd"/>
-                            <constraint firstItem="zPL-Eu-yhK" firstAttribute="leading" secondItem="3bv-rt-Tfm" secondAttribute="leading" type="default" id="xdv-gN-BnZ"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -2676,6 +2679,7 @@
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>
@@ -2719,6 +2723,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TheoryReasonViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="savePressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="reasonText" candidateClass="UITextView"/>

@@ -17,8 +17,8 @@
 const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
 //const char * mogodbServer = "131.193.79.212"; //set to ip of your mongodbServer
 
--(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2{
-    [self inFrontGroupMessage:planet1 :planet2];
+-(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2 :(NSString *) reason{
+    [self inFrontGroupMessage:planet1 :planet2 :reason];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Submit Successful"
                                                         message:@"Your observation was submitted."
                                                        delegate:nil
@@ -26,56 +26,14 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
                                               otherButtonTitles:nil];
     [alertView show];
     return 1;
-    
-//    int inDB = [self checkMongoPlanetOrder:planet1 :planet2];
-//    if(inDB == -1){
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error checking database."
-//                                                            message:@"See console for error details."
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"Ok"
-//                                                  otherButtonTitles:nil];
-//        [alertView show];
-//        return -1;
-//    }else if(inDB == 1){
-//        //print message already submitted this
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"You have already submitted this observation!"
-//                                                            message:@"Submit a new observation."
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"Ok"
-//                                                  otherButtonTitles:nil];
-//        [alertView show];
-//        return -1;
-//    }else{
-//        //Save in Database 
-//        //Send group message
-//        
-//        int result =[self updateMongoPlanetOrder:planet1 :planet2];
-//        if(result == -1){
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error updating database."
-//                                                                message:@"See console for error details."
-//                                                               delegate:nil
-//                                                      cancelButtonTitle:@"Ok"
-//                                                      otherButtonTitles:nil];
-//            [alertView show];
-//            return -1;
-//        }
-//        [self inFrontGroupMessage:planet1 :planet2];
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Submit Successful"
-//                                                            message:@"Your observation was submitted."
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"Ok"
-//                                                  otherButtonTitles:nil];
-//        [alertView show];
-//        return 1;
-//    }
-//    
-    //TODO check for conflicting results?
+   
+    //TODO check for conflicting results or if already submitted?
     
 }
 
--(void)identify:(NSString *)planetColor :(NSString *)planetName{
+-(void)identify:(NSString *)planetColor :(NSString *)planetName:(NSString *) reason{
     
-    [self identityGroupMessage:planetColor :planetName];
+    [self identityGroupMessage:planetColor :planetName:reason];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Submit Successful"
                                                         message:@"Your observation was submitted."
                                                        delegate:nil
@@ -126,15 +84,15 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
 -(void)sendGroupMessage:(NSString *)msg{
     [[self appDelegate] sendGroupMessage:msg];
 }
--(int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2{
-    return [[self appDelegate] inFrontGroupMessage:planet1:planet2];
+-(int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2:(NSString *) reason{
+    return [[self appDelegate] inFrontGroupMessage:planet1:planet2:reason];
 }
--(int)identityGroupMessage:(NSString *)planetColor:(NSString *)planetName{
-    return [[self appDelegate] identifyGroupMessage:planetColor:planetName];
+-(int)identityGroupMessage:(NSString *)planetColor:(NSString *)planetName:(NSString *) reason{
+    return [[self appDelegate] identifyGroupMessage:planetColor:planetName:(NSString *) reason];
 }
--(int)orderReasonGroupMessage:(NSString *)reason{
-    return [[self appDelegate] orderReasonGroupMessage:reason];
-}
+//-(int)orderReasonGroupMessage:(NSString *)reason{
+//    return [[self appDelegate] orderReasonGroupMessage:reason];
+//}
 -(int)theoryReasonGroupMessage:(NSString *)reason{
     return [[self appDelegate] theoryReasonGroupMessage:reason];
 }

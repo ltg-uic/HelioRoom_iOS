@@ -12,6 +12,7 @@
 #import "DDTTYLogger.h"
 #import "LoginViewController.h"
 #import "ChooseInFrontViewController.h"
+#import "SBJson.h"
 
 #import <CFNetwork/CFNetwork.h>
 
@@ -619,23 +620,37 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
 - (void)sendGroupMessage:(NSString *)msg{
     [xmppRoom sendMessage:msg];
 }
-- (int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2{
+- (int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2:(NSString *) reason{
     [self goOnline];
-    DDLogError(@"Sending the isInFrontOf group message. Planet1: %@ and Planet2: %@", planet1,planet2);
+    DDLogError(@"Sending the isInFrontOf group message. Planet1: %@ and Planet2: %@ Reason: %@", planet1,planet2,reason);
     NSXMLElement *message = [NSXMLElement elementWithName:@"inFrontOf"];
     [message addAttributeWithName:@"front" stringValue:planet1];
     [message addAttributeWithName:@"back" stringValue:planet2];
     [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
     
 
-    [xmppRoom sendMessage:[message XMLString]];
+    //[xmppRoom sendMessage:[message XMLString]];
+    
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+    NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
+                             reason, @"reason",
+                             planet2, @"anchor",
+                             planet1, @"color",
+                             nil];
+    NSDictionary *command = [NSDictionary dictionaryWithObjectsAndKeys:
+                             payload, @"payload",
+                             [self getLoggedInUser], @"origin",
+                             @"new_observation", @"event",
+                             nil];
+    NSString *jsonCommand = [writer stringWithObject:command];
+    [xmppRoom sendMessage:jsonCommand];
     
     //TODO introduce some delay/animated gif??
     //TODO check whether sent?
     return 1;
  
 }
-- (int)identifyGroupMessage:(NSString *)planetColor:(NSString *)planetName{
+- (int)identifyGroupMessage:(NSString *)planetColor:(NSString *)planetName:(NSString *) reason{
     [self goOnline];
     DDLogError(@"Sending the identify group message. PlanetColor: %@ and PlanetName: %@", planetColor,planetName);
     NSXMLElement *message = [NSXMLElement elementWithName:@"identify"];
@@ -646,26 +661,49 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
     
     [xmppRoom sendMessage:[message XMLString]];
     
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+    NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
+                             reason, @"reason",
+                             planetName, @"anchor",
+                             planetColor, @"color",
+                             nil];
+    NSDictionary *command = [NSDictionary dictionaryWithObjectsAndKeys:
+                             payload, @"payload",
+                             [self getLoggedInUser], @"origin",
+                             @"new_theory", @"event",
+                             nil];
+    NSString *jsonCommand = [writer stringWithObject:command];
+    [xmppRoom sendMessage:jsonCommand];
+    
     //TODO introduce some delay/animated gif??
     //TODO check whether sent?
     return 1;
     
 }
-- (int)orderReasonGroupMessage:(NSString *)reason{
-    [self goOnline];
-    DDLogError(@"Sending the orderReason group message. Reason: %@",reason);
-    NSXMLElement *message = [NSXMLElement elementWithName:@"orderReason"];
-    [message addAttributeWithName:@"reason" stringValue:reason];
-    [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
-    
-    
-    [xmppRoom sendMessage:[message XMLString]];
-    
-    //TODO introduce some delay/animated gif??
-    //TODO check whether sent?
-    return 1;
-    
-}
+//- (int)orderReasonGroupMessage:(NSString *)reason{
+//    [self goOnline];
+//    DDLogError(@"Sending the orderReason group message. Reason: %@",reason);
+//    NSXMLElement *message = [NSXMLElement elementWithName:@"orderReason"];
+//    [message addAttributeWithName:@"reason" stringValue:reason];
+//    [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
+//    
+//    
+//   [xmppRoom sendMessage:[message XMLString]];
+//    
+//    
+//    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+//    NSDictionary *command = [NSDictionary dictionaryWithObjectsAndKeys:
+//                             @"string1", @"key1",
+//                             @"string2", @"key2",
+//                             nil];
+//    NSString *jsonCommand = [writer stringWithObject:command];
+//    
+//    [xmppRoom sendMessage:jsonCommand];
+//    //TODO introduce some delay/animated gif??
+//    //TODO check whether sent?
+//    return 1;
+//    
+//}
 - (int)theoryReasonGroupMessage:(NSString *)reason{
     [self goOnline];
     DDLogError(@"Sending the theoryReason group message. Reason: %@",reason);

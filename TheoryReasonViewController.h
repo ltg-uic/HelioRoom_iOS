@@ -10,6 +10,7 @@
 
 @protocol TheoryReasonDelegate
 -(void) cancel;
+- (void)reasonSelected:(NSString *)reason:(NSString *) planetColor:(NSString *)planetName;
 
 @end
 @interface TheoryReasonViewController : UIViewController{
@@ -25,5 +26,10 @@
 
 //Event Handlers
 - (IBAction)cancelPressed:(id)sender;
+- (IBAction)savePressed:(UIButton *)sender;
+
+
+//Helper functions
+-(void) setName:(NSString *)color:(NSString *)name;
 
 @end

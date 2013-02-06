@@ -87,7 +87,7 @@
 }
 - (IBAction)sendGroupPressed:(id)sender {
     //[[self planetModel] sendGroupMessage:msgField.text];
-    [[self planetModel] isInFrontOf:@"blue" :@"red"];
+    [[self planetModel] isInFrontOf:@"blue" :@"red":@"I'm tired"];
 }
 
 - (IBAction)planetTouchDown:(UIButton *)sender forEvent:(UIEvent *)event {
@@ -160,7 +160,7 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    [[self planetModel] isInFrontOf:planetInDropArea1 :planetInDropArea2];
+    //[[self planetModel] isInFrontOf:planetInDropArea1 :planetInDropArea2];
     //[self.submitButton setAlpha:0]; TODO??
 }
 

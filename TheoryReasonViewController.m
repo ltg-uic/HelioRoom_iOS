@@ -12,6 +12,9 @@
 
 @end
 
+NSString * theoryColor;
+NSString * theoryName;
+
 @implementation TheoryReasonViewController
 @synthesize delegate =_delegate;
 
@@ -30,7 +33,7 @@
 	// Do any additional setup after loading the view.
     
     
-    self.contentSizeForViewInPopover = CGSizeMake(150.0, 140.0);
+    self.contentSizeForViewInPopover = CGSizeMake(300.0, 95.0);
 
     //Add buttons
 //    UIImage * buttonbg =[UIImage imageNamed:@"greyButton.png" ];
@@ -68,5 +71,29 @@
 }
 - (IBAction)cancelPressed:(id)sender {
     [_delegate cancel];
+}
+
+- (IBAction)savePressed:(UIButton *)sender {
+    NSLog(@"Save Button Pressed");
+    [_delegate reasonSelected:self.reasonText.text :theoryColor :theoryName ];
+}
+
+//HELPER FUNCTIONS
+-(void) setName:(NSString *)color:(NSString *)name{
+
+    //NSString *reason= [NSString stringWithFormat:@"%@%@%@%@%@", @"I think ",color, @" is ",name, @" because "];
+    NSString *reason= [NSString stringWithFormat:@"%@%@%@%@",name, @" is ",color, @" because "];
+    theoryColor=color;
+    theoryName=name;
+    
+    self.reasonText=nil;
+    self.reasonText=[[UITextView alloc] init];
+    
+    self.reasonText.text = reason;
+    [self setTitle:reason];
+    //[self.tableView reloadData];
+
+    
+    [self.view setNeedsDisplay];
 }
 @end

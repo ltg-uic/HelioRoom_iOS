@@ -310,34 +310,34 @@
     }
 }
 -(void)submitGuesses{
-    if(redGuess != @"empty"){
-        [[self planetModel] identify:@"red" :redGuess];
-        NSLog(@"Planet guess: color=red guess=%@",redGuess);
-    }if (blueGuess  != @"empty"){
-        [[self planetModel] identify:@"blue" :blueGuess];
-        NSLog(@"Planet guess: color=blue guess=%@",blueGuess);
-    }if (yellowGuess != @"empty"){
-        [[self planetModel] identify:@"yellow" :yellowGuess];
-        NSLog(@"Planet guess: color=yellow guess=%@",yellowGuess);
-    }if (orangeGuess  != @"empty"){
-        [[self planetModel] identify:@"orange" :orangeGuess];
-        NSLog(@"Planet guess: color=orange guess=%@",orangeGuess);
-    }if (brownGuess  != @"empty"){
-        [[self planetModel] identify:@"brown" :brownGuess];
-        NSLog(@"Planet guess: color=brown guess=%@",brownGuess);
-    }if (pinkGuess  != @"empty"){
-        [[self planetModel] identify:@"pink" :pinkGuess];
-        NSLog(@"Planet guess: color=pink guess=%@",pinkGuess);
-    }if (greenGuess  != @"empty"){
-        [[self planetModel] identify:@"green" :greenGuess];
-        NSLog(@"Planet guess: color=green guess=%@",greenGuess);
-    }if (purpleGuess  != @"empty"){
-        [[self planetModel] identify:@"purple" :purpleGuess];
-        NSLog(@"Planet guess: color=purple guess=%@",purpleGuess);
-    }if (grayGuess  != @"empty"){
-        [[self planetModel] identify:@"gray" :grayGuess];
-        NSLog(@"Planet guess: color=gray guess=%@",grayGuess);
-    }
+//    if(redGuess != @"empty"){
+//        [[self planetModel] identify:@"red" :redGuess];
+//        NSLog(@"Planet guess: color=red guess=%@",redGuess);
+//    }if (blueGuess  != @"empty"){
+//        [[self planetModel] identify:@"blue" :blueGuess];
+//        NSLog(@"Planet guess: color=blue guess=%@",blueGuess);
+//    }if (yellowGuess != @"empty"){
+//        [[self planetModel] identify:@"yellow" :yellowGuess];
+//        NSLog(@"Planet guess: color=yellow guess=%@",yellowGuess);
+//    }if (orangeGuess  != @"empty"){
+//        [[self planetModel] identify:@"orange" :orangeGuess];
+//        NSLog(@"Planet guess: color=orange guess=%@",orangeGuess);
+//    }if (brownGuess  != @"empty"){
+//        [[self planetModel] identify:@"brown" :brownGuess];
+//        NSLog(@"Planet guess: color=brown guess=%@",brownGuess);
+//    }if (pinkGuess  != @"empty"){
+//        [[self planetModel] identify:@"pink" :pinkGuess];
+//        NSLog(@"Planet guess: color=pink guess=%@",pinkGuess);
+//    }if (greenGuess  != @"empty"){
+//        [[self planetModel] identify:@"green" :greenGuess];
+//        NSLog(@"Planet guess: color=green guess=%@",greenGuess);
+//    }if (purpleGuess  != @"empty"){
+//        [[self planetModel] identify:@"purple" :purpleGuess];
+//        NSLog(@"Planet guess: color=purple guess=%@",purpleGuess);
+//    }if (grayGuess  != @"empty"){
+//        [[self planetModel] identify:@"gray" :grayGuess];
+//        NSLog(@"Planet guess: color=gray guess=%@",grayGuess);
+//    }
 }
 
 @end

@@ -305,8 +305,8 @@ NSString * mostRecentDropColor=@"";
 - (void)reasonSelected:(NSString *)reason:(NSString *) created:(NSString *)destination {
     //TODO Submit reason
     NSLog(@"reason %@ front: %@ back:%@",reason,created,destination);
-    [[self planetModel] isInFrontOf:created :destination];
-    [[self planetModel] orderReasonGroupMessage:reason];
+    [[self planetModel] isInFrontOf:created :destination :reason];
+    //[[self planetModel] orderReasonGroupMessage:reason];
     [self.reasonPopover dismissPopoverAnimated:YES];
 }
 

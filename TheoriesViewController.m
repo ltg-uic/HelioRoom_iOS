@@ -139,7 +139,9 @@
  -(void) createdPlanetPopover:(UIButton *)created:(NSString *)planet{
      //popover with reasons and delete option.
      TheoryReasonViewController *reasonViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"theoryReason"];
-     //TheoryReasonViewController *reasonViewController=[[TheoryReasonViewController alloc] init];
+     [reasonViewController setName:created.titleLabel.text :planet];
+     [reasonViewController.view setNeedsDisplay];
+     
      UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:reasonViewController];
      reasonViewController.delegate=self;
      self.reasonPopover = [[UIPopoverController alloc] initWithContentViewController:nav];
@@ -279,6 +281,28 @@
     }
     
 }
+-(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event:(UIButton *)newPlanet{
+    UIControl *control = sender;
+    BOOL droppedViewInKnownArea = NO;
+    int i=1;
+    for (UIImageView *dropArea in self.allDropAreas){
+        CGPoint pointInDropView = [[[event allTouches] anyObject] locationInView:dropArea];
+        while (![dropArea pointInside:pointInDropView withEvent:nil]) {
+            i++;
+        }
+        
+    }
+    if (!droppedViewInKnownArea) {
+        //        CGRect frame = sender.frame;
+        //        frame.origin=[self getOriginalNameLocation:planetName];
+        //        control.frame =frame;
+        [[self appDelegate] writeDebugMessage:@"was not in drop area"];
+        [self.view addSubview:sender];
+        return CGPointMake(0, 0);
+    }
+    
+}
+
 -(CGPoint)getDropAreaOpening:(int) i:(UIButton *)newPlanet{
     //iterate and see next open space
     //else return nil;
@@ -305,5 +329,12 @@
 -(void) cancel{
     [self.reasonPopover dismissPopoverAnimated:YES];
 }
-
+- (void)reasonSelected:(NSString *)reason:(NSString *) planetColor:(NSString *)planetName{
+    
+    NSLog(@"reason %@ color: %@ name:%@",reason,planetColor,planetName);
+    [[self planetModel] identify:planetColor :planetName :reason];
+    //[[self planetModel] orderReasonGroupMessage:reason];
+    [self.reasonPopover dismissPopoverAnimated:YES];
+    
+}
 @end

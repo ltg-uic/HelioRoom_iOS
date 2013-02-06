@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface PlanetObservationModel : NSObject
--(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2;
--(void)identify:(NSString *)planetColor :(NSString *)planetName;
+-(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2:(NSString *)reason;
+-(void)identify:(NSString *)planetColor :(NSString *)planetName:(NSString *) reason;
 
 //XMPP
 -(void)sendMessage:(NSString *)msg:(NSString *)to;
 -(void)sendGroupMessage:(NSString *)msg;
--(int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2;
+-(int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2:(NSString *) reason;
 -(int)orderReasonGroupMessage:(NSString *)reason;
 -(int)theoryReasonGroupMessage:(NSString *)reason;
 

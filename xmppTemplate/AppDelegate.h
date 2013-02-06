@@ -55,9 +55,9 @@
 - (NSString *)getLoggedInUser;
 - (void)sendMessage:(NSString *)msg:(NSString *)to;
 - (void)sendGroupMessage:(NSString *)msg;
-- (int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2;
-- (int)identifyGroupMessage:(NSString *)planetColor:(NSString *)planetName;
-- (int)orderReasonGroupMessage:(NSString *)reason;
+- (int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2:(NSString *) reason;
+- (int)identifyGroupMessage:(NSString *)planetColor:(NSString *)planetName:(NSString *) reason;
+//- (int)orderReasonGroupMessage:(NSString *)reason;
 - (int)theoryReasonGroupMessage:(NSString *)reason;
 - (void)joinChat;
 - (void)showLoginView:(UIViewController *)activeViewController;

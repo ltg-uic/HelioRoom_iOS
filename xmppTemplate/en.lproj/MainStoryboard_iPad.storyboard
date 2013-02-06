@@ -1833,12 +1833,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GnA-zx-yiD" firstAttribute="trailing" secondItem="J7V-R7-okh" secondAttribute="trailing" type="default" id="2uT-yV-aD8"/>
                             <constraint firstItem="GnA-zx-yiD" firstAttribute="baseline" secondItem="iOk-aP-wYC" secondAttribute="baseline" type="default" id="Vgu-Y4-ebw"/>
                             <constraint firstItem="zPL-Eu-yhK" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="324" id="duN-mA-VdT"/>
                             <constraint firstItem="J7V-R7-okh" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" type="default" id="l9Q-dL-FE4"/>
                             <constraint firstItem="GnA-zx-yiD" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="62" id="ldD-2D-zZa"/>
                             <constraint firstItem="zPL-Eu-yhK" firstAttribute="baseline" secondItem="GnA-zx-yiD" secondAttribute="baseline" type="default" id="nkP-hP-dK5"/>
+                            <constraint firstItem="GnA-zx-yiD" firstAttribute="leading" secondItem="3bv-rt-Tfm" secondAttribute="leading" constant="222" id="pf9-i7-N1W"/>
                             <constraint firstItem="iOk-aP-wYC" firstAttribute="leading" secondItem="3bv-rt-Tfm" secondAttribute="leading" constant="166" id="u4C-fK-xzR"/>
                             <constraint firstItem="iOk-aP-wYC" firstAttribute="leading" secondItem="zPL-Eu-yhK" secondAttribute="leading" type="default" id="usf-ay-5ph"/>
                             <constraint firstItem="iOk-aP-wYC" firstAttribute="top" secondItem="3bv-rt-Tfm" secondAttribute="top" constant="276" id="vV6-IH-M8j"/>
@@ -2679,7 +2679,6 @@
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>

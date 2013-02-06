@@ -282,24 +282,24 @@
     
 }
 -(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event:(UIButton *)newPlanet{
-    UIControl *control = sender;
-    BOOL droppedViewInKnownArea = NO;
-    int i=1;
-    for (UIImageView *dropArea in self.allDropAreas){
-        CGPoint pointInDropView = [[[event allTouches] anyObject] locationInView:dropArea];
-        while (![dropArea pointInside:pointInDropView withEvent:nil]) {
-            i++;
-        }
-        
-    }
-    if (!droppedViewInKnownArea) {
-        //        CGRect frame = sender.frame;
-        //        frame.origin=[self getOriginalNameLocation:planetName];
-        //        control.frame =frame;
-        [[self appDelegate] writeDebugMessage:@"was not in drop area"];
-        [self.view addSubview:sender];
-        return CGPointMake(0, 0);
-    }
+//    UIControl *control = sender;
+//    BOOL droppedViewInKnownArea = NO;
+//    int i=1;
+//    for (UIImageView *dropArea in self.allDropAreas){
+//        CGPoint pointInDropView = [[[event allTouches] anyObject] locationInView:dropArea];
+//        while (![dropArea pointInside:pointInDropView withEvent:nil]) {
+//            i++;
+//        }
+//        
+//    }
+//    if (!droppedViewInKnownArea) {
+//        //        CGRect frame = sender.frame;
+//        //        frame.origin=[self getOriginalNameLocation:planetName];
+//        //        control.frame =frame;
+//        [[self appDelegate] writeDebugMessage:@"was not in drop area"];
+//        [self.view addSubview:sender];
+//        return CGPointMake(0, 0);
+//    }
     
 }
 

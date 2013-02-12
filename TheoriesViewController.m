@@ -97,7 +97,7 @@
     if(dropLocation.x !=0){
         [newPlanet setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [newPlanet setBackgroundImage:[UIImage imageNamed:[self getPlanetImage:sender.tag]] forState:UIControlStateNormal];
-        [newPlanet setFrame:CGRectMake(0,0,60,60)];
+        [newPlanet setFrame:CGRectMake(0,0,78, 78)];
         [newPlanet addTarget:self action:@selector(createdPlanetDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
         [newPlanet addTarget:self action:@selector(createdPlanetTouchUpInside:forEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:newPlanet];

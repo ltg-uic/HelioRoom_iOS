@@ -25,7 +25,7 @@
 @synthesize brownDropArea = _brownDropArea;
 @synthesize pinkDropArea = _pinkDropArea;
 @synthesize greenDropArea = _greenDropArea;
-@synthesize grayDropArea = _grayDropArea;
+@synthesize purpleDropArea = _purpleDropArea;
 
 @synthesize planetModel= _planetModel;
 
@@ -35,7 +35,7 @@ NSString * mostRecentDropColor=@"";
 //@synthesize reasonViewController = _reasonViewController;
 
 - (NSMutableArray *) allDropAreas{
-    if(!_allDropAreas) _allDropAreas=[[NSMutableArray alloc] initWithObjects:redDrop,blueDrop,yellowDrop,orangeDrop,brownDrop,pinkDrop,greenDrop,grayDrop, nil];
+    if(!_allDropAreas) _allDropAreas=[[NSMutableArray alloc] initWithObjects:redDrop,blueDrop,yellowDrop,orangeDrop,brownDrop,pinkDrop,greenDrop,purpleDrop, nil];
     return _allDropAreas;
 }
 
@@ -58,7 +58,7 @@ NSString * mostRecentDropColor=@"";
     self.brownDropArea = [[NSMutableArray alloc] initWithCapacity:7];
     self.pinkDropArea = [[NSMutableArray alloc] initWithCapacity:7];
     self.greenDropArea = [[NSMutableArray alloc] initWithCapacity:7];
-    self.grayDropArea = [[NSMutableArray alloc] initWithCapacity:7];
+    self.purpleDropArea = [[NSMutableArray alloc] initWithCapacity:7];
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,7 +159,7 @@ NSString * mostRecentDropColor=@"";
         case 5:return @"brownLg.png";
         case 6:return @"pinkLg.png";
         case 7:return @"greenLg.png";
-        case 8:return @"grayLg.png";
+        case 8:return @"purpleLg.png";
             
         default:
             return @"An error occured in getPlanetImage";
@@ -177,7 +177,7 @@ NSString * mostRecentDropColor=@"";
         case 5:return @"brown";
         case 6:return @"pink";
         case 7:return @"green";
-        case 8:return @"gray";
+        case 8:return @"purple";
             
         default:
             return @"An error occured in getPlanetImage";
@@ -195,7 +195,7 @@ NSString * mostRecentDropColor=@"";
         case 5:return self.brownDropArea;
         case 6:return self.pinkDropArea;
         case 7:return self.greenDropArea;
-        case 8:return self.grayDropArea;
+        case 8:return self.purpleDropArea;
             
         default:
             return nil; //ERROR
@@ -212,7 +212,7 @@ NSString * mostRecentDropColor=@"";
         case 5:return brownDrop;
         case 6:return pinkDrop;
         case 7:return greenDrop;
-        case 8:return grayDrop;
+        case 8:return purpleDrop;
             
         default:
             return nil; //ERROR

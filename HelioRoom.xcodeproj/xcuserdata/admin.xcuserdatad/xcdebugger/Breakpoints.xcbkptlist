@@ -26,8 +26,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "38"
          endingLineNumber = "38"
-         landmarkName = "@interface AppDelegate"
-         landmarkType = "2">
+         landmarkName = "window"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

@@ -24,7 +24,7 @@
     __weak IBOutlet UIImageView *brownDrop;
     __weak IBOutlet UIImageView *pinkDrop;
     __weak IBOutlet UIImageView *greenDrop;
-    __weak IBOutlet UIImageView *grayDrop;
+    __weak IBOutlet UIImageView *purpleDrop;
 
 }
 //Created Colors in Drop Area stored in these arrays
@@ -36,7 +36,7 @@
 @property (strong, nonatomic) NSMutableArray *brownDropArea;
 @property (strong, nonatomic) NSMutableArray *pinkDropArea;
 @property (strong, nonatomic) NSMutableArray *greenDropArea;
-@property (strong, nonatomic) NSMutableArray *grayDropArea;
+@property (strong, nonatomic) NSMutableArray *purpleDropArea;
 
 
 @property (weak, nonatomic) IBOutlet UITableView *planetTable;

@@ -10,4 +10,11 @@
 
 @interface ScratchPadViewController : UIViewController
 - (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)objectTouchUpInside:(UIButton *)sender forEvent:(UIEvent *)event;
+
+//HELPER METHODS
+
+-(NSString *)getColor:(NSInteger)tag;
+-(NSString *)getColorImage:(NSInteger)tag;
+
 @end

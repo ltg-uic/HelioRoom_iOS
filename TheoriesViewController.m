@@ -182,7 +182,7 @@
         case 5:return @"brownLg.png";
         case 6:return @"pinkLg.png";
         case 7:return @"greenLg.png";
-        case 8:return @"grayLg.png";
+        case 8:return @"purpleLg.png";
             
         default:
             return @"An error occured in getPlanetImage";
@@ -200,7 +200,7 @@
         case 5:return @"brown";
         case 6:return @"pink";
         case 7:return @"green";
-        case 8:return @"gray";
+        case 8:return @"purple";
             
         default:
             return @"An error occured in getPlanetImage";
@@ -222,7 +222,7 @@
             return 6;
         else if([name isEqualToString: @"green"])
             return 7;
-        else if([name isEqualToString: @"gray"])
+        else if([name isEqualToString: @"purple"])
             return 8;
     
     return -100;//error

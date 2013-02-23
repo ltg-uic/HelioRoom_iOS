@@ -16,7 +16,6 @@
 #import "XMPPBaseOnlineDelegate.h"
 
 
-
 @interface AppDelegate : NSObject <UIApplicationDelegate, XMPPRosterDelegate, UITabBarControllerDelegate> {//TODO was UIResponder
     XMPPStream *xmppStream;
 	XMPPReconnect *xmppReconnect;

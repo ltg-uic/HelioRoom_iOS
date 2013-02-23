@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="width" constant="220" id="duW-jJ-7kZ"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="grayLg.png" translatesAutoresizingMaskIntoConstraints="NO" id="aWQ-hF-ofx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="purpleLg.png" translatesAutoresizingMaskIntoConstraints="NO" id="aWQ-hF-ofx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="df1-32-M1Q"/>
                                     <constraint firstAttribute="width" constant="220" id="v6D-ap-iq9"/>
@@ -284,7 +284,7 @@
                                     <constraint firstAttribute="width" constant="76" id="hmu-nz-gFm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" image="grayLg.png">
+                                <state key="normal" image="purpleLg.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -367,11 +367,11 @@
                     <connections>
                         <outlet property="blueDrop" destination="ffC-lL-fU1" id="xcU-sF-iDF"/>
                         <outlet property="brownDrop" destination="s9F-8g-xmm" id="zGq-xj-5CI"/>
-                        <outlet property="grayDrop" destination="aWQ-hF-ofx" id="muW-4u-6Nf"/>
                         <outlet property="greenDrop" destination="SQN-rp-bgr" id="bLg-Ak-pTH"/>
                         <outlet property="loginButton" destination="9js-DM-wDd" id="ZlO-Ed-c9X"/>
                         <outlet property="orangeDrop" destination="WvK-Tg-cnX" id="Myy-9A-dgi"/>
                         <outlet property="pinkDrop" destination="Kr6-1a-FQb" id="Y3n-iL-8FL"/>
+                        <outlet property="purpleDrop" destination="aWQ-hF-ofx" id="INK-GQ-gAK"/>
                         <outlet property="redDrop" destination="pdz-xa-S1t" id="i5u-dU-lUW"/>
                         <outlet property="yellowDrop" destination="adV-Hl-Run" id="MmO-Tl-RXb"/>
                     </connections>
@@ -932,7 +932,7 @@
                                     <constraint firstAttribute="height" constant="758" id="Tnj-cg-zRX"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-XS-2Dq">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-XS-2Dq">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="hwM-W7-MrE"/>
                                 </constraints>
@@ -946,9 +946,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Y4P-X6-es6"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="4aS-5B-NdP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S74-jA-rqx">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S74-jA-rqx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="PTe-Ki-mu6"/>
                                     <constraint firstAttribute="width" constant="120" id="s2r-Md-DD3"/>
@@ -963,9 +964,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="yF1-Tu-Wb4"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="6if-Sc-tEb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-CJ-Avp">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-CJ-Avp">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="vXy-Vr-Wsf"/>
                                 </constraints>
@@ -979,9 +981,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="WmC-Uo-s21"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="AFC-ts-XFW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-pz-qnY">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-pz-qnY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="AJi-5E-FZN"/>
                                     <constraint firstAttribute="height" constant="120" id="ghm-QF-VZE"/>
@@ -996,9 +999,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="TpF-mx-tXq"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="0in-bv-w53"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-SH-RV3">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-SH-RV3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="RKP-ZF-Yoo"/>
                                     <constraint firstAttribute="height" constant="120" id="TB5-0H-vj8"/>
@@ -1013,9 +1017,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9M9-Mo-EWk"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="o0M-CR-ytj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-ye-sUx">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-ye-sUx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3oK-xq-q0A"/>
                                 </constraints>
@@ -1029,9 +1034,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="BE3-qG-f9u"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="d8A-Cm-ePM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-dc-j18">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-dc-j18">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="OMd-cy-8PM"/>
                                     <constraint firstAttribute="width" constant="120" id="xkc-1R-m4b"/>
@@ -1046,9 +1052,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="wsp-VU-glb"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="R6y-nZ-kPe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-iw-iCk">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-iw-iCk">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="EkM-Se-ABj"/>
                                     <constraint firstAttribute="width" constant="120" id="WBM-D0-YHt"/>
@@ -1063,9 +1070,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="O1U-rv-Jnr"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="BEx-or-mKn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGT-3T-PnG">
+                            <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGT-3T-PnG">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="iud-Vi-5QS"/>
                                 </constraints>
@@ -1079,9 +1087,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="341-Ws-BaQ"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="GXg-IM-SC8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-If-llh">
+                            <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-If-llh">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="ZYi-Gq-XpG"/>
                                 </constraints>
@@ -1095,9 +1104,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="apJ-M7-ies"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="rcj-KX-Et0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-Mu-ncW">
+                            <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-Mu-ncW">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="vU6-iV-Q5T"/>
                                 </constraints>
@@ -1111,9 +1121,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Geb-ja-t2t"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="4de-Wf-rMC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-WO-vuc">
+                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-WO-vuc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="0kJ-yQ-EkD"/>
                                 </constraints>
@@ -1127,9 +1138,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9ku-Qb-eRZ"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="rsU-U8-Hg3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-DK-vln">
+                            <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-DK-vln">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="ofb-mW-yKU"/>
                                 </constraints>
@@ -1143,9 +1155,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="ACk-Ky-Dwg"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="H0Y-iP-fwN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92r-k3-diP">
+                            <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92r-k3-diP">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="qnN-Do-FZJ"/>
                                 </constraints>
@@ -1159,9 +1172,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="cZk-Pe-iod"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="wE8-2I-DVh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-uf-KOy">
+                            <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-uf-KOy">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="HGv-5c-UhB"/>
                                 </constraints>
@@ -1175,9 +1189,10 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="jyC-0N-jnH"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="3dg-5F-l1R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-qr-KCm">
+                            <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-qr-KCm">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="0gg-9M-k3N"/>
                                     <constraint firstAttribute="width" constant="128" id="mIN-8h-NOk"/>
@@ -1192,6 +1207,7 @@
                                 </state>
                                 <connections>
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="PCi-JV-oMN"/>
+                                    <action selector="objectTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="7ET-PF-E0w"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1518,7 +1534,7 @@
                                     <constraint firstAttribute="height" constant="80" id="cwo-YY-uE7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="gray.png">
+                                <state key="normal" image="purpleLg.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2651,12 +2667,12 @@
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="greenDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="orangeDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pinkDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="planetTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="purpleDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="redDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="yellowDrop" candidateClass="UIImageView"/>
             </relationships>
@@ -2668,6 +2684,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
             <relationships>
                 <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="objectTouchUpInside:forEvent:" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="TheoriesViewController" superclassName="UIViewController">

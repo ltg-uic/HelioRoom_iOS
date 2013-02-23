@@ -104,7 +104,8 @@
        // CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
         newPlanet.center=dropLocation;
         //create popover event
-        [self createdPlanetPopover:newPlanet :@"Mercury"];//TODO change to proper destination
+        NSString * dropPlanetName = [self getDropAreaName:sender :event];
+        [self createdPlanetPopover:newPlanet :dropPlanetName];//TODO change to proper destination
         [sender setAlpha:0];
         [sender setUserInteractionEnabled:NO];
     }
@@ -281,25 +282,30 @@
     }
     
 }
--(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event:(UIButton *)newPlanet{
-//    UIControl *control = sender;
-//    BOOL droppedViewInKnownArea = NO;
-//    int i=1;
-//    for (UIImageView *dropArea in self.allDropAreas){
-//        CGPoint pointInDropView = [[[event allTouches] anyObject] locationInView:dropArea];
-//        while (![dropArea pointInside:pointInDropView withEvent:nil]) {
-//            i++;
-//        }
-//        
-//    }
-//    if (!droppedViewInKnownArea) {
-//        //        CGRect frame = sender.frame;
-//        //        frame.origin=[self getOriginalNameLocation:planetName];
-//        //        control.frame =frame;
-//        [[self appDelegate] writeDebugMessage:@"was not in drop area"];
-//        [self.view addSubview:sender];
-//        return CGPointMake(0, 0);
-//    }
+-(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event{
+    UIControl *control = sender;
+    int i=1;
+    for (UIImageView *dropArea in self.allDropAreas){
+        CGPoint pointInDropView = [[[event allTouches] anyObject] locationInView:dropArea];
+        if (![dropArea pointInside:pointInDropView withEvent:nil]) {
+            i++;
+        }
+        
+    }
+    switch (i) {
+        case 1:return @"Mercury";
+        case 2:return @"Venus";
+        case 3:return @"Earth";
+        case 4:return @"Mars";
+        case 5:return @"Jupiter";
+        case 6:return @"Saturn";
+        case 7:return @"Uranus";
+        case 8:return @"Neptune";
+            
+        default:
+            return @"Error: drop area name unrecognized.";
+    }
+    
     
 }
 

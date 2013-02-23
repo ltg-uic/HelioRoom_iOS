@@ -53,5 +53,6 @@
 -(NSString *)getPlanetImage:(NSInteger)tag;
 -(NSMutableArray *)getDropArea:(int)i;
 -(CGPoint)isValidDrop:(UIButton *)sender:(UIEvent *)event:(UIButton *)newPlanet;
+-(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event;
 -(CGPoint)getDropAreaOpening:(int) i:(UIButton *)newPlanet;
 @end

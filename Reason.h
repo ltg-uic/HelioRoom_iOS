@@ -1,5 +1,5 @@
 //
-//  Order.h
+//  Reason.h
 //  HelioRoom
 //
 //  Created by admin on 2/6/13.
@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Order : NSManagedObject
+@interface Reason : NSManagedObject
 
 @property (nonatomic, retain) NSString * backColor;
 @property (nonatomic, retain) NSString * frontColor;
@@ -21,6 +21,5 @@
 @property (nonatomic, retain) NSString * anchor;
 @property (nonatomic, retain) NSString * flag;
 @property (nonatomic, retain) NSNumber * isReadOnly;
-@property (nonatomic, retain) NSManagedObject *reasoning;
 
 @end

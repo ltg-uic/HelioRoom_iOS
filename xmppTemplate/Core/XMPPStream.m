@@ -1719,12 +1719,14 @@ enum XMPPStreamConfig
 		
 		id <XMPPSASLAuthentication> someAuth = nil;
 		
-		if ([self supportsDigestMD5Authentication])
-		{
-			someAuth = [[XMPPDigestMD5Authentication alloc] initWithStream:self password:password];
-			result = [self authenticate:someAuth error:&err];
-		}
-		else if ([self supportsPlainAuthentication])
+//		if ([self supportsDigestMD5Authentication])
+//		{
+//			someAuth = [[XMPPDigestMD5Authentication alloc] initWithStream:self password:password];
+//			result = [self authenticate:someAuth error:&err];
+//		}
+//		else
+        
+        if ([self supportsPlainAuthentication])
 		{
 			someAuth = [[XMPPPlainAuthentication alloc] initWithStream:self password:password];
 			result = [self authenticate:someAuth error:&err];

@@ -1,15 +1,15 @@
 //
-//  Order.m
+//  Reason.m
 //  HelioRoom
 //
 //  Created by admin on 2/6/13.
 //  Copyright (c) 2013 Learning Technologies Group. All rights reserved.
 //
 
-#import "Order.h"
+#import "Reason.h"
 
 
-@implementation Order
+@implementation Reason
 
 @dynamic backColor;
 @dynamic frontColor;
@@ -20,6 +20,5 @@
 @dynamic anchor;
 @dynamic flag;
 @dynamic isReadOnly;
-@dynamic reasoning;
 
 @end

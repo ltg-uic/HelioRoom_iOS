@@ -11,6 +11,10 @@
 #import <CoreData/CoreData.h>
 
 #import "XMPPFramework.h"
+#import "XMPPBaseNewMessageDelegate.h"
+#import "XMPPMessage+XEP0045.h"
+#import "XMPPBaseOnlineDelegate.h"
+
 
 
 @interface AppDelegate : NSObject <UIApplicationDelegate, XMPPRosterDelegate, UITabBarControllerDelegate> {//TODO was UIResponder
@@ -21,6 +25,9 @@
 
     
     NSString *password;
+    
+    id <XMPPBaseNewMessageDelegate> __weak xmppBaseNewMessageDelegate;
+    id <XMPPBaseOnlineDelegate>     __weak xmppBaseOnlineDelegate;
 	
 	BOOL allowSelfSignedCertificates;
 	BOOL allowSSLHostNameMismatch;

@@ -49,17 +49,20 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 NSString *const kXMPPmyJID = @"kXMPPmyJID"; //DO NOT CHANGE
 NSString *const kXMPPmyPassword = @"kXMPPmyPassword"; //DO NOT CHANGE
 
-NSString *const xmppServer = @"ltg.evl.uic.edu"; //set to name address of your xmppServer OR use below
+//NSString *const xmppServer = @"ltg.evl.uic.edu"; //set to name address of your xmppServer OR use below
 //NSString *const xmppServer = @"169.254.225.196";  //set to ip address of your xmppServer
-NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set to location of chat room
+NSString *const xmppServer = @"localhost";  //set to ip address of your xmppServer
+NSString *const chatLocation = @"helioroom@conference"; //set to location of chat room
+
+//NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set to location of chat room
 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    //[[NSUserDefaults standardUserDefaults] setObject:@"@phenomena.evl.uic.edu" forKey:kXMPPmyJID];
-    //[[NSUserDefaults standardUserDefaults] setObject:@"password" forKey:kXMPPmyPassword];
+    [[NSUserDefaults standardUserDefaults] setObject:@"fake2@localhost" forKey:kXMPPmyJID];
+    [[NSUserDefaults standardUserDefaults] setObject:@"fake2" forKey:kXMPPmyPassword];
     // Configure logging framework
 	
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -227,7 +230,7 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
     
 	[xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
 	[xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
+
 	// Optional:
 	//
 	// Replace me with the proper domain and port.
@@ -515,6 +518,26 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
 			[[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
 		}
 	}
+    
+    
+	// A simple example of inbound message handling.
+    
+    else if( [message isGroupChatMessageWithBody]) {
+        DDLogVerbose(@"%@: %@ %@", THIS_FILE, THIS_METHOD, @"and was a group chat message");
+        NSMutableDictionary *lastMessageDict;
+        NSString *msg = [[message elementForName:@"body"] stringValue];
+        
+        
+        NSString *from = [[message attributeForName:@"from"] stringValue];
+        
+        lastMessageDict = [[NSMutableDictionary alloc] init];
+        [lastMessageDict setObject:msg forKey:@"msg"];
+        [lastMessageDict setObject:from forKey:@"sender"];
+        
+        
+        [xmppBaseNewMessageDelegate newMessageReceived:lastMessageDict];
+        
+    }
 }
 
 

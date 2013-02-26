@@ -1248,7 +1248,7 @@
                     <tabBarItem key="tabBarItem" title="Scratch Pad" image="tab_Scratch.png" id="4sn-Mh-4zW"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="bluePlanetBtn" destination="S74-jA-rqx" id="fv9-ka-UbB"/>
+                        <!--outlet property="bluePlanetBtn" destination="S74-jA-rqx" id="fv9-ka-UbB"/>
                         <outlet property="brownPlanetBtn" destination="hd3-SH-RV3" id="T7N-lq-J9g"/>
                         <outlet property="earthBtn" destination="hGT-3T-PnG" id="LM8-bm-J8n"/>
                         <outlet property="greenPlanetBtn" destination="hbl-iw-iCk" id="xUn-I0-dX0"/>
@@ -1263,7 +1263,23 @@
                         <outlet property="saturnBtn" destination="92r-k3-diP" id="M4m-sy-W6N"/>
                         <outlet property="uranusBtn" destination="BdO-uf-KOy" id="ZJu-EE-JMW"/>
                         <outlet property="venusBtn" destination="rYE-qr-KCm" id="WGB-OE-D4Y"/>
-                        <outlet property="yellowPlanetBtn" destination="L2u-CJ-Avp" id="rEt-8d-eIr"/>
+                        <outlet property="yellowPlanetBtn" destination="L2u-CJ-Avp" id="rEt-8d-eIr"/-->
+                        <outletCollection property="planetColorBtns" destination="kYp-XS-2Dq" id="Cnp-Jm-QqA"/>
+                        <outletCollection property="planetColorBtns" destination="hbl-iw-iCk" id="LkU-Wo-lAk"/>
+                        <outletCollection property="planetColorBtns" destination="t2h-pz-qnY" id="ENb-qD-6kt"/>
+                        <outletCollection property="planetColorBtns" destination="S74-jA-rqx" id="Ls3-9D-SaV"/>
+                        <outletCollection property="planetColorBtns" destination="gZT-dc-j18" id="8Ao-Fi-gez"/>
+                        <outletCollection property="planetColorBtns" destination="hd3-SH-RV3" id="E1t-8f-UHp"/>
+                        <outletCollection property="planetColorBtns" destination="L2u-CJ-Avp" id="11y-98-tcc"/>
+                        <outletCollection property="planetColorBtns" destination="7kW-ye-sUx" id="f8k-TU-LbA"/>
+                        <outletCollection property="planetNameBtns" destination="BK1-WO-vuc" id="9PV-84-4GU"/>
+                        <outletCollection property="planetNameBtns" destination="rYE-qr-KCm" id="re5-VY-6kV"/>
+                        <outletCollection property="planetNameBtns" destination="hGT-3T-PnG" id="ppM-Bv-JJw"/>
+                        <outletCollection property="planetNameBtns" destination="9cT-Mu-ncW" id="frb-Q6-IbQ"/>
+                        <outletCollection property="planetNameBtns" destination="rOY-If-llh" id="sx2-T9-CHQ"/>
+                        <outletCollection property="planetNameBtns" destination="92r-k3-diP" id="7yH-JS-wTc"/>
+                        <outletCollection property="planetNameBtns" destination="BdO-uf-KOy" id="mXL-x5-NDh"/>
+                        <outletCollection property="planetNameBtns" destination="Dns-DK-vln" id="w7A-UU-cxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBp-gy-gxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2686,22 +2702,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
             <relationships>
                 <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bluePlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="brownPlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="earthBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="greenPlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="jupiterBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="marsBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mercuryBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="neptuneBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="orangePlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pinkPlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="purplePlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="redPlanetBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saturnBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="uranusBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="venusBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="yellowPlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="planetColorBtns" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="planetNameBtns" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="TheoriesViewController" superclassName="UIViewController">

@@ -37,8 +37,9 @@ enum BUTTONS
 
 @implementation ScratchPadViewController
 
-//@synthesize planetColorBtns = _planetColorBtns;
-//@synthesize planetNameBtns = _planetNameBtns;
+@synthesize planetColorBtns = _planetColorBtns;
+@synthesize planetNameBtns = _planetNameBtns;
+/*
 @synthesize redPlanetBtn = _redPlanetBtn;
 @synthesize greenPlanetBtn = _greenPlanetBtn;
 @synthesize orangePlanetBtn = _orangePlanetBtn;
@@ -56,6 +57,7 @@ enum BUTTONS
 @synthesize uranusBtn = _uranusBtn;
 @synthesize neptuneBtn = _neptuneBtn;
 //@synthesize blankBtn = _blankBtn;
+*/
 
 
 - (AppDelegate *)appDelegate
@@ -215,6 +217,7 @@ enum BUTTONS
     NSLog(@"ScratchPadViewController loadDefaultDataForButton: getCenter (%.f, %.f)", sender.center.x, sender.center.y);
 }
 
+/*
 -(void)loadDefaultData
 {
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
@@ -353,8 +356,8 @@ enum BUTTONS
         [defaults setObject:pointString forKey:tag];
     }
 }
+*/
 
-/*
  -(void)saveDefaultData
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -404,7 +407,7 @@ enum BUTTONS
     
     return YES;
 }
-*/
+
 
 #if 0
 -(void)encodeRestorableStateWithCoder:(NSCoder *)coder

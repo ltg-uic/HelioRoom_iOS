@@ -16,9 +16,10 @@
     int numBtns;
 }
 
-//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *planetColorBtns;
-//@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *planetNameBtns;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *planetColorBtns;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *planetNameBtns;
 
+/*
 @property (weak, nonatomic) IBOutlet UIButton *redPlanetBtn;
 @property (weak, nonatomic) IBOutlet UIButton *greenPlanetBtn;
 @property (weak, nonatomic) IBOutlet UIButton *orangePlanetBtn;
@@ -35,7 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saturnBtn;
 @property (weak, nonatomic) IBOutlet UIButton *uranusBtn;
 @property (weak, nonatomic) IBOutlet UIButton *neptuneBtn;
-
+*/
 
 - (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event;
 @end

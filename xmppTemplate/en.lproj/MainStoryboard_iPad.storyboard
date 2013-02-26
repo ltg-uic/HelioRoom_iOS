@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -7,8 +7,8 @@
         <!--Root View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController id="2" customClass="RootViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
+                <viewController restorationIdentifier="" id="2" customClass="RootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ROOT_VIEW_CONTROLLER" id="5">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -922,17 +922,17 @@
         <!--Scratch Pad View Controller - Scratch Pad-->
         <scene sceneID="Ufg-vl-3xk">
             <objects>
-                <viewController restorationIdentifier="" storyboardIdentifier="" id="2g0-4c-zXt" customClass="ScratchPadViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pmW-QD-8KB">
+                <viewController restorationIdentifier="SCRATCH_PAD" storyboardIdentifier="SCRATCH_PAD" id="2g0-4c-zXt" customClass="ScratchPadViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="" id="pmW-QD-8KB">
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fwm-yt-u4n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="" image="background_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fwm-yt-u4n">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="758" id="Tnj-cg-zRX"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-XS-2Dq">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-XS-2Dq">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="hwM-W7-MrE"/>
                                 </constraints>
@@ -948,7 +948,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Y4P-X6-es6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S74-jA-rqx">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S74-jA-rqx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="PTe-Ki-mu6"/>
                                     <constraint firstAttribute="width" constant="120" id="s2r-Md-DD3"/>
@@ -965,7 +965,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="yF1-Tu-Wb4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-CJ-Avp">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-CJ-Avp">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="vXy-Vr-Wsf"/>
                                 </constraints>
@@ -981,7 +981,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="WmC-Uo-s21"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-pz-qnY">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-pz-qnY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="AJi-5E-FZN"/>
                                     <constraint firstAttribute="height" constant="120" id="ghm-QF-VZE"/>
@@ -998,7 +998,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="TpF-mx-tXq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-SH-RV3">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-SH-RV3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="RKP-ZF-Yoo"/>
                                     <constraint firstAttribute="height" constant="120" id="TB5-0H-vj8"/>
@@ -1015,7 +1015,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9M9-Mo-EWk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-ye-sUx">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-ye-sUx">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3oK-xq-q0A"/>
                                 </constraints>
@@ -1031,7 +1031,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="BE3-qG-f9u"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-dc-j18">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-dc-j18">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="OMd-cy-8PM"/>
                                     <constraint firstAttribute="width" constant="120" id="xkc-1R-m4b"/>
@@ -1048,7 +1048,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="wsp-VU-glb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-iw-iCk">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-iw-iCk">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="EkM-Se-ABj"/>
                                     <constraint firstAttribute="width" constant="120" id="WBM-D0-YHt"/>
@@ -1065,7 +1065,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="O1U-rv-Jnr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGT-3T-PnG">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGT-3T-PnG">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="iud-Vi-5QS"/>
                                 </constraints>
@@ -1081,7 +1081,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="341-Ws-BaQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-If-llh">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-If-llh">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="ZYi-Gq-XpG"/>
                                 </constraints>
@@ -1097,7 +1097,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="apJ-M7-ies"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-Mu-ncW">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-Mu-ncW">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="vU6-iV-Q5T"/>
                                 </constraints>
@@ -1113,7 +1113,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Geb-ja-t2t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-WO-vuc">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-WO-vuc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="0kJ-yQ-EkD"/>
                                 </constraints>
@@ -1129,7 +1129,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9ku-Qb-eRZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-DK-vln">
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-DK-vln">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="ofb-mW-yKU"/>
                                 </constraints>
@@ -1145,7 +1145,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="ACk-Ky-Dwg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92r-k3-diP">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92r-k3-diP">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="qnN-Do-FZJ"/>
                                 </constraints>
@@ -1161,7 +1161,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="cZk-Pe-iod"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-uf-KOy">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-uf-KOy">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="HGv-5c-UhB"/>
                                 </constraints>
@@ -1177,7 +1177,7 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="jyC-0N-jnH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-qr-KCm">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-qr-KCm">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="0gg-9M-k3N"/>
                                     <constraint firstAttribute="width" constant="128" id="mIN-8h-NOk"/>
@@ -1247,6 +1247,24 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Scratch Pad" image="tab_Scratch.png" id="4sn-Mh-4zW"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="bluePlanetBtn" destination="S74-jA-rqx" id="fv9-ka-UbB"/>
+                        <outlet property="brownPlanetBtn" destination="hd3-SH-RV3" id="T7N-lq-J9g"/>
+                        <outlet property="earthBtn" destination="hGT-3T-PnG" id="LM8-bm-J8n"/>
+                        <outlet property="greenPlanetBtn" destination="hbl-iw-iCk" id="xUn-I0-dX0"/>
+                        <outlet property="jupiterBtn" destination="rOY-If-llh" id="PIR-3F-wFv"/>
+                        <outlet property="marsBtn" destination="9cT-Mu-ncW" id="IAD-lg-4L1"/>
+                        <outlet property="mercuryBtn" destination="BK1-WO-vuc" id="O7P-Gl-zaH"/>
+                        <outlet property="neptuneBtn" destination="Dns-DK-vln" id="ThD-fX-mJf"/>
+                        <outlet property="orangePlanetBtn" destination="t2h-pz-qnY" id="sP1-Al-Qdj"/>
+                        <outlet property="pinkPlanetBtn" destination="7kW-ye-sUx" id="RsL-TP-UXs"/>
+                        <outlet property="purplePlanetBtn" destination="gZT-dc-j18" id="Qd3-bE-IfJ"/>
+                        <outlet property="redPlanetBtn" destination="kYp-XS-2Dq" id="xk3-OE-IvV"/>
+                        <outlet property="saturnBtn" destination="92r-k3-diP" id="M4m-sy-W6N"/>
+                        <outlet property="uranusBtn" destination="BdO-uf-KOy" id="ZJu-EE-JMW"/>
+                        <outlet property="venusBtn" destination="rYE-qr-KCm" id="WGB-OE-D4Y"/>
+                        <outlet property="yellowPlanetBtn" destination="L2u-CJ-Avp" id="rEt-8d-eIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBp-gy-gxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1822,10 +1840,10 @@
             </objects>
             <point key="canvasLocation" x="3303" y="1949"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="vXE-Fh-qVG">
             <objects>
-                <tabBarController restorationIdentifier="tabBarController" storyboardIdentifier="tabBarController" definesPresentationContext="YES" id="a3N-6P-8wc" customClass="TabViewController" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="tabBarController" storyboardIdentifier="tabBarController" definesPresentationContext="YES" id="a3N-6P-8wc" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Sy6-2u-RK4">
@@ -1847,7 +1865,7 @@
         <scene sceneID="ia9-99-P46">
             <objects>
                 <viewController storyboardIdentifier="loginController" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ivw-0c-L6c" customClass="LoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="50n-1d-bhV">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="LOGIN_VIEW" id="50n-1d-bhV">
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -2668,6 +2686,22 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
             <relationships>
                 <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bluePlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="brownPlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="earthBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenPlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="jupiterBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="marsBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mercuryBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="neptuneBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="orangePlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinkPlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="purplePlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redPlanetBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saturnBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="uranusBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="venusBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yellowPlanetBtn" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="TheoriesViewController" superclassName="UIViewController">

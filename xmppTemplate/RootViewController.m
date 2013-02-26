@@ -23,6 +23,9 @@
     //RACHEL TODO. Check if connected. Auto login
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.jpeg"]];
     self.view.backgroundColor = background;
+    
+    // should move presentViewController to here...
+    //[self presentViewController:self.tabBarController animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

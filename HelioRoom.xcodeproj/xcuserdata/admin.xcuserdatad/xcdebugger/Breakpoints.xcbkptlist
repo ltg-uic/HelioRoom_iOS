@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "xmppTemplate/AppDelegate.h"
-         timestampString = "382312741.986554"
+         timestampString = "383553158.759665"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
          landmarkName = "window"
          landmarkType = "19">
       </FileBreakpoint>
@@ -137,27 +137,14 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "xmppTemplate/AppDelegate.m"
-         timestampString = "382922129.512512"
+         filePath = "xmppTemplate/RootViewController.m"
+         timestampString = "383553870.836997"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "538"
-         endingLineNumber = "538"
-         landmarkName = "-xmppStream:didReceiveMessage:"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-newMessageReceived:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "xmppTemplate/RootViewController.h"
-         timestampString = "382313610.076468"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "19"
-         endingLineNumber = "19"
-         landmarkName = "@interface RootViewController"
-         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

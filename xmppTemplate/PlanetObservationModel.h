@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface PlanetObservationModel : NSObject
+@property (nonatomic, strong) UIManagedDocument *reasonDatabase;  // Model is a Core Data database of reasons
+
 -(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2:(NSString *)reason;
 -(void)identify:(NSString *)planetColor :(NSString *)planetName:(NSString *) reason;
 

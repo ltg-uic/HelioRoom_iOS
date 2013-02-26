@@ -7,13 +7,13 @@
 //  Copyright (c) 2012 Learning Technologies Group. All rights reserved.
 //
 
-#import "XMPPBaseNewMessageDelegate.h"
-#import "AppDelegate.h"
 
+#import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController<XMPPBaseNewMessageDelegate>{
+@interface RootViewController:UIViewController<XMPPBaseNewMessageDelegate>{
     
 }
 
+- (void)newMessageReceived:(NSDictionary *)messageContent;
 @end

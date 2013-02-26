@@ -7,12 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import "AppDelegate.h"
 #import "SBJson.h"
 
-@interface RootViewController ()
-
-@end
 
 @implementation RootViewController
 
@@ -24,6 +20,8 @@
     //RACHEL TODO. Check if connected. Auto login
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.jpeg"]];
     self.view.backgroundColor = background;
+    
+    self.appDelegate.xmppBaseNewMessageDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning

@@ -158,7 +158,6 @@
 		84D5494316229A5E0075940E /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5493F16229A5E0075940E /* yellow.png */; };
 		84D5494416229A5E0075940E /* yellowLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5494016229A5E0075940E /* yellowLg.png */; };
 		84D680AF16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84D680AD16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld */; };
-		84D680B316B9C36B001BC26A /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D680B216B9C36B001BC26A /* Order.m */; };
 		84E0E0231623DC4B00058BBC /* spaceshipSubmitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E0E0221623DC4B00058BBC /* spaceshipSubmitButton.png */; };
 		84E0E0251623E12900058BBC /* isInFrontOf.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E0E0241623E12900058BBC /* isInFrontOf.png */; };
 		84E0E0271623E92B00058BBC /* spaceshipSubmitButton_high.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E0E0261623E92B00058BBC /* spaceshipSubmitButton_high.png */; };
@@ -192,6 +191,7 @@
 		84EB1236161F688000CECA43 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB1235161F688000CECA43 /* planet.png */; };
 		84EB123D161F7D1A00CECA43 /* planetLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB123C161F7D1A00CECA43 /* planetLg.png */; };
 		84EC38281614C1B500C16BE6 /* PlanetObservationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC38271614C1B500C16BE6 /* PlanetObservationModel.m */; };
+		84F3265D16DC7880002B3D58 /* Reason.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F3265C16DC7880002B3D58 /* Reason.m */; };
 		84F352CE16507EAA00DEB764 /* brownLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352C816507EAA00DEB764 /* brownLg.png */; };
 		84F352CF16507EAA00DEB764 /* grayLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352C916507EAA00DEB764 /* grayLg.png */; };
 		84F352D016507EAA00DEB764 /* greenLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352CA16507EAA00DEB764 /* greenLg.png */; };
@@ -381,7 +381,6 @@
 		849D0AE816B436F200F8002D /* TheoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoriesViewController.m; sourceTree = "<group>"; };
 		849D0AE916B436F200F8002D /* TheoryReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheoryReasonViewController.h; sourceTree = "<group>"; };
 		849D0AEA16B436F200F8002D /* TheoryReasonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoryReasonViewController.m; sourceTree = "<group>"; };
-		84A1AF6816D954D3005C1AC1 /* XMPPBaseNewMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPBaseNewMessageDelegate.h; sourceTree = "<group>"; };
 		84A1AF6916D954D3005C1AC1 /* XMPPBaseOnlineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPBaseOnlineDelegate.h; sourceTree = "<group>"; };
 		84CB9534164C1BA900D01390 /* grabPlanet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabPlanet.png; sourceTree = "<group>"; };
 		84CB9536164C23CF00D01390 /* submitButtonText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submitButtonText.png; path = ../submitButtonText.png; sourceTree = "<group>"; };
@@ -397,8 +396,6 @@
 		84D5493F16229A5E0075940E /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		84D5494016229A5E0075940E /* yellowLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowLg.png; sourceTree = "<group>"; };
 		84D680AE16B9BADF001BC26A /* HelioRoomModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelioRoomModel.xcdatamodel; sourceTree = "<group>"; };
-		84D680B116B9C36B001BC26A /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
-		84D680B216B9C36B001BC26A /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		84E0E0221623DC4B00058BBC /* spaceshipSubmitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton.png; sourceTree = "<group>"; };
 		84E0E0241623E12900058BBC /* isInFrontOf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = isInFrontOf.png; path = ../isInFrontOf.png; sourceTree = "<group>"; };
 		84E0E0261623E92B00058BBC /* spaceshipSubmitButton_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton_high.png; sourceTree = "<group>"; };
@@ -462,6 +459,8 @@
 		84EB123C161F7D1A00CECA43 /* planetLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planetLg.png; sourceTree = "<group>"; };
 		84EC38261614C1B500C16BE6 /* PlanetObservationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanetObservationModel.h; path = xmppTemplate/PlanetObservationModel.h; sourceTree = "<group>"; };
 		84EC38271614C1B500C16BE6 /* PlanetObservationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanetObservationModel.m; path = xmppTemplate/PlanetObservationModel.m; sourceTree = "<group>"; };
+		84F3265B16DC7880002B3D58 /* Reason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reason.h; sourceTree = "<group>"; };
+		84F3265C16DC7880002B3D58 /* Reason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reason.m; sourceTree = "<group>"; };
 		84F352C816507EAA00DEB764 /* brownLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownLg.png; sourceTree = "<group>"; };
 		84F352C916507EAA00DEB764 /* grayLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayLg.png; sourceTree = "<group>"; };
 		84F352CA16507EAA00DEB764 /* greenLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenLg.png; sourceTree = "<group>"; };
@@ -514,8 +513,8 @@
 			isa = PBXGroup;
 			children = (
 				84D680AD16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld */,
-				84D680B116B9C36B001BC26A /* Order.h */,
-				84D680B216B9C36B001BC26A /* Order.m */,
+				84F3265B16DC7880002B3D58 /* Reason.h */,
+				84F3265C16DC7880002B3D58 /* Reason.m */,
 				855A893D16B8327C002C8FB7 /* Helio_Icon2X.png */,
 				8401631B16499209002F9F9C /* icon_144.png */,
 				700C3B3216042F52005A9E34 /* XMPPFramework.h */,
@@ -901,7 +900,6 @@
 		84AECEB316856C420070B419 /* HelioRoom */ = {
 			isa = PBXGroup;
 			children = (
-				84A1AF6816D954D3005C1AC1 /* XMPPBaseNewMessageDelegate.h */,
 				84A1AF6916D954D3005C1AC1 /* XMPPBaseOnlineDelegate.h */,
 				849D0AE716B436F200F8002D /* TheoriesViewController.h */,
 				849D0AE816B436F200F8002D /* TheoriesViewController.m */,
@@ -1379,7 +1377,6 @@
 				84F9826E16B43F0A00804BE4 /* OrderViewController.m in Sources */,
 				8474EC5E16B45CEB00FA0EA7 /* OrderReasonViewController.m in Sources */,
 				84D680AF16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld in Sources */,
-				84D680B316B9C36B001BC26A /* Order.m in Sources */,
 				84103A0A16BACB7000B89583 /* ScratchPadViewController.m in Sources */,
 				842B72D016C20F9600B976BA /* NSObject+SBJson.m in Sources */,
 				842B72D116C20F9600B976BA /* SBJsonParser.m in Sources */,
@@ -1393,6 +1390,7 @@
 				842B72D916C20F9600B976BA /* SBJsonTokeniser.m in Sources */,
 				842B72DA16C20F9600B976BA /* SBJsonUTF8Stream.m in Sources */,
 				842B72DB16C20F9600B976BA /* SBJsonWriter.m in Sources */,
+				84F3265D16DC7880002B3D58 /* Reason.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

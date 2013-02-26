@@ -39,6 +39,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @synthesize window;
 
 //RACHEL MODIFIED
+@synthesize xmppBaseNewMessageDelegate=_xmppBaseNewMessageDelegate;
 @synthesize xmppRoomRosterStorage;
 @synthesize xmppRoom;
 @synthesize loginController =_loginController;
@@ -52,7 +53,7 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword"; //DO NOT CHANGE
 //NSString *const xmppServer = @"ltg.evl.uic.edu"; //set to name address of your xmppServer OR use below
 //NSString *const xmppServer = @"169.254.225.196";  //set to ip address of your xmppServer
 NSString *const xmppServer = @"localhost";  //set to ip address of your xmppServer
-NSString *const chatLocation = @"helioroom@conference"; //set to location of chat room
+NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to location of chat room
 
 //NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set to location of chat room
 
@@ -61,8 +62,8 @@ NSString *const chatLocation = @"helioroom@conference"; //set to location of cha
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"fake2@localhost" forKey:kXMPPmyJID];
-    [[NSUserDefaults standardUserDefaults] setObject:@"fake2" forKey:kXMPPmyPassword];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"fake2@localhost" forKey:kXMPPmyJID];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"fake2" forKey:kXMPPmyPassword];
     // Configure logging framework
 	
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -534,9 +535,10 @@ NSString *const chatLocation = @"helioroom@conference"; //set to location of cha
         [lastMessageDict setObject:msg forKey:@"msg"];
         [lastMessageDict setObject:from forKey:@"sender"];
         
-        
-        [xmppBaseNewMessageDelegate newMessageReceived:lastMessageDict];
-        
+        if(_xmppBaseNewMessageDelegate!=nil){
+//            NSLog(@"xmppBaseNewMessageDelegate not nil.");
+            [_xmppBaseNewMessageDelegate newMessageReceived:lastMessageDict];
+        }
     }
 }
 
@@ -741,6 +743,12 @@ NSString *const chatLocation = @"helioroom@conference"; //set to location of cha
     //TODO check whether sent?
     return 1;
     
+}
+-(NSString *)getReasons{
+    return reasons;
+}
+-(void)setReasons:(NSString *)newReasons{
+    reasons=newReasons;
 }
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     NSInteger i, tag;

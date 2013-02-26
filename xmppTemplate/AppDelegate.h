@@ -11,10 +11,12 @@
 #import <CoreData/CoreData.h>
 
 #import "XMPPFramework.h"
-#import "XMPPBaseNewMessageDelegate.h"
 #import "XMPPMessage+XEP0045.h"
 #import "XMPPBaseOnlineDelegate.h"
 
+@protocol XMPPBaseNewMessageDelegate
+- (void)newMessageReceived:(NSDictionary *)messageContent;
+@end
 
 @interface AppDelegate : NSObject <UIApplicationDelegate, XMPPRosterDelegate, UITabBarControllerDelegate> {//TODO was UIResponder
     XMPPStream *xmppStream;
@@ -24,9 +26,10 @@
 
     
     NSString *password;
+    NSString *reasons;
     
-    id <XMPPBaseNewMessageDelegate> __weak xmppBaseNewMessageDelegate;
-    id <XMPPBaseOnlineDelegate>     __weak xmppBaseOnlineDelegate;
+//    id <XMPPBaseNewMessageDelegate> __weak xmppBaseNewMessageDelegate;
+
 	
 	BOOL allowSelfSignedCertificates;
 	BOOL allowSSLHostNameMismatch;
@@ -42,6 +45,7 @@
 @property (nonatomic, strong, readonly) XMPPRosterCoreDataStorage *xmppRosterStorage;
 
 //RACHEL MODIFIED
+@property (nonatomic, retain) id <XMPPBaseNewMessageDelegate> xmppBaseNewMessageDelegate;
 @property (nonatomic, strong, readonly) XMPPRoomCoreDataStorage *xmppRoomRosterStorage;
 @property (nonatomic, strong, readonly) XMPPRoom *xmppRoom;
 @property (nonatomic, assign) BOOL successfullLogin;;
@@ -70,6 +74,9 @@
 - (void)showChooseFirstView:(UIViewController *)activeViewController;
 - (void)showTabBarView:(UIViewController *)activeViewController;
 - (UIViewController *)getRootViewController;
+-(NSString *)getReasons;
+-(void)setReasons:(NSString *)newReasons;
+
 
 //FOR DEBUG
 - (void)writeDebugMessage:(NSString *)msg;

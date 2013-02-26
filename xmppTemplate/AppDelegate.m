@@ -93,7 +93,6 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
     NSLog(@"AppDelegate didFinishLaunchingWithOptions");
 }
 
-#if 0
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
     NSLog(@"AppDelegate shouldRestoreApplicationState");
     return YES;
@@ -103,7 +102,6 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
     NSLog(@"AppDelegate shouldSaveApplicationState");
     return YES;
 }
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark Core Data

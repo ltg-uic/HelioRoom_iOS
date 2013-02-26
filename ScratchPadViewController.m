@@ -12,6 +12,7 @@
 
 @interface ScratchPadViewController ()
 
+/*
 enum BUTTONS
 {
     RED_BTN,
@@ -31,7 +32,7 @@ enum BUTTONS
     URANUS_BTN,
     NEPTUNE_BTN
 };
-
+*/
 
 @end
 
@@ -80,72 +81,24 @@ enum BUTTONS
     [super viewDidLoad];
     
     numBtns = 16;
-    
-    /*
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (UIButton *btn in _planetColorBtns)
-    {
-        NSString *tag = [NSString stringWithFormat:@"%d", [btn tag]];
-        BOOL containsKey = [[defaults dictionaryRepresentation] objectForKey:tag] != nil;
-        if (!containsKey)
-        {
-            [self saveDefaultData];
-            break;
-        }
-    }
-    */
-    
-    NSLog(@"ScratchPadViewController viewDidLoad");
-    //[self loadDefaultData];     // restore default locations
-    //[self loadDefaultDataForButton:_purplePlanetBtn];
-    //[_purplePlanetBtn setCenter:CGPointMake(545,322)];
-    //NSLog(@"ScratchPadViewController viewDidLoad: (%.f,%.f)", _purplePlanetBtn.center.x, _purplePlanetBtn.center.y);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    NSLog(@"ScratchPadViewController viewDidAppear");
-    //[self loadDefaultData];     // restore default locations
-    //[self loadDefaultDataForButton:_purplePlanetBtn];
-    //[_purplePlanetBtn setCenter:CGPointMake(545,322)];
-    //NSLog(@"ScratchPadViewController viewDidAppear: (%.f,%.f)", _purplePlanetBtn.center.x, _purplePlanetBtn.center.y);
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    NSLog(@"ScratchPadViewController viewWillAppear");
-    //[self loadDefaultData];
-    //[self loadDefaultDataForButton:_purplePlanetBtn];
-    //[_purplePlanetBtn setCenter:CGPointMake(545,322)];
-    //NSLog(@"ScratchPadViewController viewWillAppear: (%.f,%.f)", _purplePlanetBtn.center.x, _purplePlanetBtn.center.y);
 }
-
-/*
-- (void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-    
-    //[self loadDefaultData];
-    //[self loadDefaultDataForButton:_purplePlanetBtn];
-    [_purplePlanetBtn setCenter:CGPointMake(545,322)];
-    NSLog(@"ScratchPadViewController viewWillLayoutSubviews: (%.f,%.f)", _purplePlanetBtn.center.x, _purplePlanetBtn.center.y);
-}
-*/
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     
     [self loadDefaultData];
-    //[self loadDefaultDataForButton:_purplePlanetBtn];
-    //[_purplePlanetBtn setCenter:CGPointMake(545,322)];
-    //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: (%.f,%.f)", _purplePlanetBtn.center.x, _purplePlanetBtn.center.y);
 }
-
 
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -154,24 +107,8 @@ enum BUTTONS
     [self saveDefaultData]; // restore default locations
     
     // synchronize to write defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL result = [defaults synchronize];
-    NSLog(@"ScratchPadViewController viewDidDisappear: synchronize result = %d", result);
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-/*
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    [self saveDefaultData:_redPlanetBtn]; // restore default locations
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL result = [defaults synchronize];
-    NSLog(@"ScratchPadViewController viewDidUnload: synchronize result = %d", result);
-    NSLog(@"ScratchPadViewController viewDidUnload: %@", [defaults stringForKey:@"0"]);
-}
-*/
 
 - (void)didReceiveMemoryWarning
 {
@@ -201,7 +138,7 @@ enum BUTTONS
     NSString *pointString = NSStringFromCGPoint(sender.center);
     [defaults setObject:pointString forKey:tag];
     
-    NSLog(@"ScratchPadViewController saveDefaultDataForButton: %@(%.f,%.f)", tag, sender.center.x, sender.center.y);
+    //NSLog(@"ScratchPadViewController saveDefaultDataForButton: %@(%.f,%.f)", tag, sender.center.x, sender.center.y);
 }
 
 -(void)loadDefaultDataForButton:(UIButton *)sender
@@ -214,7 +151,7 @@ enum BUTTONS
     
     [sender setCenter:savedCenter];
     
-    NSLog(@"ScratchPadViewController loadDefaultDataForButton: getCenter (%.f, %.f)", sender.center.x, sender.center.y);
+    //NSLog(@"ScratchPadViewController loadDefaultDataForButton: getCenter (%.f, %.f)", sender.center.x, sender.center.y);
 }
 
 /*
@@ -368,7 +305,7 @@ enum BUTTONS
         NSString *pointString = NSStringFromCGPoint(btn.center);
         [defaults setObject:pointString forKey:tag];
         
-        NSLog(@"ScratchPadViewController saveDefaultData: btn %@ (%.f,%.f)", tag, btn.center.x, btn.center.y);
+        //NSLog(@"ScratchPadViewController saveDefaultData: btn %@ (%.f,%.f)", tag, btn.center.x, btn.center.y);
     }
     
     for (UIButton *btn in _planetNameBtns)
@@ -377,7 +314,7 @@ enum BUTTONS
         NSString *pointString = NSStringFromCGPoint(btn.center);
         [defaults setObject:pointString forKey:tag];
         
-        NSLog(@"ScratchPadViewController saveDefaultData: btn %@ (%.f,%.f)", tag, btn.center.x, btn.center.y);
+        //NSLog(@"ScratchPadViewController saveDefaultData: btn %@ (%.f,%.f)", tag, btn.center.x, btn.center.y);
     }
 }
 
@@ -392,7 +329,7 @@ enum BUTTONS
         CGPoint savedCenter = CGPointFromString(pointString);
         
         [btn setCenter:savedCenter];
-        NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
+        //NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
     }
     
     for (UIButton *btn in _planetNameBtns)
@@ -402,7 +339,7 @@ enum BUTTONS
         CGPoint savedCenter = CGPointFromString(pointString);
         
         [btn setCenter:savedCenter];
-        NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
+        //NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
     }
     
     return YES;

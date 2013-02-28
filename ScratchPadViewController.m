@@ -97,7 +97,27 @@ enum BUTTONS
 {
     [super viewDidLayoutSubviews];
     
-    [self loadDefaultData];
+    // check if first launch
+    NSString *hasLaunchedBefore= @"hasLaunchedBefore";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults boolForKey:hasLaunchedBefore] == YES)
+    {
+        // load default data here after views are created and added (after viewDidLoad)
+        // but before they are shown (before viewDidAppear etc))
+        [self loadDefaultData];
+        
+        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: not the first launch!");
+    }
+    else
+    {
+        // if it is then save initial center info
+        [defaults setBool:YES forKey:hasLaunchedBefore];
+        [self saveDefaultData]; // restore default locations
+        [defaults synchronize];
+        
+        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: First launch!");
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated

@@ -91,6 +91,8 @@ NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set 
     [self tabBarController].delegate = self;
     
     NSLog(@"AppDelegate didFinishLaunchingWithOptions");
+    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {

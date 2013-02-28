@@ -12,7 +12,6 @@
 
 @interface ScratchPadViewController ()
 
-/*
 enum BUTTONS
 {
     RED_BTN,
@@ -30,9 +29,9 @@ enum BUTTONS
     JUPITER_BTN,
     SATURN_BTN,
     URANUS_BTN,
-    NEPTUNE_BTN
+    NEPTUNE_BTN,
+    BLANK_BTN
 };
-*/
 
 @end
 
@@ -40,26 +39,24 @@ enum BUTTONS
 
 @synthesize planetColorBtns = _planetColorBtns;
 @synthesize planetNameBtns = _planetNameBtns;
-/*
-@synthesize redPlanetBtn = _redPlanetBtn;
-@synthesize greenPlanetBtn = _greenPlanetBtn;
-@synthesize orangePlanetBtn = _orangePlanetBtn;
-@synthesize bluePlanetBtn = _bluePlanetBtn;
-@synthesize purplePlanetBtn = _purplePlanetBtn;
-@synthesize brownPlanetBtn = _brownPlanetBtn;
-@synthesize yellowPlanetBtn = _yellowPlanetBtn;
-@synthesize pinkPlanetBtn = _pinkPlanetBtn;
-@synthesize mercuryBtn = _mercuryBtn;
-@synthesize venusBtn = _venusBtn;
-@synthesize earthBtn = _earthBtn;
-@synthesize marsBtn = _marsBtn;
-@synthesize jupiterBtn = _jupiterBtn;
-@synthesize saturnBtn = _saturnBtn;
-@synthesize uranusBtn = _uranusBtn;
-@synthesize neptuneBtn = _neptuneBtn;
-//@synthesize blankBtn = _blankBtn;
-*/
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Overriding setters
+//
+
+-(void)setPlanetNameBtns:(NSMutableArray*)planetNameBtns
+{
+    // make sure we are getting mutable copy so we can add to planetNameBtns
+    _planetNameBtns= [_planetNameBtns mutableCopy];
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
 
 - (AppDelegate *)appDelegate
 {
@@ -79,8 +76,6 @@ enum BUTTONS
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    numBtns = 16;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,27 +92,7 @@ enum BUTTONS
 {
     [super viewDidLayoutSubviews];
     
-    // check if first launch
-    NSString *hasLaunchedBefore= @"hasLaunchedBefore";
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    if ([defaults boolForKey:hasLaunchedBefore] == YES)
-    {
-        // load default data here after views are created and added (after viewDidLoad)
-        // but before they are shown (before viewDidAppear etc))
-        [self loadDefaultData];
-        
-        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: not the first launch!");
-    }
-    else
-    {
-        // if it is then save initial center info
-        [defaults setBool:YES forKey:hasLaunchedBefore];
-        [self saveDefaultData]; // restore default locations
-        [defaults synchronize];
-        
-        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: First launch!");
-    }
+    [self initializeAll];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -136,18 +111,48 @@ enum BUTTONS
     // Dispose of any resources that can be recreated.
 }
 
-
-//EVENT HANDLERS
-- (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event
+- (void)initializeAll
 {
-    CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
-    sender.center=point;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    numPlanetNamesStr = @"numPlanetNameBtns";
+    numPlanetColorBtns = 8;
     
-    //[[self appDelegate] writeDebugMessage:@"drag inside event"];
-    
-    // I think we need this here in case user hits the home button or force quits from the multitasking bar
-    [self saveDefaultDataForButton:sender];
+    // check if first launch
+    NSString *hasLaunchedBefore= @"hasLaunchedBefore";
+    if ([defaults boolForKey:hasLaunchedBefore] == YES)
+    {
+        // load default data here after views are created and added (after viewDidLoad)
+        // but before they are shown (before viewDidAppear etc))
+        [self loadDefaultData];
+        
+        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: not the first launch!");
+    }
+    else
+    {
+        [defaults setBool:YES forKey:hasLaunchedBefore];
+        
+        // if it is then save initial center info for all the buttons
+        [self saveDefaultData];
+        
+        // set initial number of planet name buttons
+        numPlanetNameBtns = 9;
+        [defaults setInteger:numPlanetNameBtns forKey:numPlanetNamesStr];
+        
+        // write it down
+        [defaults synchronize];
+        
+        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: First launch!");
+    }
 }
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Default data handling
+// : to ensure that subview (i.e. buttons etc.) information is retained
+//   after the Scratch Pad tab is no longer active, app is put in
+//   background, or quit
+//
 
 -(void)saveDefaultDataForButton:(UIButton *)sender
 {
@@ -173,147 +178,6 @@ enum BUTTONS
     
     //NSLog(@"ScratchPadViewController loadDefaultDataForButton: getCenter (%.f, %.f)", sender.center.x, sender.center.y);
 }
-
-/*
--(void)loadDefaultData
-{
-    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-    
-    for (int i=0; i<numBtns; i++)
-    {
-        NSString *tag = [NSString stringWithFormat:@"%d", i];
-        NSString *pointString = [defaults stringForKey:tag];
-        CGPoint savedCenter = CGPointFromString(pointString);
-        
-        switch (i)
-        {
-            case RED_BTN:
-                [_redPlanetBtn setCenter:savedCenter];
-                break;
-            case GREEN_BTN:
-                [_greenPlanetBtn setCenter:savedCenter];
-                break;
-            case ORANGE_BTN:
-                [_orangePlanetBtn setCenter:savedCenter];
-                break;
-            case BLUE_BTN:
-                [_bluePlanetBtn setCenter:savedCenter];
-                break;
-            case PURPLE_BTN:
-                [_purplePlanetBtn setCenter:savedCenter];
-                break;
-            case BROWN_BTN:
-                [_brownPlanetBtn setCenter:savedCenter];
-                break;
-            case YELLOW_BTN:
-                [_yellowPlanetBtn setCenter:savedCenter];
-                break;
-            case PINK_BTN:
-                [_pinkPlanetBtn setCenter:savedCenter];
-                break;
-            case MERCURY_BTN:
-                [_mercuryBtn setCenter:savedCenter];
-                break;
-            case VENUS_BTN:
-                [_venusBtn setCenter:savedCenter];
-                break;
-            case EARTH_BTN:
-                [_earthBtn setCenter:savedCenter];
-                break;
-            case MARS_BTN:
-                [_marsBtn setCenter:savedCenter];
-                break;
-            case JUPITER_BTN:
-                [_jupiterBtn setCenter:savedCenter];
-                break;
-            case SATURN_BTN:
-                [_saturnBtn setCenter:savedCenter];
-                break;
-            case URANUS_BTN:
-                [_uranusBtn setCenter:savedCenter];
-                break;
-            case NEPTUNE_BTN:
-                [_neptuneBtn setCenter:savedCenter];
-                break;
-            default:
-                ;//[_redPlanetBtn setCenter:savedCenter];
-                break;
-        }
-        
-        NSLog(@"ScratchPadViewController loadDefaultData: getCenter (%.f, %.f)", savedCenter.x, savedCenter.y);
-    }
-}
-
--(void)saveDefaultData
-{
-    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-    
-    for (int i=0; i<numBtns; i++)
-    {
-        // saving the position
-        NSString *tag = [NSString stringWithFormat:@"%d", i];
-        NSString *pointString;
-        
-        switch (i)
-        {
-            case RED_BTN:
-                pointString = NSStringFromCGPoint(_redPlanetBtn.center);
-                break;
-            case GREEN_BTN:
-                pointString = NSStringFromCGPoint(_greenPlanetBtn.center);
-                break;
-            case ORANGE_BTN:
-                pointString = NSStringFromCGPoint(_orangePlanetBtn.center);
-                break;
-            case BLUE_BTN:
-                pointString = NSStringFromCGPoint(_bluePlanetBtn.center);
-                break;
-            case PURPLE_BTN:
-                pointString = NSStringFromCGPoint(_purplePlanetBtn.center);
-                break;
-            case BROWN_BTN:
-                pointString = NSStringFromCGPoint(_brownPlanetBtn.center);
-                break;
-            case YELLOW_BTN:
-                pointString = NSStringFromCGPoint(_yellowPlanetBtn.center);
-                break;
-            case PINK_BTN:
-                pointString = NSStringFromCGPoint(_pinkPlanetBtn.center);
-                break;
-            case MERCURY_BTN:
-                pointString = NSStringFromCGPoint(_mercuryBtn.center);
-                break;
-            case VENUS_BTN:
-                pointString = NSStringFromCGPoint(_venusBtn.center);
-                break;
-            case EARTH_BTN:
-                pointString = NSStringFromCGPoint(_earthBtn.center);
-                break;
-            case MARS_BTN:
-                pointString = NSStringFromCGPoint(_marsBtn.center);
-                break;
-            case JUPITER_BTN:
-                pointString = NSStringFromCGPoint(_jupiterBtn.center);
-                break;
-            case SATURN_BTN:
-                pointString = NSStringFromCGPoint(_saturnBtn.center);
-                break;
-            case URANUS_BTN:
-                pointString = NSStringFromCGPoint(_uranusBtn.center);
-                break;
-            case NEPTUNE_BTN:
-                pointString = NSStringFromCGPoint(_neptuneBtn.center);
-                break;
-            default:
-                ;//NSString *pointString = NSStringFromCGPoint(_redPlanetBtn.center);
-                break;
-        }
-        
-        NSLog(@"ScratchPadViewController saveDefaultData: getCenter %d(%@)", i, pointString);
-        [defaults setObject:pointString forKey:tag];
-    }
-}
-*/
 
  -(void)saveDefaultData
 {
@@ -342,6 +206,10 @@ enum BUTTONS
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // get number of buttons
+    numPlanetNameBtns = [defaults integerForKey:numPlanetNamesStr];
+    
+    // load positions for planet color buttons
     for (UIButton *btn in _planetColorBtns)
     {
         NSString *tag = [NSString stringWithFormat:@"%d", [btn tag]];
@@ -352,6 +220,7 @@ enum BUTTONS
         //NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
     }
     
+    // load positions for planet name buttons
     for (UIButton *btn in _planetNameBtns)
     {
         NSString *tag = [NSString stringWithFormat:@"%d", [btn tag]];
@@ -365,21 +234,53 @@ enum BUTTONS
     return YES;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Subview creation
+//
 
-#if 0
--(void)encodeRestorableStateWithCoder:(NSCoder *)coder
+-(void)addNewBtn:(UIButton*)button
 {
-    [super encodeRestorableStateWithCoder:coder];
-    [coder encodeCGPoint:_redPlanetBtn.center forKey:@"redBtnCtr"];
-    NSLog(@"encode: (%.f, %.f)", _redPlanetBtn.center.x, _redPlanetBtn.center.y);
+    // create a new blank button that user can write a label in
+    UIButton *newButton= [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
+    [newButton addTarget:self action:@selector(objectDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
+    [newButton setTitle:@"blah!" forState:UIControlStateNormal];
+    newButton.frame = [button frame];
+    newButton.tag = numPlanetColorBtns + numPlanetNameBtns;
+    [newButton setBackgroundImage:[UIImage imageNamed:@"tag_gray.png"] forState:UIControlStateNormal];
+    [newButton setBackgroundColor:[UIColor yellowColor]];
+    [_planetNameBtns addObject:newButton];
+    
+    [self.view addSubview:newButton];
+    
+    // update user defaults
+    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:++numPlanetNameBtns forKey:numPlanetNamesStr];
 }
 
--(void)decodeRestorableStateWithCoder:(NSCoder *)coder
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Event Handlers
+//
+
+- (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event
 {
-    [super decodeRestorableStateWithCoder:coder];
-    _redPlanetBtn.center = [coder decodeCGPointForKey:@"redBtnCtr"];
-    NSLog(@"decode: (%.f, %.f)", _redPlanetBtn.center.x, _redPlanetBtn.center.y);
+    CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
+    sender.center=point;
+    
+    //[[self appDelegate] writeDebugMessage:@"drag inside event"];
+    
+    // I think we need this here in case user hits the home button or force quits from the multitasking bar
+    [self saveDefaultDataForButton:sender];
 }
-#endif
+
+- (IBAction)touchUpInsideNewBtn:(UIButton *)sender forEvent:(UIEvent *)event
+{
+    [self addNewBtn:sender];
+}
+
+
+
 @end

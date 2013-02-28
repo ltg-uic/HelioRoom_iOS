@@ -888,6 +888,20 @@
                                     <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="ACk-Ky-Dwg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BbI-S8-6qJ">
+                                <rect key="frame" x="20" y="613" width="128" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" backgroundImage="tag_gray.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpInsideNewBtn:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="XFB-ch-nye"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="13" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="92r-k3-diP">
                                 <rect key="frame" x="20" y="474" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -953,6 +967,7 @@
                         <outletCollection property="planetNameBtns" destination="92r-k3-diP" id="7yH-JS-wTc"/>
                         <outletCollection property="planetNameBtns" destination="BdO-uf-KOy" id="mXL-x5-NDh"/>
                         <outletCollection property="planetNameBtns" destination="Dns-DK-vln" id="w7A-UU-cxX"/>
+                        <outletCollection property="planetNameBtns" destination="BbI-S8-6qJ" id="C7H-ci-yYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBp-gy-gxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1869,7 +1884,7 @@
     </scenes>
     <resources>
         <image name="backPlanet.png" width="360" height="280"/>
-        <image name="background_01.png" width="3452" height="2158"/>
+        <image name="background_01.png" width="2048" height="1536"/>
         <image name="background_02.png" width="3452" height="2158"/>
         <image name="blue.png" width="128" height="128"/>
         <image name="blueLg.png" width="256" height="256"/>
@@ -1987,7 +2002,9 @@
                 <relationship kind="action" name="colorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdColorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>
@@ -2007,6 +2024,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
             <relationships>
                 <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="touchUpInsideNewBtn:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="planetColorBtns" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="planetNameBtns" candidateClass="UIButton"/>
             </relationships>

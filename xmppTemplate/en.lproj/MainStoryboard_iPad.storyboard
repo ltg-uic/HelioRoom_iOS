@@ -717,7 +717,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Y4P-X6-es6"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="JIg-1q-Ue3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S74-jA-rqx">
@@ -731,7 +731,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="yF1-Tu-Wb4"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="BCv-Ua-55v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L2u-CJ-Avp">
@@ -745,7 +745,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="WmC-Uo-s21"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="ddd-DS-wlM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t2h-pz-qnY">
@@ -759,7 +759,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="TpF-mx-tXq"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="JM3-Ob-QAR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hd3-SH-RV3">
@@ -773,7 +773,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9M9-Mo-EWk"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="a8Q-AO-hQF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7kW-ye-sUx">
@@ -787,7 +787,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="BE3-qG-f9u"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="LuU-NC-bgc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gZT-dc-j18">
@@ -801,7 +801,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="wsp-VU-glb"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="LQd-RH-FZZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hbl-iw-iCk">
@@ -815,11 +815,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="O1U-rv-Jnr"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="23c-If-GPJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hGT-3T-PnG">
-                                <rect key="frame" x="20" y="186" width="128" height="37"/>
+                                <rect key="frame" x="31" y="247" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Earth" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,11 +829,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="341-Ws-BaQ"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="VEN-Lq-iiX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="12" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rOY-If-llh">
-                                <rect key="frame" x="20" y="331" width="128" height="37"/>
+                                <rect key="frame" x="31" y="395" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Jupiter" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -843,11 +843,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="apJ-M7-ies"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="A36-5G-ACo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9cT-Mu-ncW">
-                                <rect key="frame" x="20" y="258" width="128" height="37"/>
+                                <rect key="frame" x="31" y="318" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Mars" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -857,11 +857,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="Geb-ja-t2t"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="bTQ-3t-OKt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BK1-WO-vuc">
-                                <rect key="frame" x="20" y="36" width="128" height="37"/>
+                                <rect key="frame" x="31" y="103" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Mercury  " backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -871,11 +871,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="9ku-Qb-eRZ"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="tWe-YO-aeZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="15" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dns-DK-vln">
-                                <rect key="frame" x="20" y="544" width="128" height="37"/>
+                                <rect key="frame" x="31" y="620" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Neptune" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -885,11 +885,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="ACk-Ky-Dwg"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="fae-HB-uMH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="15" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BbI-S8-6qJ">
-                                <rect key="frame" x="20" y="613" width="128" height="37"/>
+                                <rect key="frame" x="31" y="32" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -899,11 +899,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="touchUpInsideNewBtn:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="XFB-ch-nye"/>
+                                    <action selector="newTextFieldTouchUpInside:forEvent:" destination="2g0-4c-zXt" eventType="touchUpInside" id="9Wj-C0-ip7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="13" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="92r-k3-diP">
-                                <rect key="frame" x="20" y="474" width="128" height="37"/>
+                                <rect key="frame" x="31" y="547" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Saturn" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -913,25 +913,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="cZk-Pe-iod"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="pGW-4b-gu5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="14" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BdO-uf-KOy">
-                                <rect key="frame" x="20" y="401" width="128" height="37"/>
+                                <rect key="frame" x="31" y="471" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Uranus" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="jyC-0N-jnH"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="SCv-eP-57L"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rYE-qr-KCm">
-                                <rect key="frame" x="20" y="110" width="128" height="37"/>
+                                <rect key="frame" x="31" y="173" width="128" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Venus" backgroundImage="tag_gray.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,7 +940,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="objectDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="PCi-JV-oMN"/>
+                                    <action selector="buttonDragInside:forEvent:" destination="2g0-4c-zXt" eventType="touchDragInside" id="mRg-nf-kEG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -951,23 +950,23 @@
                     <tabBarItem key="tabBarItem" title="Scratch Pad" image="tab_Scratch.png" id="4sn-Mh-4zW"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outletCollection property="planetColorBtns" destination="kYp-XS-2Dq" id="Cnp-Jm-QqA"/>
-                        <outletCollection property="planetColorBtns" destination="hbl-iw-iCk" id="LkU-Wo-lAk"/>
-                        <outletCollection property="planetColorBtns" destination="t2h-pz-qnY" id="ENb-qD-6kt"/>
-                        <outletCollection property="planetColorBtns" destination="S74-jA-rqx" id="Ls3-9D-SaV"/>
-                        <outletCollection property="planetColorBtns" destination="gZT-dc-j18" id="8Ao-Fi-gez"/>
-                        <outletCollection property="planetColorBtns" destination="hd3-SH-RV3" id="E1t-8f-UHp"/>
-                        <outletCollection property="planetColorBtns" destination="L2u-CJ-Avp" id="11y-98-tcc"/>
-                        <outletCollection property="planetColorBtns" destination="7kW-ye-sUx" id="f8k-TU-LbA"/>
+                        <outlet property="createNewTextFieldBtn" destination="BbI-S8-6qJ" id="nbP-OG-1hm"/>
                         <outletCollection property="planetNameBtns" destination="BK1-WO-vuc" id="9PV-84-4GU"/>
                         <outletCollection property="planetNameBtns" destination="rYE-qr-KCm" id="re5-VY-6kV"/>
-                        <outletCollection property="planetNameBtns" destination="hGT-3T-PnG" id="ppM-Bv-JJw"/>
-                        <outletCollection property="planetNameBtns" destination="9cT-Mu-ncW" id="frb-Q6-IbQ"/>
-                        <outletCollection property="planetNameBtns" destination="rOY-If-llh" id="sx2-T9-CHQ"/>
-                        <outletCollection property="planetNameBtns" destination="92r-k3-diP" id="7yH-JS-wTc"/>
-                        <outletCollection property="planetNameBtns" destination="BdO-uf-KOy" id="mXL-x5-NDh"/>
-                        <outletCollection property="planetNameBtns" destination="Dns-DK-vln" id="w7A-UU-cxX"/>
-                        <outletCollection property="planetNameBtns" destination="BbI-S8-6qJ" id="C7H-ci-yYJ"/>
+                        <outletCollection property="planetColorBtns" destination="hd3-SH-RV3" id="naG-Kz-DaY"/>
+                        <outletCollection property="planetColorBtns" destination="kYp-XS-2Dq" id="fxo-An-fzs"/>
+                        <outletCollection property="planetColorBtns" destination="gZT-dc-j18" id="bVq-FM-tFU"/>
+                        <outletCollection property="planetColorBtns" destination="7kW-ye-sUx" id="kDs-ZP-6mO"/>
+                        <outletCollection property="planetColorBtns" destination="S74-jA-rqx" id="dBo-Yg-3Fw"/>
+                        <outletCollection property="planetColorBtns" destination="hbl-iw-iCk" id="HnW-pv-2Im"/>
+                        <outletCollection property="planetColorBtns" destination="L2u-CJ-Avp" id="Lha-K4-XN3"/>
+                        <outletCollection property="planetColorBtns" destination="t2h-pz-qnY" id="xti-MY-ABs"/>
+                        <outletCollection property="planetNameBtns" destination="hGT-3T-PnG" id="HHd-f4-ecZ"/>
+                        <outletCollection property="planetNameBtns" destination="9cT-Mu-ncW" id="e9E-xC-oOf"/>
+                        <outletCollection property="planetNameBtns" destination="rOY-If-llh" id="TJw-nc-Ezd"/>
+                        <outletCollection property="planetNameBtns" destination="BdO-uf-KOy" id="Rco-jZ-pP5"/>
+                        <outletCollection property="planetNameBtns" destination="92r-k3-diP" id="uaM-1A-b0Z"/>
+                        <outletCollection property="planetNameBtns" destination="Dns-DK-vln" id="WCA-JO-h9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBp-gy-gxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1884,7 +1883,7 @@
     </scenes>
     <resources>
         <image name="backPlanet.png" width="360" height="280"/>
-        <image name="background_01.png" width="2048" height="1536"/>
+        <image name="background_01.png" width="3452" height="2158"/>
         <image name="background_02.png" width="3452" height="2158"/>
         <image name="blue.png" width="128" height="128"/>
         <image name="blueLg.png" width="256" height="256"/>
@@ -2002,9 +2001,7 @@
                 <relationship kind="action" name="colorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="createdColorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>
@@ -2023,8 +2020,9 @@
         <class className="ScratchPadViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
             <relationships>
-                <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
-                <relationship kind="action" name="touchUpInsideNewBtn:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="newTextFieldTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="createNewTextFieldBtn" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="planetColorBtns" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="planetNameBtns" candidateClass="UIButton"/>
             </relationships>

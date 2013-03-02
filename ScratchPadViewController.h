@@ -11,7 +11,8 @@
 @interface ScratchPadViewController : UIViewController
 {
     NSArray *planetColorBtns;
-    NSMutableArray *planetNameBtns;
+    NSArray *planetNameBtns;
+    NSMutableArray *userTextFields;
     
     NSString *numPlanetNamesStr;
 
@@ -20,9 +21,14 @@
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *planetColorBtns;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *planetNameBtns;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *planetNameBtns;
+@property (strong, nonatomic) NSMutableArray *userTextFields;
+@property (weak, nonatomic) IBOutlet UIButton *createNewTextFieldBtn;
 
-- (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)touchUpInsideNewBtn:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)buttonDragInside:(UIButton *)sender forEvent:(UIEvent *)event;
+- (void)textFieldDragInside:(UITextField*)sender forEvent:(UIEvent *)event;
+- (IBAction)newTextFieldTouchUpInside:(UIButton *)sender forEvent:(UIEvent *)event;
+- (void)textFieldTouchDown:(UITextField*)sender forEvent:(UIEvent *)event;
+- (void)textFieldTouchUpInside:(UITextField*)sender forEvent:(UIEvent *)event;
 
 @end

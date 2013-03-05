@@ -34,6 +34,7 @@ NSString * theoryName;
     
     
     self.contentSizeForViewInPopover = CGSizeMake(300.0, 95.0);
+    
 
     //Add buttons
 //    UIImage * buttonbg =[UIImage imageNamed:@"greyButton.png" ];

@@ -10,6 +10,7 @@
 
 #import "PlanetObservationModel.h"
 #import "AppDelegate.h"
+#import "Reason.h"
 //#include "mongo.h"
 
 @implementation PlanetObservationModel
@@ -92,27 +93,37 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
         // does not exist on disk, so create it
         [self.reasonDatabase saveToURL:self.reasonDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
 //            [self setupFetchedResultsController];
-            [self fetchReasonDataIntoDocument:self.reasonDatabase];
+            //[self fetchReasonDataIntoDocument:self.reasonDatabase];
+            NSLog(@"Save complete with new Document created on disk.");
             
         }];
     } else if (self.reasonDatabase.documentState == UIDocumentStateClosed) {
         // exists on disk, but we need to open it
         [self.reasonDatabase openWithCompletionHandler:^(BOOL success) {
 //            [self setupFetchedResultsController];
+              NSLog(@"Opened document already on disk.");
         }];
     } else if (self.reasonDatabase.documentState == UIDocumentStateNormal) {
         // already open and ready to use
 //        [self setupFetchedResultsController];
+         NSLog(@"Document already created, open, and ready to use.");
     }
 }
 
 // 2. Make the photoDatabase's setter start using it
 
-- (void)setPhotoDatabase:(UIManagedDocument *)reasonDatabase
+- (void)setReasonDatabase:(UIManagedDocument *)reasonDatabase
 {
     if (_reasonDatabase != reasonDatabase) {
         _reasonDatabase = reasonDatabase;
         [self useDocument];
+    }
+}
+
+- (UIManagedDocument *)getReasonDatabase
+{
+    if (_reasonDatabase) {
+        return _reasonDatabase;
     }
 }
 
@@ -127,27 +138,64 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
     return 1;
     
 }
+- (NSDictionary *)executeReasonFetch
+{
+    //    query = [NSString stringWithFormat:@"%@&format=json&nojsoncallback=1&api_key=%@", query, FlickrAPIKey];
+    //    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    // NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
+    
+    //    NSString * initData= [[self appDelegate] getReasons];
+    //
+    //
+    //    NSData *jsonData = [initData encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSError *error = nil;
+    //    NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    //    if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
+    //    // NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    //    
+    //    return results;
+}
 
+- (void) insertReasoninDB{
+    // anchor;
+    // flag;
+    // isReadOnly;
+    // lastTimestamp;
+    // origin;
+    // reasonText;
+    // type;
+    
+    NSManagedObjectContext *context = [self.reasonDatabase managedObjectContext ];//[sef managedObjectContext];
+    Reason *reason = [NSEntityDescription
+                                      insertNewObjectForEntityForName:@"Reason"
+                                      inManagedObjectContext:context];
+    reason.anchor = @"Test Anchor";
+    reason.flag = @"Testland";
+    reason.isReadOnly = [NSNumber numberWithBool:NO];
+    reason.lastTimestamp =[NSDate date];
+    reason.origin = [[self appDelegate] getLoggedInUser];
+    reason.reasonText =@"Because I";
+    reason.type=@"observation or theory";
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    // Test listing all FailedBankInfos from the store
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Reason"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (Reason *info in fetchedObjects) {
+        NSLog(@"Name: %@", info.anchor);
+        NSLog(@"Zip: %@", info.reasonText);
+    }
+        
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark XMPP Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSDictionary *)executeReasonFetch
-{
-//    query = [NSString stringWithFormat:@"%@&format=json&nojsoncallback=1&api_key=%@", query, FlickrAPIKey];
-//    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    // NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
-  
-//    NSString * initData= [[self appDelegate] getReasons];
-//    
-//    
-//    NSData *jsonData = [initData encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
-//    NSError *error = nil;
-//    NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-//    if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-//    // NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
-//    
-//    return results;
-}
 
 -(void)identify:(NSString *)planetColor :(NSString *)planetName:(NSString *) reason{
     
@@ -158,6 +206,7 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
     [alertView show];
+    [self insertReasoninDB];
     return;
 
 }

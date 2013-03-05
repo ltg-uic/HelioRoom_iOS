@@ -536,7 +536,6 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
         [lastMessageDict setObject:from forKey:@"sender"];
         
         if(_xmppBaseNewMessageDelegate!=nil){
-//            NSLog(@"xmppBaseNewMessageDelegate not nil.");
             [_xmppBaseNewMessageDelegate newMessageReceived:lastMessageDict];
         }
     }

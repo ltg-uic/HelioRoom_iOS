@@ -61,6 +61,11 @@
     self.uranusDropArea = [[NSMutableArray alloc] initWithCapacity:5];
     self.neptuneDropArea = [[NSMutableArray alloc] initWithCapacity:5];
     //self.plutoDropArea = [[NSMutableArray alloc] initWithCapacity:5];
+    
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Reason Database"];
+    [self.planetModel setReasonDatabase:[[UIManagedDocument alloc] initWithFileURL:url]]; // setter will create this for us on disk
 
 }
 

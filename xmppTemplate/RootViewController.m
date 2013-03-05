@@ -137,7 +137,7 @@
 //        
 //    }
     
-    NSLog(@"message %@", msg);
+    NSLog(@"newMessageRecieved method. The following: %@", msg);
 }
 
 

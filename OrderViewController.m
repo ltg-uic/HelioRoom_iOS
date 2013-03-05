@@ -59,6 +59,10 @@ NSString * mostRecentDropColor=@"";
     self.pinkDropArea = [[NSMutableArray alloc] initWithCapacity:7];
     self.greenDropArea = [[NSMutableArray alloc] initWithCapacity:7];
     self.purpleDropArea = [[NSMutableArray alloc] initWithCapacity:7];
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Reason Database"];
+    [self.planetModel setReasonDatabase:[[UIManagedDocument alloc] initWithFileURL:url]]; // setter will create this for us on disk
 }
 
 - (void)didReceiveMemoryWarning

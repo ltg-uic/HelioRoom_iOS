@@ -61,7 +61,6 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
 //    [[NSUserDefaults standardUserDefaults] setObject:@"fake2@localhost" forKey:kXMPPmyJID];
 //    [[NSUserDefaults standardUserDefaults] setObject:@"fake2" forKey:kXMPPmyPassword];
     // Configure logging framework
@@ -85,10 +84,29 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
         successfullLogin = YES;
         DDLogVerbose(@"Already connected. Proceeding to main app");
         //[self showChooseFirstView:self.window.rootViewController];
+        
+        // TODO: cannot show modal view controller from appDelegate.
+        // causing: "Warning: Attempt to present <UITabBarController: 0x769db60> on <RootViewController: 0x7629150> whose view is not in the window hierarchy!"
+        // This needs to be called from view
+        // controller that the modal vcs are being called from.  I.e. rootviewcontroller?
         [self showTabBarView:self.window.rootViewController];
     }
     
     [self tabBarController].delegate = self;
+    
+    NSLog(@"AppDelegate didFinishLaunchingWithOptions");
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
+    NSLog(@"AppDelegate shouldRestoreApplicationState");
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+    NSLog(@"AppDelegate shouldSaveApplicationState");
+    return YES;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,6 +128,9 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    NSLog(@"AppDelegate applicationDidEnterBackground");
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -302,6 +323,7 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
 
 - (BOOL)connect
 {
+#if 0
     NSString *myJID = [[NSUserDefaults standardUserDefaults] stringForKey:kXMPPmyJID];
 	NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:kXMPPmyPassword];
     
@@ -339,6 +361,7 @@ NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to loca
         
 		return NO;
 	}
+#endif
     
     DDLogVerbose(@"No Error Connecting to XMPP Stream Server %@. But authentication may fail later.", xmppServer);
 	return YES;

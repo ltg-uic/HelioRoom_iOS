@@ -1019,22 +1019,12 @@
                                 <rect key="frame" x="0.0" y="45" width="770" height="84"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </imageView>
-<<<<<<< HEAD
                             <button autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" tag="63" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HVg-jw-hzy">
                                 <rect key="frame" x="35" y="51" width="73" height="73"/>
-=======
-                            <button autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" alpha="0.70000000000000007" tag="63" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVg-jw-hzy">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="TaH-bA-HCN"/>
-                                    <constraint firstAttribute="width" constant="73" id="c7T-Q6-B9I"/>
-                                </constraints>
->>>>>>> Brenda Test
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <color key="tintColor" red="0.0" green="0.25" blue="0.21777667458740468" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Mercury" backgroundImage="planet_bg.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1896,13 +1886,8 @@
     </scenes>
     <resources>
         <image name="backPlanet.png" width="360" height="280"/>
-<<<<<<< HEAD
         <image name="background_01.png" width="3452" height="2158"/>
         <image name="background_02.png" width="3452" height="2158"/>
-=======
-        <image name="background_01.png" width="2048" height="1536"/>
-        <image name="background_02.png" width="2048" height="1536"/>
->>>>>>> Brenda Test
         <image name="blue.png" width="128" height="128"/>
         <image name="blueLg.png" width="256" height="256"/>
         <image name="brown.png" width="128" height="128"/>
@@ -1945,7 +1930,6 @@
         <image name="yellow.png" width="128" height="128"/>
         <image name="yellowLg.png" width="256" height="256"/>
     </resources>
-<<<<<<< HEAD
     <classes>
         <class className="ChooseInFrontViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseInFrontViewController.h"/>
@@ -2076,8 +2060,6 @@
             </relationships>
         </class>
     </classes>
-=======
->>>>>>> Brenda Test
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -83,8 +83,6 @@ NSString * mostRecentDropColor=@"";
 //EVENT HANDLERS
 - (IBAction)colorDragInside:(UIButton *)sender forEvent:(UIEvent *)event {
     
-    NSLog(@"OrderViewController colorDragInside");
-    
     //  NSString * planetName = [self tagToPlanet:sender.tag];
     
     //NSLog(@"drag inside event");
@@ -97,7 +95,6 @@ NSString * mostRecentDropColor=@"";
 
 - (IBAction)colorTouchUpInside:(UIButton *)sender forEvent:(UIEvent *)event  {
     
-    NSLog(@"OrderViewController colorTouchUpInside");
     //if in view area of planet. Create new button
     UIButton * newPlanet =[UIButton buttonWithType:UIButtonTypeRoundedRect];
     [newPlanet setTitle:[self getColor:sender.tag] forState:UIControlStateNormal];

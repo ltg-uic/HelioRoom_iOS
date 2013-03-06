@@ -44,7 +44,7 @@
     if( l != nil ) {
         loginTextField.text = l;
     } else {
-        loginTextField.text = @"@54.243.60.48";
+        loginTextField.text = @"@ltg.evl.uic.edu";
     }
     
     if( p != nil ) {

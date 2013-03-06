@@ -18,7 +18,7 @@
 
 @synthesize reasonDatabase = _reasonDatabase;
 
-const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
+//const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
 //const char * mogodbServer = "131.193.79.212"; //set to ip of your mongodbServer
 
 

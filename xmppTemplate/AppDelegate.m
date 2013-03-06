@@ -51,9 +51,11 @@ NSString *const kXMPPmyJID = @"kXMPPmyJID"; //DO NOT CHANGE
 NSString *const kXMPPmyPassword = @"kXMPPmyPassword"; //DO NOT CHANGE
 
 //NSString *const xmppServer = @"ltg.evl.uic.edu"; //set to name address of your xmppServer OR use below
-//NSString *const xmppServer = @"169.254.225.196";  //set to ip address of your xmppServer
-NSString *const xmppServer = @"localhost";  //set to ip address of your xmppServer
-NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to location of chat room
+NSString *const xmppServer = @"54.243.60.48";  //set to ip address of your xmppServer
+//NSString *const xmppServer = @"localhost";  //set to ip address of your xmppServer
+//NSString *const chatLocation = @"helioroom@conference.ltgmacbook"; //set to location of chat room
+NSString *const chatLocation = @"ioshelio-sp-13@conference.54.243.60.48"; //set to location of chat room
+
 
 //NSString *const chatLocation = @"helio-sp-13@conference.ltg.evl.uic.edu"; //set to location of chat room
 

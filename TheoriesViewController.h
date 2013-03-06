@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TheoryReasonViewController.h"
+#import "PlanetObservationModel.h"
 
-@interface TheoriesViewController : UIViewController<TheoryReasonDelegate>
+@interface TheoriesViewController : UIViewController<TheoryReasonDelegate, OthersTheoryDelegate>
 {
     UIPopoverController * _reasonPopover;
 
@@ -55,4 +56,7 @@
 -(CGPoint)isValidDrop:(UIButton *)sender:(UIEvent *)event:(UIButton *)newPlanet;
 -(NSString *)getDropAreaName:(UIButton *)sender:(UIEvent *)event;
 -(CGPoint)getDropAreaOpening:(int) i:(UIButton *)newPlanet;
+
+//OthersTheoryDelegate METHODS
+- (void)addOthersTheory:(NSString *) color:(NSString *) anchor:(NSString *)reason;
 @end

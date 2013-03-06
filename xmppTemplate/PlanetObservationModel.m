@@ -9,18 +9,21 @@
  //TODO check for conflicting results?
 
 #import "PlanetObservationModel.h"
-#import "AppDelegate.h"
 #import "Reason.h"
-//#include "mongo.h"
+#import "SBJson.h"
 
 @implementation PlanetObservationModel
 
 
 @synthesize reasonDatabase = _reasonDatabase;
+@synthesize othersOrderDelegate = _othersOrderDelegate;
+@synthesize othersTheoryDelegate = _othersTheoryDelegate;
 
-const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
-//const char * mogodbServer = "131.193.79.212"; //set to ip of your mongodbServer
-
+-(id)init{
+    self=[super init];
+    self.appDelegate.xmppBaseNewMessageDelegate=self;
+    return self;
+}
 
 - (UIManagedDocument *)reasonDatabase
 {
@@ -188,8 +191,17 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (Reason *info in fetchedObjects) {
-        NSLog(@"Name: %@", info.anchor);
-        NSLog(@"Zip: %@", info.reasonText);
+        NSString *anchor = [NSString stringWithFormat:@"Anchor: %@", info.anchor];
+        NSString *reason = [NSString stringWithFormat:@"Reason: %@", info.reasonText];
+        NSLog(anchor);
+        NSLog(reason);
+        
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"DB OBJECT"
+//                                                            message:[NSString stringWithFormat:@"%@ \n %@", anchor,reason]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"Ok"
+//                                                  otherButtonTitles:nil];
+//        [alertView show];
     }
         
 }
@@ -229,5 +241,139 @@ const char * mogodbServer = "169.254.225.196"; //set to ip of your mongodbServer
 -(int)theoryReasonGroupMessage:(NSString *)reason{
     return [[self appDelegate] theoryReasonGroupMessage:reason];
 }
+
+
+#pragma mark - XMPP delegate methods
+
+- (void)newMessageReceived:(NSDictionary *)messageContent{
+    NSLog(@"newMessageReceived");
+    NSString *msg = [messageContent objectForKey:@"msg"];
+    
+    SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+    NSError *error = nil;
+    NSDictionary *jsonObjects = [jsonParser objectWithString:msg error:&error];
+    
+    
+    if( jsonObjects != nil){
+        NSString *destination = [jsonObjects objectForKey:@"destination"];
+        NSString *origin = [jsonObjects objectForKey:@"destination"];
+        
+        if(![origin isEqualToString:[[self appDelegate] getLoggedInUser]]){ //Don't work with self reported event
+            NSString *event = [jsonObjects objectForKey:@"event"];
+            NSDictionary *payload = [jsonObjects objectForKey:@"payload"];
+            NSString *color= [payload objectForKey:@"color"];
+            NSString *anchor= [payload objectForKey:@"anchor"];
+            NSString *reason= [payload objectForKey:@"reason"];
+            
+            if( [event isEqualToString:@"new_observation"] ) {
+                if(_othersOrderDelegate!=nil){
+                    [_othersOrderDelegate addOthersOrder:color:anchor:reason];
+                }
+
+            }
+            else if( [event isEqualToString:@"remove_theory"] ) {
+           
+            }
+            else if( [event isEqualToString:@"new_theory"] ) {
+                if(_othersTheoryDelegate!=nil){
+                    [_othersTheoryDelegate addOthersTheory:color:anchor:reason];
+                }
+
+            }
+            else if( [event isEqualToString:@"delete_theory"] ) {
+                
+            }
+            else if( [event isEqualToString:@"init_helio_diff "] &&
+                    [destination isEqualToString:[[self appDelegate] getLoggedInUser]]) {
+                
+            }
+            else if( [event isEqualToString:@"init_helio_all"] ) {
+                
+            }
+            
+            
+            //            [self resetGame];
+            //        } else if( [event isEqualToString:@"game_stop"] ) {
+            //            isRUNNING = NO;
+            //            isGAME_STOPPED = YES;
+            //        }
+            //
+            //        if( ! [destination isEqualToString:[self origin]] )
+            //            return;
+            //
+            //        if( event != nil) {
+            //            if( [event isEqualToString:@"patch_init_data"]){
+            //
+            //                [[DataStore sharedInstance] resetPlayerCount];
+            //
+            //                NSDictionary *payload = [jsonObjects objectForKey:@"payload"];
+            //
+            //                feedRatio = @([[payload objectForKey:@"feed-ratio"] integerValue]);
+            //
+            //                NSArray *tags = [payload objectForKey:@"tags"];
+            //
+            //                for (NSDictionary *tag in tags) {
+            //
+            //                    NSString *tagId = [tag objectForKey:@"tag"];
+            //                    NSString *cluster = [tag objectForKey:@"cluster"];
+            //                    NSString *color = [tag objectForKey:@"color"];
+            //
+            //                    [[DataStore sharedInstance] addPlayerWithRFID:tagId withCluster:cluster withColor:color];
+            //                }
+            //
+            //                [[DataStore sharedInstance] printPlayers];
+            //
+            //                [[DataStore sharedInstance] addPlayerSpacing];
+            //
+            //
+            //
+            //                //init the graph
+            //                if( hasGraph) {
+            //                    [graph reloadData];
+            //                } else {
+            //                    hasGraph = YES;
+            //
+            //                    [self initPlot];
+            //                }
+            //
+            //
+            //            } else if( [event isEqualToString:@"rfid_update"] ){
+            //                NSDictionary *payload = [jsonObjects objectForKey:@"payload"];
+            //
+            //
+            //                NSArray *arrivals = [payload objectForKey:@"arrivals"];
+            //                NSArray *departures = [payload objectForKey:@"departures"];
+            //
+            //                if( arrivals != nil && arrivals.count > 0 ) {
+            //                    for (NSString *rfid in arrivals) {
+            //                        [self addRFID:rfid];
+            //                    }
+            //
+            //                    if( (isRUNNING == NO && isGAME_STOPPED == NO)) {
+            //                        isRUNNING = YES;
+            //                        [self startTimer];
+            //
+            //                    }
+            //                }
+            //
+            //                if( departures != nil && departures.count > 0 ) {
+            //                    for (NSString *rfid in departures) {
+            //                        [self sendOutScoreUpdateWith:rfid];
+            //                        [self resetScoreByRFID: rfid];
+            //                        [self removeRFID:rfid];
+            //                        
+            //                    }
+            //                }
+            //            }
+            //            
+            //            
+            //        }
+        }
+    }
+    
+    NSLog(@"newMessageRecieved method. The following: %@", msg);
+}
+
+
 
 @end

@@ -7,9 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
-@interface PlanetObservationModel : NSObject
+@protocol OthersOrderDelegate
+- (void)addOthersOrder:(NSString *) color:(NSString *) anchor:(NSString *)reason;
+@end
+
+@protocol OthersTheoryDelegate
+- (void)addOthersTheory:(NSString *) color:(NSString *) anchor:(NSString *)reason;
+@end
+
+@interface PlanetObservationModel : NSObject<XMPPBaseNewMessageDelegate>{
+    
+}
+
 @property (nonatomic, strong) UIManagedDocument *reasonDatabase;  // Model is a Core Data database of reasons
+@property (nonatomic, retain) id <OthersOrderDelegate> othersOrderDelegate;
+@property (nonatomic, retain) id <OthersTheoryDelegate> othersTheoryDelegate;
 
 -(int)isInFrontOf:(NSString *)planet1:(NSString *)planet2:(NSString *)reason;
 -(void)identify:(NSString *)planetColor :(NSString *)planetName:(NSString *) reason;
@@ -20,5 +34,8 @@
 -(int)inFrontGroupMessage:(NSString *)planet1:(NSString *)planet2:(NSString *) reason;
 -(int)orderReasonGroupMessage:(NSString *)reason;
 -(int)theoryReasonGroupMessage:(NSString *)reason;
+
+//XMPP Delegate
+- (void)newMessageReceived:(NSDictionary *)messageContent;
 
 @end

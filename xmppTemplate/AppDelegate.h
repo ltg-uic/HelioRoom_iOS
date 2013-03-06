@@ -12,7 +12,7 @@
 
 #import "XMPPFramework.h"
 #import "XMPPMessage+XEP0045.h"
-#import "XMPPBaseOnlineDelegate.h"
+
 
 @protocol XMPPBaseNewMessageDelegate
 - (void)newMessageReceived:(NSDictionary *)messageContent;

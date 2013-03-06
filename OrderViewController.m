@@ -8,7 +8,7 @@
 
 #import "OrderViewController.h"
 #import "AppDelegate.h"
-#import "PlanetObservationModel.h"
+
 
 @interface OrderViewController ()
 @property (nonatomic,strong) PlanetObservationModel *planetModel;
@@ -43,7 +43,6 @@ NSString * mostRecentDropColor=@"";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -63,6 +62,7 @@ NSString * mostRecentDropColor=@"";
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Default Reason Database"];
     [self.planetModel setReasonDatabase:[[UIManagedDocument alloc] initWithFileURL:url]]; // setter will create this for us on disk
+    self.planetModel.othersOrderDelegate =self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -301,6 +301,7 @@ NSString * mostRecentDropColor=@"";
     return CGPointMake(0, 0);
 }
 
+#pragma mark - OrderReason Popover delegate methods
 //Delegate Functions
 -(void) cancel{
     [self.reasonPopover dismissPopoverAnimated:YES];
@@ -314,4 +315,8 @@ NSString * mostRecentDropColor=@"";
     [self.reasonPopover dismissPopoverAnimated:YES];
 }
 
+#pragma mark - OthersOrder delegate methods
+- (void)addOthersOrder:(NSString *) color:(NSString *) anchor:(NSString *)reason{
+    NSLog(@"Another Students Order: \n reason %@ color: %@ name:%@",reason,color,anchor);
+}
 @end

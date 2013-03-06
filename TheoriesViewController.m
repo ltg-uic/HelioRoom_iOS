@@ -8,7 +8,6 @@
 
 #import "TheoriesViewController.h"
 #import "AppDelegate.h"
-#import "PlanetObservationModel.h"
 
 
 @interface TheoriesViewController ()
@@ -66,6 +65,7 @@
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Default Reason Database"];
     [self.planetModel setReasonDatabase:[[UIManagedDocument alloc] initWithFileURL:url]]; // setter will create this for us on disk
+    self.planetModel.othersTheoryDelegate=self;
 
 }
 
@@ -336,6 +336,7 @@
     return CGPointMake(0, 0);
 }
 
+#pragma mark - TheoryReason Popover delegate methods
 //Delegate Functions
 -(void) cancel{
     [self.reasonPopover dismissPopoverAnimated:YES];
@@ -347,5 +348,10 @@
     //[[self planetModel] orderReasonGroupMessage:reason];
     [self.reasonPopover dismissPopoverAnimated:YES];
     
+}
+
+#pragma mark - OthersTheory delegate methods
+- (void)addOthersTheory:(NSString *) color:(NSString *) anchor:(NSString *)reason{
+     NSLog(@"Another Students Theory: \n reason %@ color: %@ name:%@",reason,color,anchor);
 }
 @end

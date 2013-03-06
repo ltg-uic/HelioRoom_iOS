@@ -11,9 +11,5 @@
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
-@interface RootViewController:UIViewController<XMPPBaseNewMessageDelegate>{
-    
-}
-
-- (void)newMessageReceived:(NSDictionary *)messageContent;
+@interface RootViewController:UIViewController
 @end

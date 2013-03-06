@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "OrderReasonViewController.h"
+#import "PlanetObservationModel.h"
 
-@interface OrderViewController : UIViewController<OrderReasonDelegate>
+@interface OrderViewController : UIViewController<OrderReasonDelegate, OthersOrderDelegate>
 {
     //OrderReasonViewController * _reasonPicker;
     UIPopoverController * _reasonPopover;
@@ -61,5 +62,9 @@
 -(UIImageView *)getDropPlanetObject:(int)i;
 -(CGPoint)isValidDrop:(UIButton *)sender:(UIEvent *)event:(UIButton *)newColor;
 -(CGPoint)getDropAreaOpening:(int) i:(UIButton *)newColor;
+
+
+//OthersOrderDelegate METHODS
+- (void)addOthersOrder:(NSString *) color:(NSString *) anchor:(NSString *)reason;
 
 @end

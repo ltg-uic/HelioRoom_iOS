@@ -383,7 +383,6 @@
 		849D0AE816B436F200F8002D /* TheoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoriesViewController.m; sourceTree = "<group>"; };
 		849D0AE916B436F200F8002D /* TheoryReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheoryReasonViewController.h; sourceTree = "<group>"; };
 		849D0AEA16B436F200F8002D /* TheoryReasonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheoryReasonViewController.m; sourceTree = "<group>"; };
-		84A1AF6916D954D3005C1AC1 /* XMPPBaseOnlineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPBaseOnlineDelegate.h; sourceTree = "<group>"; };
 		84CB9534164C1BA900D01390 /* grabPlanet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabPlanet.png; sourceTree = "<group>"; };
 		84CB9536164C23CF00D01390 /* submitButtonText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = submitButtonText.png; path = ../submitButtonText.png; sourceTree = "<group>"; };
 		84CC866C162341B0004484D7 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
@@ -900,7 +899,6 @@
 		84AECEB316856C420070B419 /* HelioRoom */ = {
 			isa = PBXGroup;
 			children = (
-				84A1AF6916D954D3005C1AC1 /* XMPPBaseOnlineDelegate.h */,
 				849D0AE716B436F200F8002D /* TheoriesViewController.h */,
 				849D0AE816B436F200F8002D /* TheoriesViewController.m */,
 				849D0AE916B436F200F8002D /* TheoryReasonViewController.h */,

@@ -199,6 +199,12 @@
 		84F352D216507EAA00DEB764 /* pinkLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352CC16507EAA00DEB764 /* pinkLg.png */; };
 		84F352D316507EAA00DEB764 /* purpleLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352CD16507EAA00DEB764 /* purpleLg.png */; };
 		84F9826E16B43F0A00804BE4 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9826D16B43F0A00804BE4 /* OrderViewController.m */; };
+		8527722D16D2DB430010843D /* HR_Icon-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527722C16D2DB430010843D /* HR_Icon-2x.png */; };
+		8527723116D2DD460010843D /* Helio_Icon2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527723016D2DD460010843D /* Helio_Icon2X.png */; };
+		8527723316D2E11B0010843D /* Helio_Icon2_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527723216D2E11B0010843D /* Helio_Icon2_2x.png */; };
+		8527723516D2E12C0010843D /* Helio_Icon2_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527723416D2E12C0010843D /* Helio_Icon2_2x.png */; };
+		8527723716D2E6D10010843D /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527723616D2E6D00010843D /* Default-Landscape@2x~ipad.png */; };
+		8527723916D2E6D60010843D /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8527723816D2E6D60010843D /* Default-Portrait@2x~ipad.png */; };
 		852DCB1516B87AA5002D4B50 /* planet_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB1416B87AA5002D4B50 /* planet_bg.png */; };
 		852DCB3216B8895F002D4B50 /* p_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2A16B8895F002D4B50 /* p_blue.png */; };
 		852DCB3316B8895F002D4B50 /* p_brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2B16B8895F002D4B50 /* p_brown.png */; };
@@ -469,6 +475,12 @@
 		84F352CD16507EAA00DEB764 /* purpleLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleLg.png; sourceTree = "<group>"; };
 		84F9826C16B43F0A00804BE4 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = SOURCE_ROOT; };
 		84F9826D16B43F0A00804BE4 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = SOURCE_ROOT; };
+		8527722C16D2DB430010843D /* HR_Icon-2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HR_Icon-2x.png"; sourceTree = "<group>"; };
+		8527723016D2DD460010843D /* Helio_Icon2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Helio_Icon2X.png; path = ../../../../../Dropbox/HelioRoom/Tablet_graphics/Helio_Icon2X.png; sourceTree = "<group>"; };
+		8527723216D2E11B0010843D /* Helio_Icon2_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Helio_Icon2_2x.png; path = ../../../../../Dropbox/HelioRoom/Tablet_graphics/Helio_Icon2_2x.png; sourceTree = "<group>"; };
+		8527723416D2E12C0010843D /* Helio_Icon2_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Helio_Icon2_2x.png; sourceTree = "<group>"; };
+		8527723616D2E6D00010843D /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		8527723816D2E6D60010843D /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		852DCB1416B87AA5002D4B50 /* planet_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_bg.png; path = Planets/planet_bg.png; sourceTree = "<group>"; };
 		852DCB2A16B8895F002D4B50 /* p_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_blue.png; sourceTree = "<group>"; };
 		852DCB2B16B8895F002D4B50 /* p_brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_brown.png; sourceTree = "<group>"; };
@@ -512,8 +524,15 @@
 		700C3A42160427DA005A9E34 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				8403039716E2A7F700B83CFE /* Reason.h */,
 				8403039816E2A7F700B83CFE /* Reason.m */,
+=======
+				8527723816D2E6D60010843D /* Default-Portrait@2x~ipad.png */,
+				8527723616D2E6D00010843D /* Default-Landscape@2x~ipad.png */,
+				8527723416D2E12C0010843D /* Helio_Icon2_2x.png */,
+				8527722C16D2DB430010843D /* HR_Icon-2x.png */,
+>>>>>>> Brenda Test
 				84D680AD16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld */,
 				855A893D16B8327C002C8FB7 /* Helio_Icon2X.png */,
 				8401631B16499209002F9F9C /* icon_144.png */,
@@ -1112,6 +1131,8 @@
 		858A62C316C2D33000AC05F7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				8527723216D2E11B0010843D /* Helio_Icon2_2x.png */,
+				8527723016D2DD460010843D /* Helio_Icon2X.png */,
 				85991BE116CAFF8A0071621A /* tag_gray1.png */,
 				85991BDB16CABC200071621A /* planetRow.png */,
 				858A62C416C2D3D800AC05F7 /* tag_gray.png */,
@@ -1249,6 +1270,12 @@
 				85991BDE16CABDFE0071621A /* background_01.png in Resources */,
 				85991BE016CABE450071621A /* background_02.png in Resources */,
 				85991BE216CAFF8A0071621A /* tag_gray1.png in Resources */,
+				8527722D16D2DB430010843D /* HR_Icon-2x.png in Resources */,
+				8527723116D2DD460010843D /* Helio_Icon2X.png in Resources */,
+				8527723316D2E11B0010843D /* Helio_Icon2_2x.png in Resources */,
+				8527723516D2E12C0010843D /* Helio_Icon2_2x.png in Resources */,
+				8527723716D2E6D10010843D /* Default-Landscape@2x~ipad.png in Resources */,
+				8527723916D2E6D60010843D /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -125,6 +125,9 @@ NSString *const chatLocation = @"ioshelio-sp-13@conference.54.243.60.48"; //set 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    // save defaults upon exitting
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

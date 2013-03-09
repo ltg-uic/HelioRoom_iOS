@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class TouchTextField;
+
+@protocol TouchTextFieldDelegate
+
+-(void) saveTouchTextFieldInfo:(TouchTextField *) touchTextField;
+
+@end
+
 @interface TouchTextField : UITextField
 
-@property(strong, nonatomic) UIView *clearView;
+@property (nonatomic, assign) id delegate;
 
 @end

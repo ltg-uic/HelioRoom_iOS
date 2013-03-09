@@ -10,39 +10,41 @@
 #import "AppDelegate.h"
 
 
-@interface ScratchPadViewController ()
+// reset button         -> tag  0
+// trash button         -> tag  1
+// new textfield button -> tag  3
+// mercury-neptune      -> tag 10-17
+// red                  -> tag 20
+// yellow               -> tag 21
+// brown                -> tag 22
+// pink                 -> tag 23
+// purple               -> tag 24
+// green                -> tag 25
+// orange               -> tag 26
+// blue                 -> tag 27
+// new user TextFields start with tag 30
 
-/*
- enum BUTTONS
- {
- RED_BTN,
- GREEN_BTN,
- ORANGE_BTN,
- BLUE_BTN,
- PURPLE_BTN,
- BROWN_BTN,
- YELLOW_BTN,
- PINK_BTN,
- MERCURY_BTN,
- VENUS_BTN,
- EARTH_BTN,
- MARS_BTN,
- JUPITER_BTN,
- SATURN_BTN,
- URANUS_BTN,
- NEPTUNE_BTN,
- BLANK_BTN
- };
- */
-
+typedef enum
 {
-    int numPlanetNameBtns;
-    int numPlanetColorBtns;
+    RESET=0,
+    TRASH=1,
+    BLANK_TEXTFIELD=3,
+    MERCURY=10, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE,
+    RED=20, YELLOW, BROWN, PINK, PURPLE, GREEN, ORANGE, BLUE,
+    USER_TEXTFIELDS_BEGIN=30
+    
+} Tags;
+
+
+@interface ScratchPadViewController ()
+{
+    BOOL textFieldsAreLoaded;
 }
 
-@property (strong, nonatomic) NSString *numPlanetNamesStr;
+@property (strong, nonatomic) NSString *strNumUserTextFields;
 
 @end
+
 
 @implementation ScratchPadViewController
 
@@ -75,20 +77,65 @@
 	return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
+    NSLog(@"------ initWithCoder");
+    if (self = [super initWithCoder:aDecoder])
     {
+       // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
         // Custom initialization
+        _strNumUserTextFields = @"numOfUserTextFields";
+        
+        //[defaults setInteger:0 forKey:_strNumUserTextFields];   // no user textfields at first launch
+        
+    // test string version
+        //NSLog(@"initWithCoder: set numUserTextFields to 0");
+        //[defaults setObject:@"0" forKey:@"test"];
+        
+        // initialize userTextFields array
+        //_userTextFields = _userTextFields?_userTextFields:[[NSMutableArray alloc] init];
+        
+        textFieldsAreLoaded = NO;
     }
+    
     return self;
+}
+
+- (void)viewDidLoad
+{
+    NSLog(@"------ viewDidLoad");
+    [super viewDidLoad];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *hasLaunchedBefore= @"hasLaunchedBefore";
+    
+    // check if first launch
+    if ([defaults boolForKey:hasLaunchedBefore] == YES)
+    {
+        if (textFieldsAreLoaded == NO)
+        {
+            [self loadTextFields];      // load these only once, because they are actually getting created
+            textFieldsAreLoaded = YES;
+        }
+    }
 }
 
 - (void)viewDidLayoutSubviews
 {
+    NSLog(@"------ viewDidLayoutSubviews");
     [super viewDidLayoutSubviews];
     
+    [self initializeDefaultData];
+    
+    // needs this *here* or else runtime error
+    //[self.view layoutSubviews];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"------ viewDidAppear");
+    [super viewDidAppear:animated];
     [self initializeDefaultData];
 }
 
@@ -96,10 +143,8 @@
 {
     [super viewDidDisappear:animated];
     
-    [self saveDefaultData]; // restore default locations
-    
-    // synchronize to write defaults
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self saveDefaultData];                              // save default locations
+    [[NSUserDefaults standardUserDefaults] synchronize]; // synchronize to write defaults
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,9 +156,46 @@
 - (void)initializeDefaultData
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    _numPlanetNamesStr = @"numPlanetNameBtns";
-    numPlanetColorBtns = 8;
+    NSString *hasLaunchedBefore= @"hasLaunchedBefore";
     
+    // check if first launch
+    if ([defaults boolForKey:hasLaunchedBefore] == YES)
+    {
+        // load default data here after views are created and added (after viewDidLoad)
+        // but before they are shown (before viewDidAppear etc))
+        [self loadDefaultData];
+        
+        /*
+        if (textFieldsAreLoaded == NO)
+        {
+            [self loadTextFields];      // load these only once, because they are actually getting created
+            textFieldsAreLoaded = YES;
+        }
+         */
+    }
+    else
+    {
+        [defaults setBool:YES forKey:hasLaunchedBefore];
+        [defaults setInteger:0 forKey:_strNumUserTextFields];   // no user textfields at first launch
+        
+    // test string version
+        //NSLog(@"initializeDefaultData: set numUserTextFields to 0");
+    //[defaults setObject:@"0" forKey:@"test"];
+    
+        [self saveDefaultData]; // if it is then save initial center info for all the buttons
+        [defaults synchronize]; // write it down
+        
+        textFieldsAreLoaded = YES;      // first time, so no textFields to load
+        //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: First launch!");
+    }
+    
+    // initialize userTextFields array
+    _userTextFields = _userTextFields?_userTextFields:[[NSMutableArray alloc] init];
+}
+
+/*- (void)initializeDefaultData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // check if first launch
     NSString *hasLaunchedBefore= @"hasLaunchedBefore";
@@ -122,19 +204,21 @@
         // load default data here after views are created and added (after viewDidLoad)
         // but before they are shown (before viewDidAppear etc))
         [self loadDefaultData];
+        [self loadTextFields];
         
         //NSLog(@"ScratchPadViewController viewDidLayoutSubviews: not the first launch!");
     }
     else
     {
         [defaults setBool:YES forKey:hasLaunchedBefore];
+        [defaults setInteger:0 forKey:_strNumUserTextFields];   // no user textfields at first launch
         
         // if it is then save initial center info for all the buttons
         [self saveDefaultData];
         
         // set initial number of planet name buttons
-        numPlanetNameBtns = 9;
-        [defaults setInteger:numPlanetNameBtns forKey:_numPlanetNamesStr];
+        //numPlanetNameBtns = 9;
+        //[defaults setInteger:numPlanetNameBtns forKey:_numPlanetNamesStr];
         
         // write it down
         [defaults synchronize];
@@ -143,9 +227,8 @@
     }
     
     // initialize userTextFields array
-    //_userTextFields = _userTextFields?_userTextFields:[NSMutableArray array];
     _userTextFields = _userTextFields?_userTextFields:[[NSMutableArray alloc] init];
-}
+}*/
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,6 +238,12 @@
 //   after the Scratch Pad tab is no longer active, app is put in
 //   background, or quit
 //
+
+-(void)saveTouchTextFieldInfo:(TouchTextField *)textfield
+{
+    NSLog(@"ScratchPadViewController saveTouchTextFieldInfo");
+    [self saveTextField:textfield];
+}
 
 -(void)saveDefaultDataForButton:(UIButton *)sender
 {
@@ -181,6 +270,20 @@
     //NSLog(@"ScratchPadViewController loadDefaultDataForButton: getCenter (%.f, %.f)", sender.center.x, sender.center.y);
 }
 
+-(void)saveTextField:(TouchTextField *)textfield
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *tag = [NSString stringWithFormat:@"%d", [textfield tag]];
+    CGPoint origin = textfield.frame.origin;
+    CGSize size = textfield.frame.size;
+    NSString *textFieldString = [NSString stringWithFormat:@"%@ %.f %.f %.f %.f", textfield.text, origin.x, origin.y, size.width, size.height];
+    
+    [defaults setObject:textFieldString forKey:tag];
+    
+    NSLog(@"ScratchPadViewController saveTextField: textfield %@ (%@)", tag, textFieldString);
+}
+
 -(void)saveDefaultData
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -202,16 +305,6 @@
         
         //NSLog(@"ScratchPadViewController saveDefaultData: btn %@ (%.f,%.f)", tag, btn.center.x, btn.center.y);
     }
-    
-    /*
-     for (UITextField *textfield in _userTextFields)
-     {
-     NSString *tag = [NSString stringWithFormat:@"%d", [textfield tag]];
-     NSString *pointString = NSStringFromCGPoint(textfield.center);
-     [defaults setObject:pointString forKey:tag];
-     
-     NSLog(@"ScratchPadViewController saveDefaultData: textfield %@ (%.f,%.f)", tag, textfield.center.x, textfield.center.y);
-     }*/
 }
 
 -(void)loadDefaultData
@@ -219,7 +312,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // get number of buttons
-    numPlanetNameBtns = [defaults integerForKey:_numPlanetNamesStr];
+    //numPlanetNameBtns = [defaults integerForKey:_numPlanetNamesStr];
     
     // load positions for planet color buttons
     for (UIButton *btn in _planetColorBtns)
@@ -229,7 +322,7 @@
         CGPoint savedCenter = CGPointFromString(pointString);
         
         [btn setCenter:savedCenter];
-        //NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
+        NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
     }
     
     // load positions for planet name buttons
@@ -240,20 +333,8 @@
         CGPoint savedCenter = CGPointFromString(pointString);
         
         [btn setCenter:savedCenter];
-        //NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
+        NSLog(@"ScratchPadViewController loadDefaultData: btn %d center(%.f, %.f)", btn.tag, btn.center.x, btn.center.y);
     }
-    
-    /*
-     // load positions for user-defined textfields
-     for (UITextField *textfield in _userTextFields)
-     {
-     NSString *tag = [NSString stringWithFormat:@"%d", [textfield tag]];
-     NSString *pointString = [defaults stringForKey:tag];
-     CGPoint savedCenter = CGPointFromString(pointString);
-     
-     [textfield setCenter:savedCenter];
-     NSLog(@"ScratchPadViewController loadDefaultData: textfield %@ (%.f,%.f)", tag, textfield.center.x, textfield.center.y);
-     }*/
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,99 +342,117 @@
 // Subview creation
 //
 
-/*
- -(void)addNewBtn:(UIButton*)button
- {
- // create a new blank button that user can write a label in
- UIButton *newButton= [UIButton buttonWithType:UIButtonTypeRoundedRect];
- 
- [newButton addTarget:self action:@selector(objectDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
- [newButton setTitle:@"blah!" forState:UIControlStateNormal];
- newButton.frame = [button frame];
- newButton.tag = numPlanetColorBtns + numPlanetNameBtns;
- [newButton setBackgroundImage:[UIImage imageNamed:@"tag_gray.png"] forState:UIControlStateNormal];
- [newButton setBackgroundColor:[UIColor yellowColor]];
- [_planetNameBtns addObject:newButton];
- 
- [self.view addSubview:newButton];
- 
- // update user defaults
- NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
- [defaults setInteger:++numPlanetNameBtns forKey:numPlanetNamesStr];
- }
- */
 
-/* create a new blank textfield that user can write a label in
- */
+//
+// create a new blank textfield that user can write a label in
 -(void)addNewTextField:(UIButton*)button
 {
-    NSLog(@"ScratchPadViewController addNewTextField: 1   button frame (%f,%f)", button.center.x, button.center.y);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     TouchTextField* textfield = [[TouchTextField alloc] initWithFrame:[button frame]];
-    int tag = numPlanetColorBtns + numPlanetNameBtns;
+    int numUserTextFields = [defaults integerForKey:_strNumUserTextFields];
     
-    /*
-    [textfield addTarget:self action:@selector(textFieldDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
-    //[textfield addTarget:self action:@selector(textFieldTouchDown:forEvent:) forControlEvents:UIControlEventTouchDown];
-    //[textfield addTarget:self action:@selector(textFieldTouchUpInside:forEvent:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
-    [textfield addTarget:self action:@selector(textFieldTouchDown:) forControlEvents:UIControlEventTouchDown];
-    [textfield addTarget:self action:@selector(textFieldTouchUpInside:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
-     */
+    // test string version
+    //NSString *numUserTextFieldsS = [defaults stringForKey:@"test"];
+    //NSLog(@"ScratchPadViewController loadTextFields: %@ 1 numUserTextFieldsS to load", numUserTextFieldsS);
+    
+    int tag = USER_TEXTFIELDS_BEGIN + numUserTextFields;
+    
+    //assign delegate
+    textfield.delegate = self;
+    //[textfield saveDelegate];
     
     [textfield setFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0f]];
     [textfield setText:@"blah"];
+    //[textfield setTag:(USER_TEXTFIELDS_BEGIN + numUserTextFields - 1)];
     [textfield setTag:tag];
     [textfield setBackground:[UIImage imageNamed:@"tag_gray.png"]];
     textfield.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     textfield.textAlignment = NSTextAlignmentCenter;
     
-    
-    // add fake uiview
-    UIView *clearView = [[UIView alloc] initWithFrame:textfield.frame];
-    [clearView setTag:(tag+1)];
-    [self.view addSubview:clearView];
-    [_clearViews addObject:clearView];
-    
     // add to view, then to array
     [self.view addSubview:textfield];
     [_userTextFields addObject:textfield];
-    NSLog(@"%d userTextFields", [_userTextFields count]);
+    
+    NSLog(@"ScratchPadViewController addNewTextField: adding textfield to class %@!", NSStringFromClass([self.view class]));
+    //NSLog(@"ScratchPadViewController addNewTextField: %d userTextFields", [_userTextFields count]);
     
     textfield.userInteractionEnabled = TRUE;    //make text field editable
     [textfield becomeFirstResponder];           //pop up keyboard
     
-    NSLog(@"bounds (%.f,%.f) (%.f,%.f)", textfield.bounds.origin.x, textfield.bounds.origin.y, textfield.bounds.size.width, textfield.bounds.size.height);
-    
     // update user defaults
-    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:++numPlanetNameBtns forKey:_numPlanetNamesStr];
+    [defaults setInteger:++numUserTextFields forKey:_strNumUserTextFields];
+    [self saveTextField:textfield];
+    
+    // test string version
+    //numUserTextFieldsS = [NSString stringWithFormat:@"%d", numUserTextFields];
+    //NSLog(@"ScratchPadViewController addNewTextFields: %@ numUserTextFieldsS to load", numUserTextFieldsS);
+    //[defaults setObject:numUserTextFieldsS forKey:@"test"];
+    
+    NSLog(@"ScratchPadViewController addNewTextField: %d numUserTextFields", numUserTextFields);
+    //NSLog(@"ScratchPadViewController addNewTextField: %d numUserTextFields read from defaults", [defaults integerForKey:_strNumUserTextFields]);
 }
 
-/* load previously created user-defined textfield
- */
-/*
- -(void)loadTextField
- {
- UITextField* textfield= [[UITextField alloc] initWithFrame:[button frame]];
+//
+// load previously created user-defined textfield
+-(void)loadTextFields
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int numUserTextFields = [defaults integerForKey:_strNumUserTextFields];
+    
+    // test string version
+    //NSString *numUserTextFieldsS = [defaults stringForKey:@"test"];
+    //NSLog(@"ScratchPadViewController loadTextFields: %@ numUserTextFieldsS to load", numUserTextFieldsS);
+    
+    NSLog(@"ScratchPadViewController loadTextFields: %d numUserTextFields to load", numUserTextFields);
+    //NSLog(@"ScratchPadViewController loadTextFields: strNumUserTextFields = %@", _strNumUserTextFields);
+    
+    for (int tag=USER_TEXTFIELDS_BEGIN; tag<(USER_TEXTFIELDS_BEGIN+numUserTextFields); tag++)
+    {
+        NSString *tagString = [NSString stringWithFormat:@"%d", tag];
+        NSString *textFieldString = [defaults stringForKey:tagString];
+        
+        NSArray *components = [textFieldString componentsSeparatedByString:@" "];
+        NSString *text = (NSString *)components[0];
+        int x = [components[1] integerValue];
+        int y = [components[2] integerValue];
+        int w = [components[3] integerValue];
+        int h = [components[4] integerValue];
+    
+        TouchTextField* textfield = [[TouchTextField alloc] initWithFrame:CGRectMake(x,y,w,h)];
  
- [textfield addTarget:self action:@selector(objectDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
- [textfield setText:@"blah"];
- [textfield setTag:(numPlanetColorBtns + numPlanetNameBtns)];
- [textfield setBackground:[UIImage imageNamed:@"tag_gray.png"]];
- [_userTextFields addObject:textfield];
+        [textfield setFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0f]];
+        [textfield setBackground:[UIImage imageNamed:@"tag_gray.png"]];
+    
+        [textfield setText:text];
+        [textfield setTag:tag];
+    
+        textfield.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        textfield.textAlignment = NSTextAlignmentCenter;
+    
+        
+        [_userTextFields addObject:textfield];
+        [self.view addSubview:textfield];
+        
+       /*
+        // constraints
+        [self.view addConstraints:[NSLayoutConstraint
+                              constraintsWithVisualFormat:@"|-2-[textfield]"
+                              options:0 metrics:nil views:NSDictionaryOfVariableBindings(textfield)]];
+        [self.view addConstraints:[NSLayoutConstraint
+                              constraintsWithVisualFormat:@"V:|-2-[textfield]-2-|"
+                              options:0 metrics:nil views:NSDictionaryOfVariableBindings(textfield)]];
+        */
  
- [self.view addSubview:textfield];
- 
- //make text field editable
- textfield.userInteractionEnabled = TRUE;
- 
- //pop up keyboard
- [textfield becomeFirstResponder];
- 
- // update user defaults
- NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
- [defaults setInteger:++numPlanetNameBtns forKey:numPlanetNamesStr];
- }
- */
+        textfield.userInteractionEnabled = TRUE;    //make text field editable
+        
+        //NSLog(@"ScratcPadViewController loadTextField: adding textfield to class %@!", NSStringFromClass([self.view class]));
+        
+        NSLog(@"ScratchPadViewController loadTextFields: %d) text = %@", tag, text);
+        NSLog(@"                                             x,y  = %d,%d", x, y);
+        NSLog(@"                                             w,h  = %d,%d", w, h);
+        NSLog(@"                                         ==> %d textfields", _userTextFields.count);
+    }
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -366,30 +465,10 @@
     CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
     sender.center=point;
     
-    //[sender setBackgroundColor:[UIColor greenColor]];
-    
-    //[[self appDelegate] writeDebugMessage:@"drag inside event"];
-    NSLog(@"ScratchPadViewController buttonDragInside: drag inside event for center(%f,%f)", point.x, point.y);
+    //NSLog(@"ScratchPadViewController buttonDragInside: drag inside event for center(%f,%f)", point.x, point.y);
     
     // In case user hits the home button or force quits from the multitasking bar
     [self saveDefaultDataForButton:sender];
-}
-
-- (void)textFieldDragInside:(UITextField*)sender forEvent:(UIEvent *)event
-{
-    CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
-    sender.center = point;
-    
-    //[sender setBackgroundColor:[UIColor greenColor]];
-    [sender setBackground:[UIImage imageNamed:@"tag_gray1.png"]];
-    
-    NSLog(@"ScratchPadViewController textFieldDragInside: drag inside event for center(%f,%f)", point.x, point.y);
-    NSLog(@"ScratchPadViewController textFieldDragInside: event %d %d", event.type, event.subtype);
-    
-    [sender setBackgroundColor:[UIColor clearColor]];
-    
-    // In case user hits the home button or force quits from the multitasking bar
-    //[self saveDefaultDataForButton:sender];
 }
 
 - (IBAction)newTextFieldTouchUpInside:(UIButton *)sender forEvent:(UIEvent *)event
@@ -397,48 +476,13 @@
     [self addNewTextField:sender];
 }
 
-/*
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (IBAction)resetTouchUpInside:(UIButton *)sender
 {
-    UITouch *touch = [[event allTouches] anyObject];
-    //UITouch *touch = [touches anyObject];
-    
-    UIView *clearview = touch.view;
-    
-    NSLog(@"ScratchPadViewController touchesBegan: clear tag = %d", clearview.tag);
-    for (TouchTextField *textfield in _userTextFields)
-    {
-        if ([textfield isFirstResponder] && [touch view] != textfield)
-        {
-            if ([[touch view] tag] == (textfield.tag + 1) && [touch tapCount] == 2)
-            {
-                [textfield becomeFirstResponder];
-            }
-        }
-    }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    //UITouch *touch = [touches anyObject];
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint location = [touch locationInView:self.view];
-    
-    NSLog(@"ScratchPadViewController touchesMoved: %d userTextFields", [_userTextFields count]);
-    for (UITextField *textfield in _userTextFields)
-    {
-        if ([[touch view] tag] == 101)
-        {
-            textfield.center = location;
-            [[touch view] setCenter:location];
-        }
-    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //UITouch *touch = [touches anyObject];
-    UITouch *touch = [[event allTouches] anyObject];
+    UITouch *touch = [touches anyObject];
     
     NSLog(@"ScratchPadViewController touchesEnded: %d userTextFields", [_userTextFields count]);
     for (UITextField *textfield in _userTextFields)
@@ -450,170 +494,6 @@
         }
     }
 }
- */
-
-- (void)textFieldTouchDown:(UITextField *)sender// forEvent:(UIEvent *)event
-{
-    NSLog(@"ScratchPadViewController textFieldTouchDown");
-    [sender setBackgroundColor:[UIColor greenColor]];
-    [sender setBackground:[UIImage imageNamed:@"tag_gray.png"]];
-}
-
-/*
-- (void)textFieldTouchUpInside:(UITextField *)sender forEvent:(UIEvent *)event
-{
-    NSLog(@"ScratchPadViewController textFieldTouchUp");
-    [sender setBackgroundColor:[UIColor clearColor]];
-    [sender setBackground:[UIImage imageNamed:@"tag_gray.png"]];
-    
-}
- */
-- (void)textFieldTouchUpInside:(UITextField *)sender
-{
-    NSLog(@"ScratchPadViewController textFieldTouchUp");
-    [sender setBackgroundColor:[UIColor clearColor]];
-    [sender setBackground:[UIImage imageNamed:@"tag_gray.png"]];
-    
-}
-
-- (IBAction)resetTouchUpInside:(UIButton *)sender
-{
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    NSLog(@"ScratchPadViewController textFieldShouldBeginEditing");
-    return YES;
-}
 
 
 @end
-
-
-/*
-#import "ScratchPadViewController.h"
-#import "AppDelegate.h"
-
-@interface ScratchPadViewController ()
-
-@end
-
-@implementation ScratchPadViewController
-
-- (AppDelegate *)appDelegate
-{
-	return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-//EVENT HANDLERS
-- (IBAction)objectDragInside:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-    //  NSString * planetName = [self tagToPlanet:sender.tag];
-    
-    //NSLog(@"drag inside event");
-    CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
-    sender.center=point;
-    
-    
-    [[self appDelegate] writeDebugMessage:@"drag inside event"];
-}
-
-- (IBAction)objectTouchUpInside:(UIButton *)sender forEvent:(UIEvent *)event  {
-    CGPoint point = [[[event allTouches] anyObject] locationInView:self.view];
-    NSInteger tag= sender.tag;
-    sender.center=point;
-    
-    
-    //Create new button. Done in order to avoid state restoration issues
-    UIButton * newPlanet = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [newPlanet setTitle:[self getColor:sender.tag] forState:UIControlStateNormal];
-    [newPlanet setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    newPlanet.titleLabel.font=[UIFont fontWithName:@"HelveticaNeue-Bold" size:19];
-    [newPlanet setBackgroundImage:[UIImage imageNamed:[self getColorImage:sender.tag]] forState:UIControlStateNormal];
-    [newPlanet setFrame:sender.frame];//CGRectMake(0,0,70,70)
-    [newPlanet addTarget:self action:@selector(objectDragInside:forEvent:) forControlEvents:UIControlEventTouchDragInside];
-    [newPlanet addTarget:self action:@selector(objectTouchUpInside:forEvent:) forControlEvents:UIControlEventTouchUpInside];
-//    [newPlanet setClearsContextBeforeDrawing:YES];
-    newPlanet.center=point;
-    [self.view addSubview:newPlanet];
-  
-    //Remove old planet button
-//    [[self.view viewWithTag:sender.tag] removeFromSuperview];
-    [sender setAlpha:0];
-
-    [newPlanet setTag:sender.tag];
-
-     [[self appDelegate] writeDebugMessage:@"color touch up inside event"];
-}
-
-//HELPER METHODS
-
--(NSString *)getColor:(NSInteger)tag{
-    int tagInt =tag;
-    //printf("tag is %d\n",tagInt);
-    switch (tagInt) {
-//        case 1:return @"red";
-//        case 2:return @"blue";
-//        case 3:return @"yellow";
-//        case 4:return @"orange";
-//        case 5:return @"brown";
-//        case 6:return @"pink";
-//        case 7:return @"green";
-//        case 8:return @"purple";
-        
-        case 51:return @"Mercury";
-        case 52:return @"Venus";
-        case 53:return @"Earth";
-        case 54:return @"Mars";
-        case 55:return @"Jupiter";
-        case 56:return @"Saturn";
-        case 57:return @"Uranus";
-        case 58:return @"Neptune";
-            
-        default:
-            return @"";
-    }
-    return @"An error occured in getPlanetImage";
-}
--(NSString *)getColorImage:(NSInteger)tag{
-    int tagInt =tag;
-    //printf("tag is %d\n",tagInt);
-    switch (tagInt) {
-        case 1:return @"redLg.png";
-        case 2:return @"blueLg.png";
-        case 3:return @"yellowLg.png";
-        case 4:return @"orangeLg.png";
-        case 5:return @"brownLg.png";
-        case 6:return @"pinkLg.png";
-        case 7:return @"greenLg.png";
-        case 8:return @"purpleLg.png";
-            
-        default:
-            return @"tag_gray.png";
-    }
-    return @"An error occured in getPlanetImage";
-}
-@end
-*/

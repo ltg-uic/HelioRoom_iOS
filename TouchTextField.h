@@ -12,7 +12,8 @@
 
 @protocol TouchTextFieldDelegate
 
--(void) saveTouchTextFieldInfo:(TouchTextField *) touchTextField;
+-(void) touchTextFieldTouchesMoved:(TouchTextField *) touchTextField;
+-(void) touchTextFieldTouchesEnded:(TouchTextField *) touchTextField;
 
 @end
 

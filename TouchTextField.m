@@ -37,22 +37,25 @@
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"TouchTextField touchesMoved");
+    //NSLog(@"TouchTextField touchesMoved");
     
     // Allows dragging the textfield around the screen
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[self superview]];
     self.center = location;
     
-    [delegate saveTouchTextFieldInfo:self];
+    //[delegate saveTouchTextFieldInfo:self];
+    [delegate touchTextFieldTouchesMoved:self];
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"TouchTextField touchesEnded");
+    //NSLog(@"TouchTextField touchesEnded");
     
     // change textfield image when touched is released
     [self setBackground:[UIImage imageNamed:@"tag_gray.png"]];
+    
+    [delegate touchTextFieldTouchesEnded:self];
 }
 
 /*

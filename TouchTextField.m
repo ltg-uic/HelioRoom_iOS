@@ -22,13 +22,6 @@
     return self;
 }
 
-/*
--(void) layoutSubviews
-{
-    [super layoutSubviews];
-}
-*/
-
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // change textfield image when touched down
@@ -44,7 +37,6 @@
     CGPoint location = [touch locationInView:[self superview]];
     self.center = location;
     
-    //[delegate saveTouchTextFieldInfo:self];
     [delegate touchTextFieldTouchesMoved:self];
 }
 

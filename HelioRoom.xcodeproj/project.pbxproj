@@ -108,6 +108,8 @@
 		700C3B3816042FEE005A9E34 /* XMPPReconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C3B3616042FE5005A9E34 /* XMPPReconnect.m */; };
 		700C3B3A160430DA005A9E34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700C3B39160430DA005A9E34 /* SystemConfiguration.framework */; };
 		707C2C3916080C6A00A09AB8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C2C3816080C6A00A09AB8 /* LoginViewController.m */; };
+		7190937816E90030009F3FA6 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 7190937716E90030009F3FA6 /* trash.png */; };
+		7190937B16E99E61009F3FA6 /* TouchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7190937A16E99E61009F3FA6 /* TouchTextField.m */; };
 		8401631C16499209002F9F9C /* icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 8401631B16499209002F9F9C /* icon_144.png */; };
 		8402065D164C3E3D00010A99 /* brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 84020657164C3E3D00010A99 /* brown.png */; };
 		8402065E164C3E3D00010A99 /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 84020658164C3E3D00010A99 /* gray.png */; };
@@ -326,6 +328,9 @@
 		700C3B39160430DA005A9E34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		707C2C3716080C6A00A09AB8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		707C2C3816080C6A00A09AB8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7190937716E90030009F3FA6 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
+		7190937916E99E61009F3FA6 /* TouchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchTextField.h; sourceTree = "<group>"; };
+		7190937A16E99E61009F3FA6 /* TouchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchTextField.m; sourceTree = "<group>"; };
 		8401631B16499209002F9F9C /* icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_144.png; sourceTree = "<group>"; };
 		84020657164C3E3D00010A99 /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
 		84020658164C3E3D00010A99 /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
@@ -915,6 +920,8 @@
 				8474EC5D16B45CEB00FA0EA7 /* OrderReasonViewController.m */,
 				84103A0816BACB7000B89583 /* ScratchPadViewController.h */,
 				84103A0916BACB7000B89583 /* ScratchPadViewController.m */,
+				7190937916E99E61009F3FA6 /* TouchTextField.h */,
+				7190937A16E99E61009F3FA6 /* TouchTextField.m */,
 			);
 			name = HelioRoom;
 			sourceTree = "<group>";
@@ -1110,6 +1117,7 @@
 		858A62C316C2D33000AC05F7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				7190937716E90030009F3FA6 /* trash.png */,
 				85991BE116CAFF8A0071621A /* tag_gray1.png */,
 				85991BDB16CABC200071621A /* planetRow.png */,
 				858A62C416C2D3D800AC05F7 /* tag_gray.png */,
@@ -1247,6 +1255,7 @@
 				85991BDE16CABDFE0071621A /* background_01.png in Resources */,
 				85991BE016CABE450071621A /* background_02.png in Resources */,
 				85991BE216CAFF8A0071621A /* tag_gray1.png in Resources */,
+				7190937816E90030009F3FA6 /* trash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,6 +1398,7 @@
 				842B72DA16C20F9600B976BA /* SBJsonUTF8Stream.m in Sources */,
 				842B72DB16C20F9600B976BA /* SBJsonWriter.m in Sources */,
 				8403039916E2A7F700B83CFE /* Reason.m in Sources */,
+				7190937B16E99E61009F3FA6 /* TouchTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -347,6 +347,9 @@ typedef enum
     textfield.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     textfield.textAlignment = NSTextAlignmentCenter;
     
+    // make sure we know when the user changes the text
+    [textfield addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
     // add to view, then to array
     [self.view addSubview:textfield];
     [_userTextFields addObject:textfield];
@@ -393,6 +396,9 @@ typedef enum
     
         textfield.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         textfield.textAlignment = NSTextAlignmentCenter;
+        
+        // make sure we know when the user changes the text
+        [textfield addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
         [_userTextFields addObject:textfield];
         [self.view addSubview:textfield];
@@ -433,14 +439,7 @@ typedef enum
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // remove from NSMutable array _userTextFields
-    for (TouchTextField *ttextfield in _userTextFields)
-    {
-        // are the pointers equal?
-        if (ttextfield == textfield)
-        {
-            [_userTextFields removeObjectIdenticalTo:textfield];
-        }
-    }
+    [_userTextFields removeObjectIdenticalTo:textfield];
     
     // remove from defaults
     NSString *tag = [NSString stringWithFormat:@"%d", [textfield tag]];
@@ -523,5 +522,10 @@ typedef enum
     }
 }
 
+- (void)textFieldDidChange:(TouchTextField *)sender
+{
+    // if there are any text changes to the textfield then save to defaults
+    [self saveTextField:sender];
+}
 
 @end

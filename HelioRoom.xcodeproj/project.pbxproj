@@ -164,6 +164,8 @@
 		84E0E0271623E92B00058BBC /* spaceshipSubmitButton_high.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E0E0261623E92B00058BBC /* spaceshipSubmitButton_high.png */; };
 		84E42A8B16235EE900BD1A59 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E42A8916235EE900BD1A59 /* red.png */; };
 		84E42A8C16235EE900BD1A59 /* redLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E42A8A16235EE900BD1A59 /* redLg.png */; };
+		84E5033B1730AB86003A4657 /* NewOrdering.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5033A1730AB86003A4657 /* NewOrdering.m */; };
+		84E5033E1730BC8C003A4657 /* sun copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E5033D1730BC8C003A4657 /* sun copy.png */; };
 		84EA79241615491700EC67A2 /* XMPPCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA79221615491700EC67A2 /* XMPPCoreDataStorage.m */; };
 		84EA793D1615492100EC67A2 /* XMPPGroupCoreDataStorageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA79281615492100EC67A2 /* XMPPGroupCoreDataStorageObject.m */; };
 		84EA793E1615492100EC67A2 /* XMPPResourceCoreDataStorageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA792A1615492100EC67A2 /* XMPPResourceCoreDataStorageObject.m */; };
@@ -402,6 +404,9 @@
 		84E0E0261623E92B00058BBC /* spaceshipSubmitButton_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton_high.png; sourceTree = "<group>"; };
 		84E42A8916235EE900BD1A59 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		84E42A8A16235EE900BD1A59 /* redLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redLg.png; sourceTree = "<group>"; };
+		84E503391730AB86003A4657 /* NewOrdering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewOrdering.h; sourceTree = "<group>"; };
+		84E5033A1730AB86003A4657 /* NewOrdering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewOrdering.m; sourceTree = "<group>"; };
+		84E5033D1730BC8C003A4657 /* sun copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun copy.png"; sourceTree = "<group>"; };
 		84EA79211615491700EC67A2 /* XMPPCoreDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPCoreDataStorage.h; sourceTree = "<group>"; };
 		84EA79221615491700EC67A2 /* XMPPCoreDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPCoreDataStorage.m; sourceTree = "<group>"; };
 		84EA79231615491700EC67A2 /* XMPPCoreDataStorageProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPCoreDataStorageProtected.h; sourceTree = "<group>"; };
@@ -915,6 +920,8 @@
 				8474EC5D16B45CEB00FA0EA7 /* OrderReasonViewController.m */,
 				84103A0816BACB7000B89583 /* ScratchPadViewController.h */,
 				84103A0916BACB7000B89583 /* ScratchPadViewController.m */,
+				84E503391730AB86003A4657 /* NewOrdering.h */,
+				84E5033A1730AB86003A4657 /* NewOrdering.m */,
 			);
 			name = HelioRoom;
 			sourceTree = "<group>";
@@ -1089,6 +1096,7 @@
 		84EB1234161F688000CECA43 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84E5033D1730BC8C003A4657 /* sun copy.png */,
 				858A62C316C2D33000AC05F7 /* ui */,
 				852DCB1416B87AA5002D4B50 /* planet_bg.png */,
 				84CB9534164C1BA900D01390 /* grabPlanet.png */,
@@ -1247,6 +1255,7 @@
 				85991BDE16CABDFE0071621A /* background_01.png in Resources */,
 				85991BE016CABE450071621A /* background_02.png in Resources */,
 				85991BE216CAFF8A0071621A /* tag_gray1.png in Resources */,
+				84E5033E1730BC8C003A4657 /* sun copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,6 +1398,7 @@
 				842B72DA16C20F9600B976BA /* SBJsonUTF8Stream.m in Sources */,
 				842B72DB16C20F9600B976BA /* SBJsonWriter.m in Sources */,
 				8403039916E2A7F700B83CFE /* Reason.m in Sources */,
+				84E5033B1730AB86003A4657 /* NewOrdering.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

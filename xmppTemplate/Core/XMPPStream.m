@@ -1725,8 +1725,7 @@ enum XMPPStreamConfig
 //			result = [self authenticate:someAuth error:&err];
 //		}
 //		else
-        
-        if ([self supportsPlainAuthentication])
+            if ([self supportsPlainAuthentication])
 		{
 			someAuth = [[XMPPPlainAuthentication alloc] initWithStream:self password:password];
 			result = [self authenticate:someAuth error:&err];

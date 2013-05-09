@@ -136,7 +136,7 @@
                 [[self appDelegate] writeDebugMessage:@"was in drop area!"];
                 control.center = CGPointMake(dropArea.center.x, dropArea.center.y-30);
 //                [self getLargePlanetButton:planetName].center=CGPointMake(dropArea.center.x, dropArea.center.y-30);
-                control.center=CGPointMake(dropArea.center.x, dropArea.center.y-30);
+                control.center=CGPointMake(dropArea.center.x, dropArea.center.y);
             }
         }
         i++;

@@ -32,7 +32,7 @@ NSString * destinationColor;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:@"Reason"];
+    [self setTitle:@"I am adding this observation because:"];
 
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
@@ -134,11 +134,12 @@ NSString * destinationColor;
 
 //HELPER FUNCTIONS
 -(void) setReasons:(NSString *)created:(NSString *)destination{
-    //NSString * because = @"Because";
-    //NSMutableString *reason1 =
-    NSString *reason1= [NSString stringWithFormat:@"%@%@%@%@", @"Because I saw ", created,@" in front of ", destination];
-    NSString *reason2= [NSString stringWithFormat:@"%@%@%@%@", @"Because ", created,@" is moving faster than ", destination];
-    NSString *reason3= @"Because of another reason.";
+
+//    NSString *reason1= [NSString stringWithFormat:@"%@%@%@%@", @"Because I saw ", created,@" in front of ", destination];
+//    NSString *reason2= [NSString stringWithFormat:@"%@%@%@%@", @"Because ", created,@" is moving faster than ", destination];
+    NSString *reason1 =@"I saw one planet in front of another.";
+    NSString *reason2= @"They were moving at different speeds.";
+    NSString *reason3= @"Another reason.";
     
     self.reasons = [NSMutableArray array];
     [_reasons addObject:reason1];

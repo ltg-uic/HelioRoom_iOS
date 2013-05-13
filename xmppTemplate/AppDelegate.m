@@ -651,9 +651,13 @@ NSString *const chatLocation = @"helio-sp-13-ben@conference.54.243.60.48"; //set
     [self goOnline];
     DDLogError(@"Sending the isInFrontOf group message. Planet1: %@ and Planet2: %@ Reason: %@", planet1,planet2,reason);
     NSXMLElement *message = [NSXMLElement elementWithName:@"inFrontOf"];
+    
+    
+    NSString* username = [self parseUserNameFromJID:[self getLoggedInUser]];
+    
     [message addAttributeWithName:@"front" stringValue:planet1];
     [message addAttributeWithName:@"back" stringValue:planet2];
-    [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
+    [message addAttributeWithName:@"user" stringValue:username];
     
 
     //[xmppRoom sendMessage:[message XMLString]];
@@ -666,7 +670,7 @@ NSString *const chatLocation = @"helio-sp-13-ben@conference.54.243.60.48"; //set
                              nil];
     NSDictionary *command = [NSDictionary dictionaryWithObjectsAndKeys:
                              payload, @"payload",
-                             [self getLoggedInUser], @"origin",
+                             username, @"origin",
                              @"new_observation", @"event",
                              nil];
     NSString *jsonCommand = [writer stringWithObject:command];
@@ -677,13 +681,34 @@ NSString *const chatLocation = @"helio-sp-13-ben@conference.54.243.60.48"; //set
     return 1;
  
 }
+
+
+-(NSString*) parseUserNameFromJID: (NSString *) jid {
+    
+    //split at the @ symbol, username@conference
+    NSArray* userString = [jid componentsSeparatedByString: @"@"];
+    NSString* username = [userString objectAtIndex: 0];
+    
+    if( username == NULL ) {
+        return jid;
+    } else {
+        return username;
+    }
+    
+    
+}
+
 - (int)identifyGroupMessage:(NSString *)planetColor:(NSString *)planetName:(NSString *) reason{
     [self goOnline];
     DDLogError(@"Sending the identify group message. PlanetColor: %@ and PlanetName: %@", planetColor,planetName);
     NSXMLElement *message = [NSXMLElement elementWithName:@"identify"];
+    
+
+    NSString* username = [self parseUserNameFromJID:[self getLoggedInUser]];
+    
     [message addAttributeWithName:@"color" stringValue:planetColor];
     [message addAttributeWithName:@"name" stringValue:planetName];
-    [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
+    [message addAttributeWithName:@"user" stringValue:username];
     
     
     [xmppRoom sendMessage:[message XMLString]];
@@ -696,7 +721,7 @@ NSString *const chatLocation = @"helio-sp-13-ben@conference.54.243.60.48"; //set
                              nil];
     NSDictionary *command = [NSDictionary dictionaryWithObjectsAndKeys:
                              payload, @"payload",
-                             [self getLoggedInUser], @"origin",
+                             username, @"origin",
                              @"new_theory", @"event",
                              nil];
     NSString *jsonCommand = [writer stringWithObject:command];
@@ -733,10 +758,14 @@ NSString *const chatLocation = @"helio-sp-13-ben@conference.54.243.60.48"; //set
 //}
 - (int)theoryReasonGroupMessage:(NSString *)reason{
     [self goOnline];
+    
     DDLogError(@"Sending the theoryReason group message. Reason: %@",reason);
     NSXMLElement *message = [NSXMLElement elementWithName:@"theoryReason"];
+    
+    NSString* username = [self parseUserNameFromJID:[self getLoggedInUser]];
+    
     [message addAttributeWithName:@"reason" stringValue:reason];
-    [message addAttributeWithName:@"user" stringValue:[self getLoggedInUser]];
+    [message addAttributeWithName:@"user" stringValue:username];
     
     
     [xmppRoom sendMessage:[message XMLString]];

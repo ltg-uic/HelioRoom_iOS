@@ -201,6 +201,8 @@
 		84F352D216507EAA00DEB764 /* pinkLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352CC16507EAA00DEB764 /* pinkLg.png */; };
 		84F352D316507EAA00DEB764 /* purpleLg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F352CD16507EAA00DEB764 /* purpleLg.png */; };
 		84F9826E16B43F0A00804BE4 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9826D16B43F0A00804BE4 /* OrderViewController.m */; };
+		85021F5A17412B300071979F /* Helio_FINAL_Icon_N-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 85021F5917412B300071979F /* Helio_FINAL_Icon_N-01.png */; };
+		85021F5C17413D9F0071979F /* shape_cloud_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 85021F5B17413D9F0071979F /* shape_cloud_empty.png */; };
 		852DCB1516B87AA5002D4B50 /* planet_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB1416B87AA5002D4B50 /* planet_bg.png */; };
 		852DCB3216B8895F002D4B50 /* p_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2A16B8895F002D4B50 /* p_blue.png */; };
 		852DCB3316B8895F002D4B50 /* p_brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2B16B8895F002D4B50 /* p_brown.png */; };
@@ -473,6 +475,8 @@
 		84F352CD16507EAA00DEB764 /* purpleLg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleLg.png; sourceTree = "<group>"; };
 		84F9826C16B43F0A00804BE4 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = SOURCE_ROOT; };
 		84F9826D16B43F0A00804BE4 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = SOURCE_ROOT; };
+		85021F5917412B300071979F /* Helio_FINAL_Icon_N-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Helio_FINAL_Icon_N-01.png"; sourceTree = "<group>"; };
+		85021F5B17413D9F0071979F /* shape_cloud_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shape_cloud_empty.png; path = ../../../../../Dropbox/HelioRoom/ui/shape_cloud_empty.png; sourceTree = "<group>"; };
 		852DCB1416B87AA5002D4B50 /* planet_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_bg.png; path = Planets/planet_bg.png; sourceTree = "<group>"; };
 		852DCB2A16B8895F002D4B50 /* p_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_blue.png; sourceTree = "<group>"; };
 		852DCB2B16B8895F002D4B50 /* p_brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_brown.png; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 		700C3A42160427DA005A9E34 = {
 			isa = PBXGroup;
 			children = (
+				85021F5917412B300071979F /* Helio_FINAL_Icon_N-01.png */,
 				8403039716E2A7F700B83CFE /* Reason.h */,
 				8403039816E2A7F700B83CFE /* Reason.m */,
 				84D680AD16B9BADF001BC26A /* HelioRoomModel.xcdatamodeld */,
@@ -1118,6 +1123,7 @@
 		858A62C316C2D33000AC05F7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				85021F5B17413D9F0071979F /* shape_cloud_empty.png */,
 				85991BE116CAFF8A0071621A /* tag_gray1.png */,
 				85991BDB16CABC200071621A /* planetRow.png */,
 				858A62C416C2D3D800AC05F7 /* tag_gray.png */,
@@ -1256,6 +1262,8 @@
 				85991BE016CABE450071621A /* background_02.png in Resources */,
 				85991BE216CAFF8A0071621A /* tag_gray1.png in Resources */,
 				84E5033E1730BC8C003A4657 /* sun copy.png in Resources */,
+				85021F5A17412B300071979F /* Helio_FINAL_Icon_N-01.png in Resources */,
+				85021F5C17413D9F0071979F /* shape_cloud_empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,10 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>Helio_FINAL_Icon_N-01.png</string>
+				<string>Helio_FINAL_Icon.png</string>
 			</array>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
@@ -42,6 +45,8 @@
 	<string>MainStoryboard_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>MainStoryboard_iPad</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -811,8 +811,10 @@
                             <constraint firstItem="VLd-bf-Lv2" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" type="default" id="Cp7-BB-gRO"/>
                             <constraint firstItem="LLm-7I-P6L" firstAttribute="baseline" secondItem="ewS-Nw-xWa" secondAttribute="baseline" type="default" id="DK0-Wp-uQi"/>
                             <constraint firstItem="Iu5-Rb-a7G" firstAttribute="top" secondItem="5Wp-LO-Ln5" secondAttribute="top" constant="25" id="DPS-3G-CkN"/>
+                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="leading" secondItem="JLf-CJ-MB8" secondAttribute="leading" type="default" id="DZT-F3-xFz"/>
                             <constraint firstItem="6FX-K3-Q8E" firstAttribute="bottom" secondItem="JLf-CJ-MB8" secondAttribute="bottom" type="default" id="EUc-8B-rO1"/>
                             <constraint firstItem="QGc-If-aNQ" firstAttribute="trailing" secondItem="hjh-n1-CJL" secondAttribute="trailing" type="default" id="Eso-Ry-X9R"/>
+                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="bottom" secondItem="48y-5b-a5q" secondAttribute="bottom" type="default" id="G2R-cz-BfE"/>
                             <constraint firstItem="4IG-Sk-FbO" firstAttribute="leading" secondItem="IxC-ib-vLZ" secondAttribute="leading" type="default" id="GsJ-fY-Nqj"/>
                             <constraint firstItem="2rh-LT-eWi" firstAttribute="top" secondItem="s44-Xk-1rD" secondAttribute="top" type="default" id="HXz-yU-Rk8"/>
                             <constraint firstItem="9ih-Bh-pL0" firstAttribute="leading" secondItem="wDB-kK-kgw" secondAttribute="leading" type="default" id="Hj8-0e-T7w"/>
@@ -859,6 +861,7 @@
                             <constraint firstItem="nzH-Al-rtB" firstAttribute="leading" secondItem="cWY-XZ-e71" secondAttribute="leading" type="default" id="l1C-wL-SMM"/>
                             <constraint firstItem="cWY-XZ-e71" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="371" id="lLR-AA-axi"/>
                             <constraint firstItem="wvO-Je-XLU" firstAttribute="top" secondItem="s44-Xk-1rD" secondAttribute="top" type="default" id="m11-NG-JbC"/>
+                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="top" secondItem="48y-5b-a5q" secondAttribute="top" type="default" id="mae-39-BKu"/>
                             <constraint firstItem="48y-5b-a5q" firstAttribute="bottom" secondItem="F8V-mr-AuN" secondAttribute="bottom" type="default" id="mfj-K4-E4t"/>
                             <constraint firstItem="zEN-Uj-l9r" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="161" id="mhg-5K-hAV"/>
                             <constraint firstItem="zEN-Uj-l9r" firstAttribute="bottom" secondItem="4IG-Sk-FbO" secondAttribute="bottom" type="default" id="o0x-Gt-FMD"/>
@@ -867,14 +870,12 @@
                             <constraint firstItem="XRx-pn-EuG" firstAttribute="leading" secondItem="vaR-DR-jLb" secondAttribute="leading" type="default" id="rmY-y3-D9g"/>
                             <constraint firstItem="cWY-XZ-e71" firstAttribute="top" secondItem="nzH-Al-rtB" secondAttribute="top" type="default" id="rox-hH-lwM"/>
                             <constraint firstItem="6FX-K3-Q8E" firstAttribute="top" secondItem="JLf-CJ-MB8" secondAttribute="top" type="default" id="s5k-tm-dnh"/>
-                            <constraint firstItem="F8V-mr-AuN" firstAttribute="bottom" secondItem="6FX-K3-Q8E" secondAttribute="bottom" type="default" id="sSw-WA-eAw"/>
                             <constraint firstItem="tGu-FT-qWq" firstAttribute="top" secondItem="2rh-LT-eWi" secondAttribute="top" type="default" id="saF-fj-r92"/>
                             <constraint firstItem="UbS-3O-rgb" firstAttribute="trailing" secondItem="5Wp-LO-Ln5" secondAttribute="trailing" type="default" id="tBa-Yw-sVH"/>
                             <constraint firstItem="F8V-mr-AuN" firstAttribute="leading" secondItem="48y-5b-a5q" secondAttribute="leading" type="default" id="tna-X4-UdZ"/>
                             <constraint firstItem="F8V-mr-AuN" firstAttribute="top" secondItem="5Wp-LO-Ln5" secondAttribute="top" constant="258" id="tr4-jJ-Bd0"/>
                             <constraint firstItem="QGc-If-aNQ" firstAttribute="top" secondItem="hjh-n1-CJL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vOn-vh-RY5"/>
                             <constraint firstItem="hjh-n1-CJL" firstAttribute="top" secondItem="5Wp-LO-Ln5" secondAttribute="top" constant="104" id="xug-md-KJu"/>
-                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="top" secondItem="F8V-mr-AuN" secondAttribute="top" type="default" id="xz3-xu-j40"/>
                             <constraint firstAttribute="trailing" secondItem="JLf-CJ-MB8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yEj-E8-Arh"/>
                             <constraint firstItem="9k8-Ar-EzI" firstAttribute="top" secondItem="zEN-Uj-l9r" secondAttribute="top" type="default" id="yNE-jA-d3R"/>
                         </constraints>
@@ -2543,24 +2544,24 @@
                         <rect key="frame" x="0.0" y="20" width="1024" height="699"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-uK-qMN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background_HelioSimple.png" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-uK-qMN">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="758" id="8Qt-pW-Fez"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropFrontPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-bd-Nr9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropBackPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-bd-Nr9">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="G0d-dc-HxB"/>
-                                    <constraint firstAttribute="height" constant="83" id="NRs-N4-CJU"/>
+                                    <constraint firstAttribute="height" constant="87" id="Bjv-Fb-EIa"/>
+                                    <constraint firstAttribute="width" constant="87" id="yap-VF-sQO"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropBackPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-ve-qTJ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="8du-rr-fd1"/>
-                                    <constraint firstAttribute="height" constant="83" id="R4e-dY-RSJ"/>
+                                    <constraint firstAttribute="width" constant="87" id="baU-EX-qQb"/>
+                                    <constraint firstAttribute="height" constant="87" id="gPe-Yw-TYT"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shape_cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1Q-lo-Pas">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="shape_cloud_empty.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1Q-lo-Pas">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="9tq-Pb-QdN"/>
                                     <constraint firstAttribute="height" constant="503" id="mVH-Df-Y6Y"/>
@@ -2848,12 +2849,12 @@
                         <constraints>
                             <constraint firstItem="zEY-gi-zhH" firstAttribute="leading" secondItem="8dd-Hs-zlB" secondAttribute="leading" type="default" id="2C3-bw-KCm"/>
                             <constraint firstAttribute="bottom" secondItem="lCI-Qn-TTt" secondAttribute="bottom" constant="136" id="3Ju-iA-HlX"/>
-                            <constraint firstItem="dQ8-ve-qTJ" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="17" id="50w-69-lGm"/>
                             <constraint firstItem="E0u-LK-lra" firstAttribute="top" secondItem="atn-ZB-3lX" secondAttribute="top" type="default" id="54B-CM-wXf"/>
                             <constraint firstAttribute="trailing" secondItem="atn-ZB-3lX" secondAttribute="trailing" constant="263" id="7L6-pa-rfe"/>
                             <constraint firstItem="z8t-Dn-R8x" firstAttribute="trailing" secondItem="G1G-t3-owu" secondAttribute="trailing" type="default" id="7n1-PQ-MFR"/>
                             <constraint firstAttribute="trailing" secondItem="Xlc-um-dm8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9D7-Rw-idu"/>
                             <constraint firstAttribute="trailing" secondItem="E0u-LK-lra" secondAttribute="trailing" constant="398" id="BGQ-FG-04c"/>
+                            <constraint firstItem="dQ8-ve-qTJ" firstAttribute="top" secondItem="Mu5-hm-0V1" secondAttribute="top" type="default" id="DI9-33-SEC"/>
                             <constraint firstItem="BB3-bd-Nr9" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" constant="499" id="DLu-56-E6a"/>
                             <constraint firstItem="zEY-gi-zhH" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="665" id="DsZ-Vl-5pC"/>
                             <constraint firstItem="xnU-uK-qMN" firstAttribute="trailing" secondItem="G1G-t3-owu" secondAttribute="trailing" type="default" id="Erd-Ow-wYg"/>
@@ -2870,6 +2871,7 @@
                             <constraint firstAttribute="bottom" secondItem="Ebc-31-OcY" secondAttribute="bottom" constant="199" id="Um9-97-M3z"/>
                             <constraint firstItem="Npd-wb-YTD" firstAttribute="top" secondItem="ehc-H3-OIB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VzG-2O-Abn"/>
                             <constraint firstItem="fe6-C1-CI9" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="104" id="Yh6-kc-2Mf"/>
+                            <constraint firstAttribute="trailing" secondItem="dQ8-ve-qTJ" secondAttribute="trailing" constant="246" id="bZJ-oC-Kh1"/>
                             <constraint firstItem="E0u-LK-lra" firstAttribute="bottom" secondItem="aDp-Dc-sbq" secondAttribute="bottom" type="default" id="bel-cd-7zi"/>
                             <constraint firstItem="V1Q-lo-Pas" firstAttribute="top" secondItem="fe6-C1-CI9" secondAttribute="top" type="default" id="ced-6f-sxo"/>
                             <constraint firstItem="xnU-uK-qMN" firstAttribute="centerY" secondItem="G1G-t3-owu" secondAttribute="centerY" type="default" id="dqQ-sp-tJa"/>
@@ -2881,7 +2883,6 @@
                             <constraint firstAttribute="trailing" secondItem="fe6-C1-CI9" secondAttribute="trailing" constant="336" id="jyl-Jb-ohH"/>
                             <constraint firstItem="BB3-bd-Nr9" firstAttribute="top" secondItem="cw5-GT-TqP" secondAttribute="top" type="default" id="kg2-B0-YmM"/>
                             <constraint firstItem="Npd-wb-YTD" firstAttribute="leading" secondItem="ehc-H3-OIB" secondAttribute="leading" type="default" id="ktu-ef-x0Y"/>
-                            <constraint firstAttribute="trailing" secondItem="dQ8-ve-qTJ" secondAttribute="trailing" constant="233" id="lGW-pp-1za"/>
                             <constraint firstItem="Xlc-um-dm8" firstAttribute="leading" secondItem="8dd-Hs-zlB" secondAttribute="leading" type="default" id="oyx-ye-hvl"/>
                             <constraint firstItem="0qQ-A6-Ov1" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="-4" id="qek-2r-ezl"/>
                             <constraint firstItem="xnU-uK-qMN" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" type="default" id="tSW-Gx-pHb"/>
@@ -2924,12 +2925,13 @@
         <image name="backPlanet.png" width="360" height="280"/>
         <image name="background_01.png" width="3452" height="2158"/>
         <image name="background_02.png" width="3452" height="2158"/>
+        <image name="background_HelioSimple.png" width="2048" height="1536"/>
         <image name="blue.png" width="128" height="128"/>
         <image name="blueLg.png" width="256" height="256"/>
         <image name="brown.png" width="128" height="128"/>
         <image name="brownLg.png" width="256" height="256"/>
         <image name="clear.png" width="48" height="32"/>
-        <image name="dropBackPlanet.png" width="360" height="280"/>
+        <image name="dropBackPlanet.png" width="280" height="280"/>
         <image name="dropFrontPlanet.png" width="360" height="280"/>
         <image name="frontPlanet.png" width="360" height="280"/>
         <image name="grabPlanet.png" width="460" height="177"/>
@@ -2958,6 +2960,7 @@
         <image name="red.png" width="128" height="128"/>
         <image name="redLg.png" width="256" height="256"/>
         <image name="shape_cloud.png" width="551" height="1234"/>
+        <image name="shape_cloud_empty.png" width="551" height="1234"/>
         <image name="submitButtonText.png" width="104" height="50"/>
         <image name="sun copy.png" width="818" height="776"/>
         <image name="tab_Scratch.png" width="48" height="32"/>
@@ -2968,6 +2971,166 @@
         <image name="yellow.png" width="128" height="128"/>
         <image name="yellowLg.png" width="256" height="256"/>
     </resources>
+    <classes>
+        <class className="ChooseInFrontViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseInFrontViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
+                <relationship kind="action" name="planetDragInside:withEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetTouchDown:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="sendGroupPressed:"/>
+                <relationship kind="action" name="sendPressed:"/>
+                <relationship kind="action" name="submitButtonPressed:"/>
+                <relationship kind="outlet" name="backPlanetArea" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="backPlanetChoseView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bluePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bluePlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="brownPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="brownPlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dropClosest" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dropFurthest" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="frontPlanetArea" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="frontPlanetChoseView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="grayPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="grayPlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenPlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="isInFrontView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="msgField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="orangePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="orangePlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinkPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinkPlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="purplePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="purplePlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redPlanetLg" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="submitButtonAnimation" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="toField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yellowPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yellowPlanetLg" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ChoosePlanetViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChoosePlanetViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nameDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="nameTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="submitButtonPressed:"/>
+                <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="grayDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="greenDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="orangeDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pinkDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="purpleDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="redDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="yellowDrop" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="loginTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewOrdering" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewOrdering.h"/>
+            <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
+                <relationship kind="action" name="planetDragInside:withEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetTouchDown:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="sendGroupPressed:"/>
+                <relationship kind="action" name="sendPressed:"/>
+                <relationship kind="action" name="submitButtonPressed:"/>
+                <relationship kind="outlet" name="backPlanetArea" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bluePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="brownPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="frontPlanetArea" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="grayPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="isInFrontView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="msgField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="orangePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pinkPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="purplePlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redPlanet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="submitButtonAnimation" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="toField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yellowPlanet" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OrderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="colorDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="greenDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="orangeDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pinkDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="planetTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="purpleDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="redDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="yellowDrop" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="RootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+        </class>
+        <class className="ScratchPadViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScratchPadViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="objectDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="objectTouchUpInside:forEvent:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TheoriesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createdPlanetDragInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdPlanetTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetDragInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="action" name="planetTouchUpInside:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="earthDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="jupiterDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="marsDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mercuryDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="neptuneDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="planetTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="saturnDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="uranusDrop" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="venusDrop" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TheoryReasonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheoryReasonViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="savePressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="reasonText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

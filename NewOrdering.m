@@ -161,7 +161,7 @@
 
 - (IBAction)submitButtonPressed:(id)sender {
     [self createdColorPopover:planetInDropArea1 :planetInDropArea2];
-    
+    self.submitButton.userInteractionEnabled=NO;
 
 //    [[self planetModel] isInFrontOf:planetInDropArea1 :planetInDropArea2 :@"because I said so"];
 //    self.submitButtonAnimation.alpha=1;
@@ -176,6 +176,7 @@
     [self unlockPlanets];
     [self.submitButton setAlpha:0]; //TODO??
     [self.cancelButton setAlpha:0]; //TODO??
+    [self.reasonPopover dismissPopoverAnimated:YES];
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
@@ -403,6 +404,7 @@
     [self unlockPlanets];
     [self.submitButton setAlpha:0]; //TODO??
     [self.cancelButton setAlpha:0]; //TODO??
+    [self.reasonPopover dismissPopoverAnimated:YES];
 }
 
 - (void)reasonSelected:(NSString *)reason:(NSString *) created:(NSString *)destination {

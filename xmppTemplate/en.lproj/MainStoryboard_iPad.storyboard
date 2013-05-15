@@ -409,7 +409,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropBackPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="6FX-K3-Q8E"/>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="backPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-CJ-MB8"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="backPlanet.png" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-CJ-MB8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="NbW-3c-45I"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="drop furthest planet here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewS-Nw-xWa">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="353" id="wyw-DC-QzH"/>
@@ -798,13 +802,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XRx-pn-EuG" firstAttribute="top" secondItem="5Wp-LO-Ln5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="0bv-lE-PaK"/>
+                            <constraint firstItem="F8V-mr-AuN" firstAttribute="top" secondItem="JLf-CJ-MB8" secondAttribute="top" type="default" id="1do-ic-dLY"/>
                             <constraint firstItem="2rh-LT-eWi" firstAttribute="leading" secondItem="ZTS-KI-F9T" secondAttribute="leading" type="default" id="2dm-bd-kCr"/>
                             <constraint firstItem="2Ok-Lj-B4P" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="443" id="3KL-fo-aKr"/>
                             <constraint firstItem="Iu5-Rb-a7G" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="56" id="4QL-IO-HTn"/>
                             <constraint firstItem="xv0-Xz-oB0" firstAttribute="leading" secondItem="tGu-FT-qWq" secondAttribute="leading" type="default" id="5gN-dq-1K2"/>
                             <constraint firstItem="XTA-oa-7dw" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="351" id="5qU-ex-wX5"/>
                             <constraint firstItem="wDB-kK-kgw" firstAttribute="top" secondItem="tGu-FT-qWq" secondAttribute="top" type="default" id="610-Y9-Ofh"/>
-                            <constraint firstItem="F8V-mr-AuN" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="25" id="6RL-cK-TjM"/>
                             <constraint firstItem="ZTS-KI-F9T" firstAttribute="top" secondItem="s44-Xk-1rD" secondAttribute="top" type="default" id="9yH-7A-v34"/>
                             <constraint firstItem="4IG-Sk-FbO" firstAttribute="top" secondItem="xG6-UK-kfx" secondAttribute="top" type="default" id="A9I-Br-akk"/>
                             <constraint firstItem="cWY-XZ-e71" firstAttribute="top" secondItem="4IG-Sk-FbO" secondAttribute="top" type="default" id="B1f-1o-SwP"/>
@@ -812,7 +816,6 @@
                             <constraint firstItem="LLm-7I-P6L" firstAttribute="baseline" secondItem="ewS-Nw-xWa" secondAttribute="baseline" type="default" id="DK0-Wp-uQi"/>
                             <constraint firstItem="Iu5-Rb-a7G" firstAttribute="top" secondItem="5Wp-LO-Ln5" secondAttribute="top" constant="25" id="DPS-3G-CkN"/>
                             <constraint firstItem="6FX-K3-Q8E" firstAttribute="leading" secondItem="JLf-CJ-MB8" secondAttribute="leading" type="default" id="DZT-F3-xFz"/>
-                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="bottom" secondItem="JLf-CJ-MB8" secondAttribute="bottom" type="default" id="EUc-8B-rO1"/>
                             <constraint firstItem="QGc-If-aNQ" firstAttribute="trailing" secondItem="hjh-n1-CJL" secondAttribute="trailing" type="default" id="Eso-Ry-X9R"/>
                             <constraint firstItem="6FX-K3-Q8E" firstAttribute="bottom" secondItem="48y-5b-a5q" secondAttribute="bottom" type="default" id="G2R-cz-BfE"/>
                             <constraint firstItem="4IG-Sk-FbO" firstAttribute="leading" secondItem="IxC-ib-vLZ" secondAttribute="leading" type="default" id="GsJ-fY-Nqj"/>
@@ -857,11 +860,11 @@
                             <constraint firstItem="9k8-Ar-EzI" firstAttribute="leading" secondItem="Iu5-Rb-a7G" secondAttribute="leading" type="default" id="hac-72-iju"/>
                             <constraint firstItem="wvO-Je-XLU" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="791" id="iHC-sH-LYN"/>
                             <constraint firstAttribute="trailing" secondItem="ewS-Nw-xWa" secondAttribute="trailing" constant="21" id="j6F-0F-mb9"/>
+                            <constraint firstItem="48y-5b-a5q" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="25" id="jFZ-gO-CbE"/>
                             <constraint firstAttribute="trailing" secondItem="ZTS-KI-F9T" secondAttribute="trailing" constant="82" id="jhy-xe-N6j"/>
                             <constraint firstItem="nzH-Al-rtB" firstAttribute="leading" secondItem="cWY-XZ-e71" secondAttribute="leading" type="default" id="l1C-wL-SMM"/>
                             <constraint firstItem="cWY-XZ-e71" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="371" id="lLR-AA-axi"/>
                             <constraint firstItem="wvO-Je-XLU" firstAttribute="top" secondItem="s44-Xk-1rD" secondAttribute="top" type="default" id="m11-NG-JbC"/>
-                            <constraint firstItem="6FX-K3-Q8E" firstAttribute="top" secondItem="48y-5b-a5q" secondAttribute="top" type="default" id="mae-39-BKu"/>
                             <constraint firstItem="48y-5b-a5q" firstAttribute="bottom" secondItem="F8V-mr-AuN" secondAttribute="bottom" type="default" id="mfj-K4-E4t"/>
                             <constraint firstItem="zEN-Uj-l9r" firstAttribute="leading" secondItem="5Wp-LO-Ln5" secondAttribute="leading" constant="161" id="mhg-5K-hAV"/>
                             <constraint firstItem="zEN-Uj-l9r" firstAttribute="bottom" secondItem="4IG-Sk-FbO" secondAttribute="bottom" type="default" id="o0x-Gt-FMD"/>
@@ -2752,7 +2755,7 @@
                                     <constraint firstAttribute="height" constant="80" id="KxR-JM-O1w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" image="p_purple.png">
+                                <state key="normal" image="p_grey.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2947,6 +2950,7 @@
         <image name="p_blue.png" width="127" height="127"/>
         <image name="p_brown.png" width="127" height="127"/>
         <image name="p_green.png" width="127" height="127"/>
+        <image name="p_grey.png" width="127" height="127"/>
         <image name="p_orange.png" width="127" height="127"/>
         <image name="p_pink.png" width="127" height="127"/>
         <image name="p_purple.png" width="127" height="127"/>
@@ -3078,7 +3082,9 @@
                 <relationship kind="action" name="colorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdColorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="greenDrop" candidateClass="UIImageView"/>

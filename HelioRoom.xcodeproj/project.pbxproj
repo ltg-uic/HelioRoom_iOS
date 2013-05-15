@@ -203,6 +203,7 @@
 		84F9826E16B43F0A00804BE4 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9826D16B43F0A00804BE4 /* OrderViewController.m */; };
 		85021F5A17412B300071979F /* Helio_FINAL_Icon_N-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 85021F5917412B300071979F /* Helio_FINAL_Icon_N-01.png */; };
 		85021F5C17413D9F0071979F /* shape_cloud_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 85021F5B17413D9F0071979F /* shape_cloud_empty.png */; };
+		8514680C1742EC5F00DBB66C /* p_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 8514680B1742EC5F00DBB66C /* p_grey.png */; };
 		852DCB1516B87AA5002D4B50 /* planet_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB1416B87AA5002D4B50 /* planet_bg.png */; };
 		852DCB3216B8895F002D4B50 /* p_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2A16B8895F002D4B50 /* p_blue.png */; };
 		852DCB3316B8895F002D4B50 /* p_brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 852DCB2B16B8895F002D4B50 /* p_brown.png */; };
@@ -254,7 +255,7 @@
 		700C3A8116042895005A9E34 /* DDFileLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = xmppTemplate/CocoaLumberjack/DDFileLogger.m; sourceTree = "<group>"; };
 		700C3A8216042895005A9E34 /* DDLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = xmppTemplate/CocoaLumberjack/DDLog.h; sourceTree = "<group>"; };
 		700C3A8316042895005A9E34 /* DDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = xmppTemplate/CocoaLumberjack/DDLog.m; sourceTree = "<group>"; };
-		700C3A8416042895005A9E34 /* DDTTYLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = xmppTemplate/CocoaLumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
+		700C3A8416042895005A9E34 /* DDTTYLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = DDTTYLogger.h; path = xmppTemplate/CocoaLumberjack/DDTTYLogger.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		700C3A8516042895005A9E34 /* DDTTYLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = xmppTemplate/CocoaLumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
 		700C3A8716042895005A9E34 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
 		700C3A8816042895005A9E34 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
@@ -347,8 +348,8 @@
 		84103A0816BACB7000B89583 /* ScratchPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScratchPadViewController.h; sourceTree = SOURCE_ROOT; };
 		84103A0916BACB7000B89583 /* ScratchPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScratchPadViewController.m; sourceTree = SOURCE_ROOT; };
 		84103A0C16BAD21400B89583 /* tab_Scratch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_Scratch.png; path = ../tab_Scratch.png; sourceTree = "<group>"; };
-		84137FD71648421800045E7E /* ChoosePlanetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChoosePlanetViewController.h; path = xmppTemplate/ChoosePlanetViewController.h; sourceTree = "<group>"; };
-		84137FD81648421800045E7E /* ChoosePlanetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChoosePlanetViewController.m; path = xmppTemplate/ChoosePlanetViewController.m; sourceTree = "<group>"; };
+		84137FD71648421800045E7E /* ChoosePlanetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ChoosePlanetViewController.h; path = xmppTemplate/ChoosePlanetViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		84137FD81648421800045E7E /* ChoosePlanetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ChoosePlanetViewController.m; path = xmppTemplate/ChoosePlanetViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		84137FDB164861D600045E7E /* tab_planetOrder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_planetOrder.png; path = ../tab_planetOrder.png; sourceTree = "<group>"; };
 		84137FDD164862F000045E7E /* tab_planetIdentify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_planetIdentify.png; path = ../tab_planetIdentify.png; sourceTree = "<group>"; };
 		84137FDF1648A58F00045E7E /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
@@ -378,8 +379,8 @@
 		842B72CD16C20F9600B976BA /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		842B72CE16C20F9600B976BA /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		842B72CF16C20F9600B976BA /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		843739FE1613A615006D7253 /* ChooseInFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseInFrontViewController.h; path = xmppTemplate/ChooseInFrontViewController.h; sourceTree = "<group>"; };
-		843739FF1613A615006D7253 /* ChooseInFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseInFrontViewController.m; path = xmppTemplate/ChooseInFrontViewController.m; sourceTree = "<group>"; };
+		843739FE1613A615006D7253 /* ChooseInFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ChooseInFrontViewController.h; path = xmppTemplate/ChooseInFrontViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		843739FF1613A615006D7253 /* ChooseInFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ChooseInFrontViewController.m; path = xmppTemplate/ChooseInFrontViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		843D104F1648AF2900DC6C34 /* spaceshipSubmitButton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton1.png; sourceTree = "<group>"; };
 		843D10501648AF2900DC6C34 /* spaceshipSubmitButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton2.png; sourceTree = "<group>"; };
 		843D10511648AF2900DC6C34 /* spaceshipSubmitButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceshipSubmitButton3.png; sourceTree = "<group>"; };
@@ -481,6 +482,7 @@
 		84F9826D16B43F0A00804BE4 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = SOURCE_ROOT; };
 		85021F5917412B300071979F /* Helio_FINAL_Icon_N-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Helio_FINAL_Icon_N-01.png"; sourceTree = "<group>"; };
 		85021F5B17413D9F0071979F /* shape_cloud_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shape_cloud_empty.png; path = ../../../../../Dropbox/HelioRoom/ui/shape_cloud_empty.png; sourceTree = "<group>"; };
+		8514680B1742EC5F00DBB66C /* p_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_grey.png; sourceTree = "<group>"; };
 		852DCB1416B87AA5002D4B50 /* planet_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_bg.png; path = Planets/planet_bg.png; sourceTree = "<group>"; };
 		852DCB2A16B8895F002D4B50 /* p_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_blue.png; sourceTree = "<group>"; };
 		852DCB2B16B8895F002D4B50 /* p_brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p_brown.png; sourceTree = "<group>"; };
@@ -945,6 +947,7 @@
 		84D5493C16229A5E0075940E /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				8514680B1742EC5F00DBB66C /* p_grey.png */,
 				84020657164C3E3D00010A99 /* brown.png */,
 				84020658164C3E3D00010A99 /* gray.png */,
 				84020659164C3E3D00010A99 /* green.png */,
@@ -1280,6 +1283,7 @@
 				85DDAF0117414FA800054D42 /* background_HelioSimple.png in Resources */,
 				85DDAF0317414FF200054D42 /* Default-Landscape@2x~ipad.png in Resources */,
 				85DDAF0517414FF600054D42 /* Default-Landscape~ipad.png in Resources */,
+				8514680C1742EC5F00DBB66C /* p_grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

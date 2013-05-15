@@ -2926,7 +2926,7 @@
     </scenes>
     <resources>
         <image name="backPlanet.png" width="360" height="280"/>
-        <image name="background_01.png" width="3452" height="2158"/>
+        <image name="background_01.png" width="2048" height="1536"/>
         <image name="background_02.png" width="3452" height="2158"/>
         <image name="background_HelioSimple.png" width="2048" height="1536"/>
         <image name="blue.png" width="128" height="128"/>
@@ -3049,6 +3049,7 @@
         <class className="NewOrdering" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewOrdering.h"/>
             <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
                 <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="action" name="planetDragInside:withEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="planetTouchDown:forEvent:" candidateClass="UIButton"/>
@@ -3111,7 +3112,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TheoriesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="createdPlanetDragInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdPlanetDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdPlanetTouchUpInside:" candidateClass="UIButton"/>
+                <relationship kind="action" name="createdPlanetTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="planetDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="planetTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="earthDrop" candidateClass="UIImageView"/>

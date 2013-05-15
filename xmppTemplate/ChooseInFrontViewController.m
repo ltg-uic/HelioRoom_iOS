@@ -328,7 +328,7 @@
     }else if (tag ==17 || tag ==27){
         return @"green";
     }else if (tag ==18 || tag ==28){
-        return @"purple";
+        return @"gray";
     }else if (tag ==19 || tag ==29){
         return @"gray";
     }else{

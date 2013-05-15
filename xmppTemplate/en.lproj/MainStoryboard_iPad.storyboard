@@ -2768,24 +2768,6 @@
                                     <action selector="planetTouchUpInside:forEvent:" destination="ugq-B3-B4r" eventType="touchUpInside" id="3Bs-JT-7Y6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" userInteractionEnabled="NO" tag="19" contentMode="center" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-hm-0V1">
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" image="gray.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="planetDragInside:withEvent:" destination="ugq-B3-B4r" eventType="touchDragInside" id="hj6-XX-12h"/>
-                                    <action selector="planetTouchDown:forEvent:" destination="ugq-B3-B4r" eventType="touchDown" id="Plo-az-PFQ"/>
-                                    <action selector="planetTouchUpInside:forEvent:" destination="ugq-B3-B4r" eventType="touchUpInside" id="wx1-oi-YlJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0u-LK-lra">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WSX-oh-gtW"/>
@@ -2857,7 +2839,6 @@
                             <constraint firstItem="z8t-Dn-R8x" firstAttribute="trailing" secondItem="G1G-t3-owu" secondAttribute="trailing" type="default" id="7n1-PQ-MFR"/>
                             <constraint firstAttribute="trailing" secondItem="Xlc-um-dm8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9D7-Rw-idu"/>
                             <constraint firstAttribute="trailing" secondItem="E0u-LK-lra" secondAttribute="trailing" constant="398" id="BGQ-FG-04c"/>
-                            <constraint firstItem="dQ8-ve-qTJ" firstAttribute="top" secondItem="Mu5-hm-0V1" secondAttribute="top" type="default" id="DI9-33-SEC"/>
                             <constraint firstItem="BB3-bd-Nr9" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" constant="499" id="DLu-56-E6a"/>
                             <constraint firstItem="zEY-gi-zhH" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="665" id="DsZ-Vl-5pC"/>
                             <constraint firstItem="xnU-uK-qMN" firstAttribute="trailing" secondItem="G1G-t3-owu" secondAttribute="trailing" type="default" id="Erd-Ow-wYg"/>
@@ -2869,7 +2850,6 @@
                             <constraint firstItem="BB3-bd-Nr9" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="187" id="OPX-lT-LYo"/>
                             <constraint firstItem="atn-ZB-3lX" firstAttribute="bottom" secondItem="aDp-Dc-sbq" secondAttribute="bottom" type="default" id="Oy0-jQ-Kdq"/>
                             <constraint firstItem="eVH-gN-7BB" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" constant="32" id="Rv3-9x-G1g"/>
-                            <constraint firstItem="Mu5-hm-0V1" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="39" id="Suz-sy-VfC"/>
                             <constraint firstItem="Xlc-um-dm8" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="266" id="TEd-Uf-ZlB"/>
                             <constraint firstAttribute="bottom" secondItem="Ebc-31-OcY" secondAttribute="bottom" constant="199" id="Um9-97-M3z"/>
                             <constraint firstItem="Npd-wb-YTD" firstAttribute="top" secondItem="ehc-H3-OIB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VzG-2O-Abn"/>
@@ -2891,10 +2871,10 @@
                             <constraint firstItem="xnU-uK-qMN" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" type="default" id="tSW-Gx-pHb"/>
                             <constraint firstAttribute="trailing" secondItem="ehc-H3-OIB" secondAttribute="trailing" constant="114" id="tku-zr-gme"/>
                             <constraint firstAttribute="trailing" secondItem="8dd-Hs-zlB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="umI-zO-pZs"/>
+                            <constraint firstItem="dQ8-ve-qTJ" firstAttribute="top" secondItem="G1G-t3-owu" secondAttribute="top" constant="39" id="vV2-IX-0mV"/>
                             <constraint firstItem="cw5-GT-TqP" firstAttribute="centerX" secondItem="V1Q-lo-Pas" secondAttribute="centerX" type="default" id="xyi-NS-IBq"/>
                             <constraint firstItem="V1Q-lo-Pas" firstAttribute="leading" secondItem="aDp-Dc-sbq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yJE-io-lR4"/>
                             <constraint firstItem="zEY-gi-zhH" firstAttribute="trailing" secondItem="G1G-t3-owu" secondAttribute="trailing" type="default" id="yUS-8E-8VS"/>
-                            <constraint firstItem="Mu5-hm-0V1" firstAttribute="leading" secondItem="G1G-t3-owu" secondAttribute="leading" constant="405" id="zcG-o7-pcs"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -2906,12 +2886,11 @@
                         <outlet property="brownPlanet" destination="lCI-Qn-TTt" id="M4P-G0-zZh"/>
                         <outlet property="cancelButton" destination="atn-ZB-3lX" id="igF-yS-V81"/>
                         <outlet property="frontPlanetArea" destination="BB3-bd-Nr9" id="Bhu-oL-av2"/>
-                        <outlet property="grayPlanet" destination="Mu5-hm-0V1" id="xgQ-7B-R7N"/>
+                        <outlet property="grayPlanet" destination="Xlc-um-dm8" id="ruN-yj-QAS"/>
                         <outlet property="greenPlanet" destination="8dd-Hs-zlB" id="9uf-gW-Px4"/>
                         <outlet property="loginButton" destination="zEY-gi-zhH" id="Elh-Fx-Hhi"/>
                         <outlet property="orangePlanet" destination="Npd-wb-YTD" id="bCd-3s-WeC"/>
                         <outlet property="pinkPlanet" destination="ehc-H3-OIB" id="hqV-dY-Omn"/>
-                        <outlet property="purplePlanet" destination="Xlc-um-dm8" id="h8w-st-oJQ"/>
                         <outlet property="redPlanet" destination="z8t-Dn-R8x" id="ayc-Bv-0nM"/>
                         <outlet property="submitButton" destination="E0u-LK-lra" id="AEf-nF-uea"/>
                         <outlet property="submitButtonAnimation" destination="aDp-Dc-sbq" id="CKc-NZ-gJr"/>
@@ -2926,7 +2905,7 @@
     </scenes>
     <resources>
         <image name="backPlanet.png" width="360" height="280"/>
-        <image name="background_01.png" width="2048" height="1536"/>
+        <image name="background_01.png" width="3452" height="2158"/>
         <image name="background_02.png" width="3452" height="2158"/>
         <image name="background_HelioSimple.png" width="2048" height="1536"/>
         <image name="blue.png" width="128" height="128"/>
@@ -3083,9 +3062,7 @@
                 <relationship kind="action" name="colorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="colorTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorDragInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="createdColorDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdColorTouchUpInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="blueDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="brownDrop" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="greenDrop" candidateClass="UIImageView"/>
@@ -3112,9 +3089,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TheoriesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="createdPlanetDragInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="createdPlanetDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="createdPlanetTouchUpInside:" candidateClass="UIButton"/>
-                <relationship kind="action" name="createdPlanetTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="planetDragInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="action" name="planetTouchUpInside:forEvent:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="earthDrop" candidateClass="UIImageView"/>
